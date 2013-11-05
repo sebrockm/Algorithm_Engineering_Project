@@ -90,7 +90,7 @@ void parse_options(int argc, char** argv, char** input_file, char** output_file,
 		}
 	}
 
-	if(*input_file ^ *output_file)
+	if(!*input_file ^ !*output_file)
 	{
 		usage(argv[0]);
 		exit(EXIT_FAILURE);
@@ -122,7 +122,7 @@ int fileParser(const char* file_name)
 
 		int x, y, l, h;
 		std::string t;
-		if(!(ss >> x >> y >> l >> h >> t))
+		if(!(iss >> x >> y >> l >> h >> t))
 		{
 			break;
 		}
