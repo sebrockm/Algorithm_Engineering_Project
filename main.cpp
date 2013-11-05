@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
-#include <limits>
+#include <sstream>
+#include <string>
 
 void usage(const char* progname)
 {
@@ -89,7 +90,7 @@ void parse_options(int argc, char** argv, char** input_file, char** output_file,
 		}
 	}
 
-	if(!*input_file ^ !*output_file)
+	if(*input_file ^ *output_file)
 	{
 		usage(argv[0]);
 		exit(EXIT_FAILURE);
@@ -99,38 +100,40 @@ void parse_options(int argc, char** argv, char** input_file, char** output_file,
 
 int fileParser(const char* file_name)
 {
-	std::ifstream stream(file_name);
-	if(!stream)
+	std::ifstream file(file_name);
+	if(!file)
 	{
 		std::cerr << "cannot open " << file_name << std::endl;
 		exit(EXIT_FAILURE);
 	}
 
 	int count;
-	stream >> count;
+	if(!(file >> count))
+	{
+		std::cerr << "failed reading line 1 of " << file_name << std::endl;
+		return 0;
+	}
 
 	int i;
-	for(i = 1; i <= count && !stream.eof(); i++)
+	std::string line;
+	for(i = 1; i <= count && std::getline(file, line); i++)
 	{
+		std::istringstream iss(line);
+
 		int x, y, l, h;
 		std::string t;
-		stream >> x >> y >> l >> h >> t;
-		if(!stream.fail())
+		if(!(ss >> x >> y >> l >> h >> t))
 		{
-			std::cout << x << " " << y << " " << l << " " << h << " " << t << std::endl;
+			break;
 		}
-		else
-		{
-			std::cerr << "failed reading line " << i+1 << " of " << file_name << std::endl;
-			exit(EXIT_FAILURE);
-		}
-		stream.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+		std::cout << x << " " << y << " " << l << " " << h << " " << t << std::endl;
+		//TODO Werte speichern statt ausgeben und Problem Loesen
 	}
 	
 	if(i <= count)
 	{
-		std::cerr << "only" << i+1 << " lines of " << count+1 << " could be parsed" << std::endl;
-		exit(EXIT_FAILURE);
+		std::cerr << "only " << i+1 << " lines of " << count+1 << " could be parsed" << std::endl;
 	}
 
 	return count;
@@ -142,12 +145,16 @@ bool evaluate(const char* file_name)
 	std::ifstream stream(file_name);
 	if(!stream)
 	{
-		std::cerr << "cannot open " << file_name << std::endl;
+		std::cerr << "ERROR: Fehler beim Oeffnen der Datei" << std::endl;
 		return false;
 	}
 
 	int count;
-	stream >> count;
+	if(!(stream >> count))
+	{
+		std::cerr << "ERROR: Fehler beim Parsen der Datei" << std::endl;
+		return false;
+	}
 
 	if(count <= 0)
 	{
@@ -166,11 +173,15 @@ bool evaluate(const char* file_name)
 
 	for(int i = 0; i < count; i++)
 	{
-		stream >> x[i] >> y[i] >> l[i] >> h[i] >> t[i] >> b[i] >> xs[i] >> ys[i];
+		if(!(stream >> x[i] >> y[i] >> l[i] >> h[i] >> t[i] >> b[i] >> xs[i] >> ys[i]))
+		{
+			std::cerr << "ERROR: Fehler beim Parsen der Datei" << std::endl;
+			return false;
+		}
 	}
 
 	bool good = true;
-	int counter = 0;
+	int counter = 0; //Anzahl beschrifteter Punkte
 
 	for(int i = 0; i < count; i++)
 	{
@@ -186,7 +197,7 @@ bool evaluate(const char* file_name)
 			
 			for(int j = i+1; j < count; j++)
 			{
-				if(b[j] == 1
+				if(b[j] == 1 //Ueberlappung der Rechtecke
 						&& ((xs[i] < xs[j] && xs[j] < xs[i]+l[i]) || (xs[j] < xs[i] && xs[i] < xs[j]+l[j]))
 						&& ((ys[i] > ys[j] && ys[j] > ys[i]-h[i]) || (ys[j] > ys[i] && ys[i] > ys[j]-h[j])))
 				{
