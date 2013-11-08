@@ -116,6 +116,7 @@ int fileParser(const char* file_name)
 
 	int i;
 	std::string line;
+	std::getline(file, line); //erstes '\n' ueberspringen
 	for(i = 1; i <= count && std::getline(file, line); i++)
 	{
 		std::istringstream iss(line);
@@ -133,32 +134,32 @@ int fileParser(const char* file_name)
 	
 	if(i <= count)
 	{
-		std::cerr << "only " << i+1 << " lines of " << count+1 << " could be parsed" << std::endl;
+		std::cerr << "in file " << file_name << ": only " << i << " lines could be parsed" << std::endl;
 	}
 
 	return count;
 }
 
 
-bool evaluate(const char* file_name)
+int evaluate(const char* file_name)
 {
-	std::ifstream stream(file_name);
-	if(!stream)
+	std::ifstream file(file_name);
+	if(!file)
 	{
-		std::cerr << "ERROR: Fehler beim Oeffnen der Datei" << std::endl;
-		return false;
+		std::cerr << "ERROR: Fehler beim Oeffnen " << file_name << std::endl;
+		return -1;
 	}
 
 	int count;
-	if(!(stream >> count))
+	if(!(file >> count))
 	{
-		std::cerr << "ERROR: Fehler beim Parsen der Datei" << std::endl;
-		return false;
+		std::cerr << "ERROR: Fehler beim Parsen von " << file_name << " in Zeile 1" << std::endl;
+		return -1;
 	}
 
 	if(count <= 0)
 	{
-		return false;
+		return -1;
 	}
 
 	int* x = new int[count];
@@ -169,14 +170,16 @@ bool evaluate(const char* file_name)
 	int* b = new int[count];
 	int* xs = new int[count];
 	int* ys = new int[count];
-	std::string mull;
 
-	for(int i = 0; i < count; i++)
+	std::string line;
+	std::getline(file, line); //erstes '\n' ueberspringen
+	for(int i = 0; i < count && std::getline(file, line); i++)
 	{
-		if(!(stream >> x[i] >> y[i] >> l[i] >> h[i] >> t[i] >> b[i] >> xs[i] >> ys[i]))
+		std::istringstream iss(line);
+		if(!(iss >> x[i] >> y[i] >> l[i] >> h[i] >> t[i] >> b[i] >> xs[i] >> ys[i]))
 		{
-			std::cerr << "ERROR: Fehler beim Parsen der Datei" << std::endl;
-			return false;
+			std::cerr << "ERROR: Fehler beim Parsen von " << file_name << " in Zeile " << i+2 << std::endl;
+			return -1;
 		}
 	}
 
@@ -208,7 +211,6 @@ bool evaluate(const char* file_name)
 		}
 	}
 
-	std::cout << counter << std::endl;
 
 	delete [] x;
 	delete [] y;
@@ -219,7 +221,7 @@ bool evaluate(const char* file_name)
 	delete [] xs;
 	delete [] ys;
 
-	return good;
+	return good ? counter : -1;
 }
 
 
@@ -242,7 +244,11 @@ int main(int argc, char** argv)
 	}
 	if(eval_file)
 	{
-		evaluate(eval_file);
+		int counter = evaluate(eval_file);
+		if(counter >= 0)
+		{
+			std::cout << counter << std::endl;
+		}
 	}
 }
 
