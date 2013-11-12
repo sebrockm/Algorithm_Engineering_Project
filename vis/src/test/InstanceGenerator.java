@@ -122,10 +122,11 @@ public class InstanceGenerator
 				m.addLabelData(ld);
 			}
 		}
-		try {
+		try 
+		{
 			IO.writeLabelData(m);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
 	}

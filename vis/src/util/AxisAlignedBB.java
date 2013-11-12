@@ -4,6 +4,12 @@ public class AxisAlignedBB {
     
     int[] minMax = new int[4];
     
+    
+    public AxisAlignedBB()
+    {
+        reset();
+    }
+    
     public void reset()
     {
         minMax[0] = Integer.MAX_VALUE;
@@ -14,21 +20,11 @@ public class AxisAlignedBB {
     
     public void addPoint(int x, int y)
     {
-        if(x < getMinX())
-        {
-            minMax[0] = x;
-        } else if(x > getMaxX())
-        {
-            minMax[1] = x;
-        }
-        
-        if(y < getMinY())
-        {
-            minMax[2] = y;
-        } else if(y > getMaxY())
-        {
-            minMax[3] = y;
-        }
+        minMax[0] = Math.min(minMax[0], x);
+        minMax[1] = Math.max(minMax[1], x);
+
+        minMax[2] = Math.min(minMax[2], y);
+        minMax[3] = Math.max(minMax[3], y);
     }
     
     public int getMinX()
@@ -59,5 +55,10 @@ public class AxisAlignedBB {
     public int getH()
     {
         return getMaxY() - getMinY();
+    }
+    
+    public String toString()
+    {
+        return String.format("[%d, %d] - [%d, %d]", getMinX(), getMinY(), getMaxX(), getMaxY());
     }
 }

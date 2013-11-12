@@ -6,58 +6,13 @@ import imp.Parser.RawData;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
-import java.io.File;
 import java.io.IOException;
-
-import javax.swing.JFileChooser;
 
 import util.IO;
 import api.InputController;
 
 public class Controlls extends InputController 
-{    
-    private static final String PROGRAM_PATH = "ae -in %s -out %s";
-    
-    public void callCppProgProj()
-    {
-        String outFile = getModel().getFile() + "p";
-        String inputFile = getModel().getFile();
-        if(_callCppProg(String.format(PROGRAM_PATH, inputFile, outFile)) > -1)
-        {
-        	getModel().setFile(outFile);
-        	getModel().setParser(new ProjectedData());
-        }
-    }
-    
-    public void callCppProgEval()
-    {
-        String inputFile = getModel().getFile();
-        if(_callCppProg(String.format("ae -eval %s", inputFile)) == 0)
-        {
-        	System.out.println("Ok");
-        }
-    }
-    
-    public int _callCppProg(String args)
-    {
-        Runtime rt = Runtime.getRuntime();
-
-        try {
-            Process p = rt.exec(args);
-            p.waitFor();
-            int status = p.exitValue();
-            return status;
-        } catch (IOException e) 
-        {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        return -1;
-    }
-    
+{       
     @Override
     public void keyTyped(KeyEvent e) 
     {
@@ -98,6 +53,10 @@ public class Controlls extends InputController
         {
         	callCppProgProj();
         }
+        else if(e.getKeyChar() == 'd')
+        {
+            getRenderer().toggleDrawLabelText();
+        }
         else if(e.getKeyChar() == 'e')
         {
         	callCppProgEval();
@@ -105,13 +64,7 @@ public class Controlls extends InputController
         
         else if(e.getKeyChar() == 'l')
         {
-            JFileChooser chooser = new JFileChooser();
-            chooser.setCurrentDirectory(new File("./tests/"));
-            if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
-            {
-            	getModel().setFile(chooser.getSelectedFile().getPath());
-            	getModel().generateData();
-            }
+            loadFile();
         }
     }
 

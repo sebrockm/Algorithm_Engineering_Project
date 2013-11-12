@@ -41,7 +41,17 @@ public abstract class Renderer implements Observer
     
     public abstract int getTranslationY();
     
+    public abstract void toggleDrawLabelText();
+    
+    public abstract void toggleDrawDots();
+    
+    public abstract void addButton(Button b);
+    
     public abstract void translate(int dx, int dy);
+    
+    public abstract void setSplashScreen(String text);
+    
+    public abstract void showPopUp(String message, boolean error);
     
     public void update(Observable o, Object arg)
     {
@@ -58,7 +68,9 @@ public abstract class Renderer implements Observer
     {
         Color getLabelColor();
         
-        Color getTextColor();
+        Color getCSColor();
+        
+        Color getLabelTextColor();
         
         Color getDotColor();
         
@@ -71,5 +83,7 @@ public abstract class Renderer implements Observer
         Color getRasterColor();
         
         Color getCoordinatesColor();
+        
+        Color getButtonColor();
     }
 }

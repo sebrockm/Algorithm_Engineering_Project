@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
@@ -11,8 +12,10 @@ import java.util.List;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
+import api.Button;
 import api.InputController;
 import api.Model.LabelData;
 import api.Renderer;
@@ -26,7 +29,11 @@ public class SwingRenderer extends Renderer
     private Random _r;
     
     private float _zoom = 0.75f;
-    private int _tx = 0, _ty = 0;
+    private float _tx = 0, _ty = 0;
+    private boolean _drawLabelText = true;
+    private boolean _drawDots = true;
+    private List<Button> _gui = new ArrayList<>();
+    private String _splashScreen = "";
     
     private Color nextColor()
     {
@@ -41,24 +48,24 @@ public class SwingRenderer extends Renderer
     private void drawOval(int x, int y, int w, int h, Color color)
     {
         Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
-        int[] c = _model.getScreenCoords(x, y, this);
+        int[] c = _model.getScreenCoords(x, y, w, h, this);
         g2d.setColor(color);
-        int z = 10;//Math.max(5, (int)(15/_zoom));
+        int z = Math.max(4, Math.min(10, c[2]/15));
         g2d.fillOval(c[0] - z/2, c[1] - z/2, z, z);
         g2d.drawOval(c[0] - z/2, c[1] - z/2, z, z);
     }
     
-    private void drawTextDirect(String text, int x, int y)
+    private void drawTextDirect(String text, int x, int y, Color c)
     {
         Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
-        g2d.setColor(_codes.getTextColor());
+        g2d.setColor(c);
         g2d.drawString(text, x, y + g2d.getFontMetrics().getHeight());
     }
     
     private void drawText(String text, int x, int y)
     {
         int[] c = _model.getScreenCoords(x, y, this);
-        drawTextDirect(text, c[0], c[1]);
+        drawTextDirect(text, c[0], c[1], _codes.getLabelTextColor());
     }
     
     private void drawRect(int x, int y, int w, int h)
@@ -72,7 +79,9 @@ public class SwingRenderer extends Renderer
         g2d.drawRect(c[0], c[1], c[2], c[3]);
         
         g2d.setColor(_codes.getBorderColor());
-        g2d.setStroke(new BasicStroke(4f));
+        
+        int s = Math.max(1, Math.min(4, _model.getScreenWidths(10, 10, this)[0]/200));
+        g2d.setStroke(new BasicStroke(s));
         g2d.drawRect(c[0], c[1], c[2], c[3]);
         g2d.setStroke(new BasicStroke(1f));
     }
@@ -92,6 +101,15 @@ public class SwingRenderer extends Renderer
         }
     }
     
+    private void drawGui()
+    {
+        Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
+        for(Button b : _gui)
+        {
+            b.draw(g2d, _codes.getButtonColor(), _codes.getCoordinatesColor());
+        }
+    }
+    
     private void drawLine(int axis, int c)
     {
         Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
@@ -108,7 +126,7 @@ public class SwingRenderer extends Renderer
         }
     }
     
-    private void drawCSText(int axis, int v0)
+    private void drawCSText(int axis, int v0, int dx, int dy)
     {
         Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
         int[] c = _model.getScreenCoords(v0, v0, this);
@@ -116,46 +134,126 @@ public class SwingRenderer extends Renderer
         if((axis & 1) > 0)
         {
             g2d.setColor(_codes.getCoordinatesColor());
-            drawTextDirect(String.valueOf(v0), 0, other0 - 17);  
+            drawTextDirect(String.valueOf(v0), 2, other0 - _strategy.getDrawGraphics().getFontMetrics().getHeight() - 2, _codes.getCSColor());  
         }
         else
         {
             g2d.setColor(_codes.getCoordinatesColor());
-            drawTextDirect(String.valueOf(v0), other0 - 15, 0);
+            drawTextDirect(String.valueOf(v0), other0 + 2, getH() - _strategy.getDrawGraphics().getFontMetrics().getHeight() - 2, _codes.getCSColor());
         }
     }
     
     private void drawRaster()
     {
-        int rastersx = Math.min(30, Math.max(_model.getAxisAlignedBB().getW(), 10));
+        int rastersx = Math.min(25, Math.max(_model.getAxisAlignedBB().getW(), 10));
         int dx = Math.max(1, _model.getAxisAlignedBB().getW()/rastersx);
-        int rastersy = Math.min(30, Math.max(_model.getAxisAlignedBB().getH(), 10));
+        int rastersy = Math.min(25, Math.max(_model.getAxisAlignedBB().getH(), 10));
         int dy = Math.max(1, _model.getAxisAlignedBB().getH()/rastersy);
-
-        for(int i = _model.getAxisAlignedBB().getMinX()-1; i <= _model.getAxisAlignedBB().getMaxX()+1; i+=dx)
+        
+        for(int i = _model.getAxisAlignedBB().getMaxX()-dx; ;i-=dx)
         {
             drawLine(0, i);
+            if(_model.getScreenCoords(i, 0, this)[0] < 0)
+            {
+                break;
+            }
         }
-        for(int i = _model.getAxisAlignedBB().getMinY()-1; i <= _model.getAxisAlignedBB().getMaxY()+1; i+=dy)
+        
+        for(int i = _model.getAxisAlignedBB().getMaxX(); ;i+=dx)
+        {
+            drawLine(0, i);
+            if(_model.getScreenCoords(i, 0, this)[0] > getW())
+            {
+                break;
+            }
+        }
+        
+        for(int i = _model.getAxisAlignedBB().getMaxY()-dy; ;i-=dy)
         {
             drawLine(1, i);
+            if(_model.getScreenCoords(0, i, this)[1] > getH())
+            {
+                break;
+            }
+        }
+        
+        for(int i = _model.getAxisAlignedBB().getMaxY(); ;i+=dy)
+        {
+            drawLine(1, i);
+            if(_model.getScreenCoords(0, i, this)[1] < 0)
+            {
+                break;
+            }
         }
     }
     
+//    private boolean modelInWindowScreen(int offx, int offy)
+//    {
+//        AxisAlignedBB aabb = getModelScreenBox(offx, offy);
+//        
+//        return aabb.getW() <= getW() && aabb.getH() <= getH() && aabb.getMinX() >= 0 && aabb.getMaxY() <= getH();
+//    }
+    
+//    private AxisAlignedBB getModelScreenBox(int offx, int offy)
+//    {
+//        AxisAlignedBB aabb = new AxisAlignedBB();
+//        int[] min = _model.getScreenCoords(_model.getAxisAlignedBB().getMinX() - offx, _model.getAxisAlignedBB().getMinY() - offy, this);
+//        int[] max = _model.getScreenCoords(_model.getAxisAlignedBB().getMaxX() - offx, _model.getAxisAlignedBB().getMaxY() + offy, this);
+//        aabb.addPoint(min[0], min[1]);
+//        aabb.addPoint(max[0], max[1]);
+//        return aabb;
+//    }
+    
     private void drawCS()
     {
-        int rastersx = Math.min(30, Math.max(_model.getAxisAlignedBB().getW(), 10));
+        int rastersx = Math.min(25, Math.max(_model.getAxisAlignedBB().getW(), 10));
         int dx = Math.max(1, _model.getAxisAlignedBB().getW()/rastersx);
-        int rastersy = Math.min(30, Math.max(_model.getAxisAlignedBB().getH(), 10));
+        int rastersy = Math.min(25, Math.max(_model.getAxisAlignedBB().getH(), 10));
         int dy = Math.max(1, _model.getAxisAlignedBB().getH()/rastersy);
+
+//        for(int i = _model.getAxisAlignedBB().getMinX(); i <= _model.getAxisAlignedBB().getMaxX()+dx; i+=dx)
+//        {
+//            drawCSText(0, i, dx, dy);
+//        }
+//        for(int i = _model.getAxisAlignedBB().getMinY()-dy; i <= _model.getAxisAlignedBB().getMaxY()+dy; i+=dy)
+//        {
+//            drawCSText(1, i, dx, dy);
+//        }
         
-        for(int i = _model.getAxisAlignedBB().getMinX()-1; i <= _model.getAxisAlignedBB().getMaxX()+1; i+=dx)
+        for(int i = _model.getAxisAlignedBB().getMaxX()-dx; ;i-=dx)
         {
-            drawCSText(0, i);
+            drawCSText(0, i, dx, dy);
+            if(_model.getScreenCoords(i, 0, this)[0] < 0)
+            {
+                break;
+            }
         }
-        for(int i = _model.getAxisAlignedBB().getMinY()-1; i <= _model.getAxisAlignedBB().getMaxY()+1; i+=dy)
+        
+        for(int i = _model.getAxisAlignedBB().getMaxX(); ;i+=dx)
         {
-            drawCSText(1, i);
+            drawCSText(0, i, dx, dy);
+            if(_model.getScreenCoords(i, 0, this)[0] > getW())
+            {
+                break;
+            }
+        }
+        
+        for(int i = _model.getAxisAlignedBB().getMaxY()-dy; ;i-=dy)
+        {
+            drawCSText(1, i, dx, dy);
+            if(_model.getScreenCoords(0, i, this)[1] > getH())
+            {
+                break;
+            }
+        }
+        
+        for(int i = _model.getAxisAlignedBB().getMaxY(); ;i+=dy)
+        {
+            drawCSText(1, i, dx, dy);
+            if(_model.getScreenCoords(0, i, this)[1] < 0)
+            {
+                break;
+            }
         }
     }
         
@@ -178,15 +276,35 @@ public class SwingRenderer extends Renderer
             {
                 if(d.isVisible())
                 {
-                    drawText(d.getText(), d.getAnchorX(), d.getAnchorY());
+                    if(_drawLabelText)
+                    {
+                        drawText(d.getText(), d.getAnchorX(), d.getAnchorY());    
+                    }
+                    if(_drawDots)
                     drawOval(d.getX(), d.getY(), 10, 10, _codes.getDotColor());
                 }
                 else
                 {
+                    if(_drawDots)
                     drawOval(d.getX(), d.getY(), 10, 10, _codes.getNoLabelDotColor());   
                 }
             }
             drawCS();
+            
+            drawGui();
+
+            if(_splashScreen.length() > 0)
+            {
+                Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
+                Font s = g2d.getFont();
+                g2d.setFont(new Font("Arial", Font.BOLD, 100));
+                int l = g2d.getFontMetrics().charsWidth(_splashScreen.toCharArray(), 0, _splashScreen.length());
+                int y = getH()/2 + g2d.getFontMetrics().getHeight()/3;
+                int x = getW()/2 - l/2;
+                g2d.setColor(_codes.getCSColor());
+                g2d.drawString(_splashScreen, x, y);
+                g2d.setFont(s);
+            }
         }
         _strategy.show();
     }
@@ -225,7 +343,7 @@ public class SwingRenderer extends Renderer
                 _frame.setVisible(true);
                 
                 _window.createBufferStrategy(2);
-                _strategy = _window.getBufferStrategy();
+                _strategy = _window.getBufferStrategy();                  
                 
                 synchronized(SwingRenderer.this) 
                 {
@@ -257,15 +375,19 @@ public class SwingRenderer extends Renderer
     @Override
     public void zoom(float dfactor) 
     {
-        _zoom += dfactor;
+        float sign = 1 + Math.signum(dfactor);
+        _zoom = _zoom * (1-sign) * 0.9f + (1/0.9f) * _zoom * sign;
         _zoom = Math.max(0.05f, _zoom);
     }
 
     @Override
     public void translate(int dx, int dy) 
     {
-        _tx += dx;
-        _ty += dy;
+        float _dx = dx/_zoom;
+        float _dy = dy/_zoom;
+        
+        _tx += Math.abs(_dx) > 0.2f ? _dx : Math.signum(dx) * 0.2f; 
+        _ty += Math.abs(_dy) > 0.2f ? _dy : Math.signum(dy) * 0.2f; 
     }
 
     @Override
@@ -296,12 +418,44 @@ public class SwingRenderer extends Renderer
     @Override
     public int getTranslationX()
     {
-        return _tx;
+        return (int)_tx;
     }
 
     @Override
     public int getTranslationY() 
     {
-        return _ty;
+        return (int)_ty;
+    }
+    
+    public void addButton(Button b)
+    {
+        _gui.add(b);
+        addInputController(b);
+        b.setRenderer(this);
+        b.setModel(_model);
+    }
+
+    @Override
+    public void toggleDrawLabelText() 
+    {
+        _drawLabelText = !_drawLabelText;
+    }
+
+    @Override
+    public void toggleDrawDots() 
+    {
+        _drawDots = !_drawDots;
+    }
+
+    @Override
+    public void setSplashScreen(String text) 
+    {
+        _splashScreen = text;
+    }
+
+    @Override
+    public void showPopUp(String message, boolean error) 
+    {
+        JOptionPane.showMessageDialog(_frame, message, error ? "Error" : "Info", error ? JOptionPane.ERROR_MESSAGE : JOptionPane.INFORMATION_MESSAGE);
     }
 }

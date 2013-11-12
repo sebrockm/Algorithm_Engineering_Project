@@ -61,13 +61,8 @@ public abstract class Model extends Observable
         return new int[] { (int)posx, (int)posy };
     }
     
-    public int[] getScreenCoords(int x, int y, int w, int h, Renderer renderer)
+    public int[] getScreenWidths(int w, int h, Renderer renderer)
     {
-        int[] c = new int[4];
-        int[] _c = getScreenCoords(x, y, renderer);
-        c[0] = _c[0];
-        c[1] = _c[1];
-
         double u = (w / (double)_aabb.getW());
         double v = (h / (double)_aabb.getH());
         
@@ -75,9 +70,23 @@ public abstract class Model extends Observable
         int sw = renderer.getW();
         float zoom = renderer.getZoom();
         
-        c[2] = (int)(zoom * u * sw);
-        c[3] = (int)(zoom * v * sh);
+        int[] c = new int[2];
         
+        c[0] = (int)(zoom * u * sw);
+        c[1] = (int)(zoom * v * sh);
+        
+        return c;
+    }
+    
+    public int[] getScreenCoords(int x, int y, int w, int h, Renderer renderer)
+    {
+        int[] c = new int[4];
+        int[] _c = getScreenCoords(x, y, renderer);
+        int[] __c = getScreenWidths(w, h, renderer);
+        c[0] = _c[0];
+        c[1] = _c[1];
+        c[2] = __c[0];
+        c[3] = __c[1];
         return c;
     }
     
@@ -125,7 +134,6 @@ public abstract class Model extends Observable
         _aabb.addPoint(data.getX(), data.getY());
         _aabb.addPoint(data.getX() + data.getW(), data.getY() - data.getH());
         _aabb.addPoint(data.getAnchorX(), data.getAnchorY());
-        update(); 
         
         return true;
     }
@@ -166,7 +174,9 @@ public abstract class Model extends Observable
     public boolean generateData() 
     {
         clear();
-        return _parser.parse(this);
+        boolean ok = _parser.parse(this);
+        update(); 
+        return ok;
     }
     
     public abstract LabelData createData();
