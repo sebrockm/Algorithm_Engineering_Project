@@ -1,6 +1,6 @@
 package imp;
 
-import imp.Parser.ProjectedData;
+import imp.Parser.RawData;
 
 import java.awt.Color;
 
@@ -33,7 +33,7 @@ public class Main
         
         public Parser createParser()
         {
-            return new ProjectedData();
+            return new RawData();
         }
     }
     

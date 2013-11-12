@@ -1,36 +1,61 @@
 package imp;
 
-import imp.LabelModel._LabelData;
 import imp.Parser.ProjectedData;
+import imp.Parser.RawData;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import java.io.File;
 import java.io.IOException;
+
+import javax.swing.JFileChooser;
 
 import util.IO;
 import api.InputController;
-import api.Model.LabelData;
 
 public class Controlls extends InputController 
 {    
-    private static final String PROGRAM_PATH = "prog.exe -%s -%s";
+    private static final String PROGRAM_PATH = "ae -in %s -out %s";
     
-    public void callCppProg()
+    public void callCppProgProj()
+    {
+        String outFile = getModel().getFile() + "p";
+        String inputFile = getModel().getFile();
+        if(_callCppProg(String.format(PROGRAM_PATH, inputFile, outFile)) > -1)
+        {
+        	getModel().setFile(outFile);
+        	getModel().setParser(new ProjectedData());
+        }
+    }
+    
+    public void callCppProgEval()
+    {
+        String inputFile = getModel().getFile();
+        if(_callCppProg(String.format("ae -eval %s", inputFile)) == 0)
+        {
+        	System.out.println("Ok");
+        }
+    }
+    
+    public int _callCppProg(String args)
     {
         Runtime rt = Runtime.getRuntime();
-        String outFile = getModel().getFile();
-        String inputFile = getModel().getFile();
+
         try {
-            Process p = rt.exec(String.format(PROGRAM_PATH, inputFile, outFile));
-            if(p.exitValue() == 0)
-            {
-                getModel().generateData();
-            }
+            Process p = rt.exec(args);
+            p.waitFor();
+            int status = p.exitValue();
+            return status;
         } catch (IOException e) 
         {
             e.printStackTrace();
-        }
+        } catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return -1;
     }
     
     @Override
@@ -48,7 +73,7 @@ public class Controlls extends InputController
         }
         else if(e.getKeyChar() == 'o')
         {
-            //getModel().setParser(new RawData());
+            getModel().setParser(new RawData());
         }
         
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
@@ -71,7 +96,22 @@ public class Controlls extends InputController
         }
         else if(e.getKeyChar() == 'c')
         {
-            callCppProg();
+        	callCppProgProj();
+        }
+        else if(e.getKeyChar() == 'e')
+        {
+        	callCppProgEval();
+        }
+        
+        else if(e.getKeyChar() == 'l')
+        {
+            JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new File("./tests/"));
+            if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
+            	getModel().setFile(chooser.getSelectedFile().getPath());
+            	getModel().generateData();
+            }
         }
     }
 
@@ -80,27 +120,10 @@ public class Controlls extends InputController
     {
     }
 
-    _LabelData newData = null;
     @Override
     public void mouseClicked(MouseEvent e) 
     {
-        if(newData == null)
-        {
-            newData = new _LabelData();
-            newData.isVisible = true;
-            newData.x = e.getX();
-            newData.y = e.getY();
-        }
-        else
-        {
-            int w = e.getX() - newData.x;
-            int h = e.getY() - newData.y;
-            newData.w = w;
-            newData.h = h;
-            newData.text = "test";
-            getModel().addLabelData(newData);
-            newData = null;
-        }
+
     }
 
     @Override
@@ -145,7 +168,7 @@ public class Controlls extends InputController
             deltay = 0;
         }
 
-        getRenderer().translate(deltax, -deltay);
+        getRenderer().translate(deltax, deltay);
         
         _lastX = e.getX();
         _lastY = e.getY();

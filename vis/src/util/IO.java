@@ -28,6 +28,15 @@ public class IO
         return sb.toString();
     }
     
+    public static void writeTextFile(String file, String text) throws IOException
+    {
+    	BufferedWriter br = null;
+        br = new BufferedWriter(new FileWriter(file));
+        br.write(text);
+        br.flush();
+        br.close();
+    }
+    
     public static void writeLabelData(Model m) throws IOException
     {
         int c = 0;

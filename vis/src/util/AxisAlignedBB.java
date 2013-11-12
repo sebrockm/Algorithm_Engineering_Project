@@ -6,10 +6,10 @@ public class AxisAlignedBB {
     
     public void reset()
     {
-        for(int i = 0; i < 4; ++i)
-        {
-            minMax[i] = 0;
-        }
+        minMax[0] = Integer.MAX_VALUE;
+        minMax[1] = Integer.MIN_VALUE;
+        minMax[2] = Integer.MAX_VALUE;
+        minMax[3] = Integer.MIN_VALUE;
     }
     
     public void addPoint(int x, int y)

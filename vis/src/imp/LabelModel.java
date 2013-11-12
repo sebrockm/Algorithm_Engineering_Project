@@ -66,11 +66,67 @@ public class LabelModel extends Model
         {
             return isVisible;
         }
+
+		@Override
+		public void setX(int x) {
+			this.x = x;
+			
+		}
+
+		@Override
+		public void setY(int y) {
+			this.y = y;
+		}
+
+		@Override
+		public void setW(int w) {
+			this.w = w;
+		}
+
+		@Override
+		public void setH(int h) {
+			this.h = h;
+		}
+
+		@Override
+		public void setTextY(String text) {
+			this.text = text;
+			
+		}
+
+		@Override
+		public void setAnchorX(int x) {
+			ax = x;
+		}
+
+		@Override
+		public void setAnchorY(int y) {
+			ay = y;
+			
+		}
+
+		@Override
+		public void setVisible(boolean b) 
+		{
+			isVisible = b;
+		}
+		
+		public boolean equals(Object other)
+        {
+			LabelData o = (LabelData)(other);
+			
+			return (getX() == o.getX() && getY() == o.getY());  
+        }
     }
     
     public LabelModel(String file)
     {
         setFile(file);
+    }
+    
+    public LabelData createData()
+    {
+    	return new _LabelData();
     }
     
     

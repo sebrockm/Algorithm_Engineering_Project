@@ -13,7 +13,6 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-import util.AxisAlignedBB;
 import api.InputController;
 import api.Model.LabelData;
 import api.Renderer;
@@ -24,50 +23,10 @@ public class SwingRenderer extends Renderer
     private JFrame _frame;
     private Canvas _window;
     BufferStrategy _strategy;
-    private AxisAlignedBB _aabb = new AxisAlignedBB();
     private Random _r;
     
     private float _zoom = 0.75f;
     private int _tx = 0, _ty = 0;
-   
-    private int[] getScreenCoords(int x, int y)
-    {
-        int h = _window.getHeight();
-        int w = _window.getWidth();
-        
-        int posx = x - _aabb.getMinX();
-        int posy = y - _aabb.getMinY();
-
-        float u = -0.5f + (posx / (float)_aabb.getW());
-        float v = -0.5f + (posy / (float)_aabb.getH());
-  
-        u = 0.5f + _zoom * u;
-        v = 0.5f + _zoom * v;
-        
-        posx = (int)(u * (float)w) + _tx;
-        posy = (int)((1-v) * (float)h) - _ty;
-
-        return new int[] { (int)posx, (int)posy };
-    }
-    
-    private int[] getScreenCoords(int x, int y, int w, int h)
-    {
-        int[] c = new int[4];
-        int[] _c = getScreenCoords(x, y);
-        c[0] = _c[0];
-        c[1] = _c[1];
-
-        double u = (w / (double)_aabb.getW());
-        double v = (h / (double)_aabb.getH());
-        
-        int sh = _window.getHeight();
-        int sw = _window.getWidth();
-        
-        c[2] = (int)(_zoom * u * sw);
-        c[3] = (int)(_zoom * v * sh);
-        
-        return c;
-    }
     
     private Color nextColor()
     {
@@ -82,9 +41,9 @@ public class SwingRenderer extends Renderer
     private void drawOval(int x, int y, int w, int h, Color color)
     {
         Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
-        int[] c = getScreenCoords(x, y);
+        int[] c = _model.getScreenCoords(x, y, this);
         g2d.setColor(color);
-        int z = Math.max(5, (int)(_zoom * 15));
+        int z = 10;//Math.max(5, (int)(15/_zoom));
         g2d.fillOval(c[0] - z/2, c[1] - z/2, z, z);
         g2d.drawOval(c[0] - z/2, c[1] - z/2, z, z);
     }
@@ -98,7 +57,7 @@ public class SwingRenderer extends Renderer
     
     private void drawText(String text, int x, int y)
     {
-        int[] c = getScreenCoords(x, y);
+        int[] c = _model.getScreenCoords(x, y, this);
         drawTextDirect(text, c[0], c[1]);
     }
     
@@ -108,7 +67,7 @@ public class SwingRenderer extends Renderer
 
         g2d.setColor(nextColor());
         
-        int[] c = getScreenCoords(x, y, w, h);
+        int[] c = _model.getScreenCoords(x, y, w, h, this);
         g2d.fillRect(c[0], c[1], c[2], c[3]);
         g2d.drawRect(c[0], c[1], c[2], c[3]);
         
@@ -129,15 +88,14 @@ public class SwingRenderer extends Renderer
     {
         synchronized(this) 
         {
-            _data.clear();
-            _aabb.reset();            
+            _data.clear();        
         }
     }
     
     private void drawLine(int axis, int c)
     {
         Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
-        c = getScreenCoords(c, c)[axis];
+        c = _model.getScreenCoords(c, c, this)[axis];
         if((axis & 1) > 0)
         {
             g2d.setColor(_codes.getRasterColor());
@@ -153,7 +111,7 @@ public class SwingRenderer extends Renderer
     private void drawCSText(int axis, int v0)
     {
         Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
-        int[] c = getScreenCoords(v0, v0);
+        int[] c = _model.getScreenCoords(v0, v0, this);
         int other0 = c[axis];
         if((axis & 1) > 0)
         {
@@ -167,14 +125,18 @@ public class SwingRenderer extends Renderer
         }
     }
     
-    
     private void drawRaster()
     {
-        for(int i = _aabb.getMinX()-1; i <= _aabb.getMaxX()+1; ++i)
+        int rastersx = Math.min(30, Math.max(_model.getAxisAlignedBB().getW(), 10));
+        int dx = Math.max(1, _model.getAxisAlignedBB().getW()/rastersx);
+        int rastersy = Math.min(30, Math.max(_model.getAxisAlignedBB().getH(), 10));
+        int dy = Math.max(1, _model.getAxisAlignedBB().getH()/rastersy);
+
+        for(int i = _model.getAxisAlignedBB().getMinX()-1; i <= _model.getAxisAlignedBB().getMaxX()+1; i+=dx)
         {
             drawLine(0, i);
         }
-        for(int i = _aabb.getMinY()-1; i <= _aabb.getMaxY()+1; ++i)
+        for(int i = _model.getAxisAlignedBB().getMinY()-1; i <= _model.getAxisAlignedBB().getMaxY()+1; i+=dy)
         {
             drawLine(1, i);
         }
@@ -182,11 +144,16 @@ public class SwingRenderer extends Renderer
     
     private void drawCS()
     {
-        for(int i = _aabb.getMinX()-1; i <= _aabb.getMaxX()+1; ++i)
+        int rastersx = Math.min(30, Math.max(_model.getAxisAlignedBB().getW(), 10));
+        int dx = Math.max(1, _model.getAxisAlignedBB().getW()/rastersx);
+        int rastersy = Math.min(30, Math.max(_model.getAxisAlignedBB().getH(), 10));
+        int dy = Math.max(1, _model.getAxisAlignedBB().getH()/rastersy);
+        
+        for(int i = _model.getAxisAlignedBB().getMinX()-1; i <= _model.getAxisAlignedBB().getMaxX()+1; i+=dx)
         {
             drawCSText(0, i);
         }
-        for(int i = _aabb.getMinY()-1; i <= _aabb.getMaxY()+1; ++i)
+        for(int i = _model.getAxisAlignedBB().getMinY()-1; i <= _model.getAxisAlignedBB().getMaxY()+1; i+=dy)
         {
             drawCSText(1, i);
         }
@@ -230,9 +197,6 @@ public class SwingRenderer extends Renderer
         synchronized(this) 
         {
             _data.add(data);
-            _aabb.addPoint(data.getX(), data.getY());
-            _aabb.addPoint(data.getX() + data.getW(), data.getY() - data.getH());
-            _aabb.addPoint(data.getAnchorX(), data.getAnchorY());
         }
     }
 
@@ -309,5 +273,35 @@ public class SwingRenderer extends Renderer
     {
         _ty = _tx = 0;
         _zoom = 0.75f;
+    }
+
+    @Override
+    public int getW() 
+    {
+        return _window.getWidth();
+    }
+
+    @Override
+    public int getH() 
+    {
+        return _window.getHeight();
+    }
+
+    @Override
+    public float getZoom() 
+    {
+        return _zoom;
+    }
+
+    @Override
+    public int getTranslationX()
+    {
+        return _tx;
+    }
+
+    @Override
+    public int getTranslationY() 
+    {
+        return _ty;
     }
 }
