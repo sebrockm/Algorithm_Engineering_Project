@@ -1,14 +1,16 @@
 package imp;
 
+import imp.LabelModel._LabelData;
 import imp.Parser.ProjectedData;
-import imp.Parser.RawData;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.io.IOException;
 
+import util.IO;
 import api.InputController;
+import api.Model.LabelData;
 
 public class Controlls extends InputController 
 {    
@@ -46,7 +48,7 @@ public class Controlls extends InputController
         }
         else if(e.getKeyChar() == 'o')
         {
-            getModel().setParser(new RawData());
+            //getModel().setParser(new RawData());
         }
         
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
@@ -54,27 +56,18 @@ public class Controlls extends InputController
             System.exit(0);
         }
         
-        int trans = 5;
-        
         if(e.getKeyChar() == 'r')
         {
             getRenderer().resetViewPortSettings();
         }
         else if(e.getKeyChar() == 'w')
         {
-            getRenderer().translate(0, -trans);
-        }
-        else if(e.getKeyChar() == 'a')
-        {
-            getRenderer().translate(-trans, 0);
-        }
-        else if(e.getKeyChar() == 's')
-        {
-            getRenderer().translate(0, trans);
-        }
-        else if(e.getKeyChar() == 'd')
-        {
-            getRenderer().translate(+trans, 0);
+            try {
+                IO.writeLabelData(getModel());
+            } catch (IOException e1) 
+            {
+                e1.printStackTrace();
+            }
         }
         else if(e.getKeyChar() == 'c')
         {
@@ -87,10 +80,27 @@ public class Controlls extends InputController
     {
     }
 
+    _LabelData newData = null;
     @Override
     public void mouseClicked(MouseEvent e) 
     {
-
+        if(newData == null)
+        {
+            newData = new _LabelData();
+            newData.isVisible = true;
+            newData.x = e.getX();
+            newData.y = e.getY();
+        }
+        else
+        {
+            int w = e.getX() - newData.x;
+            int h = e.getY() - newData.y;
+            newData.w = w;
+            newData.h = h;
+            newData.text = "test";
+            getModel().addLabelData(newData);
+            newData = null;
+        }
     }
 
     @Override

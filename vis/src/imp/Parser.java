@@ -41,6 +41,8 @@ public class Parser
             ld.w = Integer.parseInt(_st.nextToken());
             ld.h = Integer.parseInt(_st.nextToken());
             ld.text = _st.nextToken();
+            _st.nextToken();
+            ld.isVisible = true;
             ld.ax = ld.x;
             ld.ay = ld.y;
             m.addLabelData(ld);
@@ -79,15 +81,9 @@ public class Parser
                 ld.w = Integer.parseInt(_st.nextToken());
                 ld.h = Integer.parseInt(_st.nextToken());
                 ld.text = _st.nextToken();
-                int draw = Integer.parseInt(_st.nextToken());
+                ld.isVisible = Integer.parseInt(_st.nextToken()) > 0;
                 ld.ax = Integer.parseInt(_st.nextToken());
                 ld.ay = Integer.parseInt(_st.nextToken());
-                if(draw == 0)
-                {
-                    ld.w = ld.h = 0;
-                    ld.ax = ld.x;
-                    ld.ay = ld.y;
-                }
                 m.addLabelData(ld);
             }
             return true;

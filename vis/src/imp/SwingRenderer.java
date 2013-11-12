@@ -202,14 +202,14 @@ public class SwingRenderer extends Renderer
             drawRaster();
             for(LabelData d : _data)
             {
-                if(d.getH() > 0)
+                if(d.isVisible())
                 {
                     drawRect(d.getAnchorX(), d.getAnchorY(), d.getW(), d.getH());
                 }
             }
             for(LabelData d : _data)
             {
-                if(d.getH() > 0)
+                if(d.isVisible())
                 {
                     drawText(d.getText(), d.getAnchorX(), d.getAnchorY());
                     drawOval(d.getX(), d.getY(), 10, 10, _codes.getDotColor());

@@ -9,6 +9,7 @@ public class LabelModel extends Model
         public int x, y, w, h;
         public int ax, ay;
         public String text;
+        boolean isVisible;
         
         _LabelData()
         {
@@ -59,6 +60,11 @@ public class LabelModel extends Model
         public int getAnchorY() 
         {
             return ay;
+        }
+        
+        public boolean isVisible()
+        {
+            return isVisible;
         }
     }
     

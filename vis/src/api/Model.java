@@ -16,6 +16,7 @@ public abstract class Model extends Observable
         String getText();
         int getAnchorX();
         int getAnchorY();
+        boolean isVisible();
     }
         
     private List<LabelData> _data = new ArrayList<>();
