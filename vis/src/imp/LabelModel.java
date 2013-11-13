@@ -122,6 +122,8 @@ public class LabelModel extends Model
     public LabelModel(String file)
     {
         setFile(file);
+        _aabb.addPoint(5, 5);
+        _aabb.addPoint(-5, -5);
     }
     
     public LabelData createData()

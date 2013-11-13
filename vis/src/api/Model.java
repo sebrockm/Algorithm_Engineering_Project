@@ -33,7 +33,7 @@ public abstract class Model extends Observable
     private List<LabelData> _data = new ArrayList<>();
     private Parser _parser;
     private String _file;
-    private AxisAlignedBB _aabb = new AxisAlignedBB();
+    protected AxisAlignedBB _aabb = new AxisAlignedBB();
     
     public int[] getScreenCoords(int x, int y, Renderer renderer)
     {
