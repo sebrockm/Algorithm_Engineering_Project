@@ -4,9 +4,6 @@ import imp.Parser.RawData;
 
 import java.awt.Color;
 
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-
 import api.Button;
 import api.InputController;
 import api.Model;
@@ -15,9 +12,7 @@ import api.Renderer;
 import api.Renderer.ColorCodes;
 
 public class Main 
-{
-    public final static String FILE = "test.txt";
-    
+{   
     public class Factory
     {
         public Renderer createRenderer()
@@ -27,7 +22,7 @@ public class Main
         
         public Model createModel()
         {
-            return new LabelModel(FILE);
+            return new LabelModel(null);
         }
         
         public InputController createController()
@@ -132,31 +127,26 @@ public class Main
         Main.Factory f = new Main().new Factory();
         
         Model model = f.createModel();
-        
-        model.setParser(f.createParser());
-       
+        model.setParser(new RawData());
+               
         final Renderer renderer = f.createRenderer();
                 
         renderer.setColorCodes(new _colors());
         
-        if(!renderer.init("LV", 1024, 768))
+        if(!renderer.init("PFLP - Visualizer", 1024, 768))
         {
             System.err.println("Failed to create renderer");
             System.exit(-1);
         }
-        
+                
         model.addObserver(renderer);
-        
-        if(!model.generateData())
-        {
-            System.err.println("Failed to create model");
-            System.exit(-1);
-        }
         
         final InputController c = f.createController();
         c.setModel(model);
         c.setRenderer(renderer);
         renderer.addInputController(c);
+        
+        model.generateData();
         
         int leftPadding = 10;
         renderer.addButton(new Button(leftPadding, 20, 100, 20, "Draw LabelText") {

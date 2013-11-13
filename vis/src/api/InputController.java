@@ -6,37 +6,28 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelListener;
-import java.io.File;
 import java.io.IOException;
-
-import javax.swing.JFileChooser;
 
 public abstract class InputController implements KeyListener, MouseListener, MouseWheelListener, MouseMotionListener
 {
     private Model _model;
     private Renderer _renderer;
     
-    private static final String PROGRAM_PATH = "ae -in %s -out %s";
+    private static final String PROG_NAME = "pflp_solver";
+    private static final String SOLVE = PROG_NAME + " -in %s -out %s";
+    private static final String EVAL = PROG_NAME + " -eval %s";
     
     public void loadFile()
     {
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File("./tests/"));
-        if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
-        {
-            getModel().setFile(chooser.getSelectedFile().getPath());
-            getRenderer().setSplashScreen("Loading...");
-            getModel().generateData();
-            getRenderer().setSplashScreen("");
-        }
+        getRenderer().openLoadScreen();
     }
     
     public void callCppProgProj()
     {
         getRenderer().setSplashScreen("Solving...");
-        String outFile = getModel().getFile() + "p";
+        String outFile = getModel().getFile();
         String inputFile = getModel().getFile();
-        if(_callCppProg(String.format(PROGRAM_PATH, inputFile, outFile)) > -1)
+        if(_callCppProg(String.format(SOLVE, inputFile, outFile)) > -1)
         {
             getRenderer().setSplashScreen("Loading...");
             getModel().setFile(outFile);
@@ -53,12 +44,15 @@ public abstract class InputController implements KeyListener, MouseListener, Mou
     {
         getRenderer().setSplashScreen("Evaluating...");
         String inputFile = getModel().getFile();
-        if(_callCppProg(String.format("ae -eval %s", inputFile)) == -1)
+        if(_callCppProg(String.format(EVAL, inputFile)) == -1)
         {
             getRenderer().showPopUp("Evaluating Failed", true);
         }
+        else
+        {
+            getRenderer().showPopUp("Evaluating Succeded", false);   
+        }
         getRenderer().setSplashScreen("");
-        getRenderer().showPopUp("Evaluating Succeded", false);
     }
     
     public int _callCppProg(String args)

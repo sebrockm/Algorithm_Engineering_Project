@@ -1,5 +1,7 @@
 package imp;
 
+import imp.Parser.RawData;
+
 import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -7,10 +9,12 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -34,6 +38,7 @@ public class SwingRenderer extends Renderer
     private boolean _drawDots = true;
     private List<Button> _gui = new ArrayList<>();
     private String _splashScreen = "";
+    private int _labeled = 0;
     
     private Color nextColor()
     {
@@ -99,6 +104,7 @@ public class SwingRenderer extends Renderer
         {
             _data.clear();        
         }
+        _labeled = 0;
     }
     
     private void drawGui()
@@ -108,6 +114,21 @@ public class SwingRenderer extends Renderer
         {
             b.draw(g2d, _codes.getButtonColor(), _codes.getCoordinatesColor());
         }
+        
+        String nodes = String.format("Nodes: %d", _data.size());
+        String labeled = String.format("Labeled: %d", _labeled);
+        
+        int w = 10 + _strategy.getDrawGraphics().getFontMetrics().charsWidth(labeled.toCharArray(), 0, labeled.length());
+        int h = 35; int x = 40; int y = 10;
+        
+        g2d.setColor(_codes.getBackgroundColor());
+        g2d.clearRect(x, y, w, h);
+        g2d.fillRect(x, y, w, h);
+        g2d.setColor(Color.WHITE);
+        g2d.drawRect(x, y, w, h);
+        
+        g2d.drawString(nodes, 5 + x, 25);
+        g2d.drawString(labeled, 5 + x, 25 + _strategy.getDrawGraphics().getFontMetrics().getHeight());
     }
     
     private void drawLine(int axis, int c)
@@ -262,50 +283,55 @@ public class SwingRenderer extends Renderer
     {
         _r = new Random(0);
         printBackground();
-        synchronized(this) 
-        {
-            drawRaster();
-            for(LabelData d : _data)
+        
+        if(_model != null)
+        {        
+            synchronized(this) 
             {
-                if(d.isVisible())
+                drawRaster();
+                for(LabelData d : _data)
                 {
-                    drawRect(d.getAnchorX(), d.getAnchorY(), d.getW(), d.getH());
-                }
-            }
-            for(LabelData d : _data)
-            {
-                if(d.isVisible())
-                {
-                    if(_drawLabelText)
+                    if(d.isVisible())
                     {
-                        drawText(d.getText(), d.getAnchorX(), d.getAnchorY());    
+                        drawRect(d.getAnchorX(), d.getAnchorY(), d.getW(), d.getH());
                     }
-                    if(_drawDots)
-                    drawOval(d.getX(), d.getY(), 10, 10, _codes.getDotColor());
                 }
-                else
+                for(LabelData d : _data)
                 {
-                    if(_drawDots)
-                    drawOval(d.getX(), d.getY(), 10, 10, _codes.getNoLabelDotColor());   
+                    if(d.isVisible())
+                    {
+                        if(_drawLabelText)
+                        {
+                            drawText(d.getText(), d.getAnchorX(), d.getAnchorY());    
+                        }
+                        if(_drawDots)
+                        drawOval(d.getX(), d.getY(), 10, 10, _codes.getDotColor());
+                    }
+                    else
+                    {
+                        if(_drawDots)
+                        drawOval(d.getX(), d.getY(), 10, 10, _codes.getNoLabelDotColor());   
+                    }
                 }
-            }
-            drawCS();
-            
-            drawGui();
-
-            if(_splashScreen.length() > 0)
-            {
-                Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
-                Font s = g2d.getFont();
-                g2d.setFont(new Font("Arial", Font.BOLD, 100));
-                int l = g2d.getFontMetrics().charsWidth(_splashScreen.toCharArray(), 0, _splashScreen.length());
-                int y = getH()/2 + g2d.getFontMetrics().getHeight()/3;
-                int x = getW()/2 - l/2;
-                g2d.setColor(_codes.getCSColor());
-                g2d.drawString(_splashScreen, x, y);
-                g2d.setFont(s);
+                drawCS();
             }
         }
+       
+        if(_splashScreen.length() > 0)
+        {
+            Graphics2D g2d = (Graphics2D)_strategy.getDrawGraphics();
+            Font s = g2d.getFont();
+            g2d.setFont(new Font("Arial", Font.BOLD, 100));
+            int l = g2d.getFontMetrics().charsWidth(_splashScreen.toCharArray(), 0, _splashScreen.length());
+            int y = getH()/2 + g2d.getFontMetrics().getHeight()/3;
+            int x = getW()/2 - l/2;
+            g2d.setColor(_codes.getCSColor());
+            g2d.drawString(_splashScreen, x, y);
+            g2d.setFont(s);
+        }
+        
+        drawGui();
+        
         _strategy.show();
     }
 
@@ -315,6 +341,10 @@ public class SwingRenderer extends Renderer
         synchronized(this) 
         {
             _data.add(data);
+            if(data.isVisible())
+            {
+                _labeled++;
+            }
         }
     }
 
@@ -457,5 +487,21 @@ public class SwingRenderer extends Renderer
     public void showPopUp(String message, boolean error) 
     {
         JOptionPane.showMessageDialog(_frame, message, error ? "Error" : "Info", error ? JOptionPane.ERROR_MESSAGE : JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    @Override
+    public void openLoadScreen() 
+    {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File("."));
+        if(chooser.showOpenDialog(_frame) == JFileChooser.APPROVE_OPTION)
+        {
+            _model.setFile(chooser.getSelectedFile().getPath());
+            setSplashScreen("Loading...");
+            _model.setParser(new RawData());
+            _model.generateData();
+            setSplashScreen("");
+            resetViewPortSettings();
+        }
     }
 }

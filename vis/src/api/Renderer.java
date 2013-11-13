@@ -21,6 +21,8 @@ public abstract class Renderer implements Observer
     
     public abstract void addLabelData(LabelData data);
     
+    public abstract void openLoadScreen();
+    
     public abstract void clearScreen();
     
     public abstract boolean init(String title, int w, int h);

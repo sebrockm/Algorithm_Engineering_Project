@@ -1,14 +1,9 @@
 package imp;
 
-import imp.Parser.ProjectedData;
-import imp.Parser.RawData;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
-import java.io.IOException;
 
-import util.IO;
 import api.InputController;
 
 public class Controlls extends InputController 
@@ -21,50 +16,10 @@ public class Controlls extends InputController
 
     @Override
     public void keyPressed(KeyEvent e) 
-    {
-        if(e.getKeyChar() == 'p')
-        {
-            getModel().setParser(new ProjectedData());
-        }
-        else if(e.getKeyChar() == 'o')
-        {
-            getModel().setParser(new RawData());
-        }
-        
+    {        
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
         {
             System.exit(0);
-        }
-        
-        if(e.getKeyChar() == 'r')
-        {
-            getRenderer().resetViewPortSettings();
-        }
-        else if(e.getKeyChar() == 'w')
-        {
-            try {
-                IO.writeLabelData(getModel());
-            } catch (IOException e1) 
-            {
-                e1.printStackTrace();
-            }
-        }
-        else if(e.getKeyChar() == 'c')
-        {
-        	callCppProgProj();
-        }
-        else if(e.getKeyChar() == 'd')
-        {
-            getRenderer().toggleDrawLabelText();
-        }
-        else if(e.getKeyChar() == 'e')
-        {
-        	callCppProgEval();
-        }
-        
-        else if(e.getKeyChar() == 'l')
-        {
-            loadFile();
         }
     }
 
@@ -128,8 +83,7 @@ public class Controlls extends InputController
     }
 
     @Override
-    public void mouseMoved(MouseEvent e) {
-        // TODO Auto-generated method stub
-        
+    public void mouseMoved(MouseEvent e) 
+    {
     }
 }

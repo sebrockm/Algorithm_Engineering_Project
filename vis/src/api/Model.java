@@ -173,9 +173,13 @@ public abstract class Model extends Observable
     
     public boolean generateData() 
     {
-        clear();
-        boolean ok = _parser.parse(this);
-        update(); 
+        boolean ok = true;
+        if(_file != null)
+        {
+            clear();
+            ok = _parser.parse(this);
+        } 
+        update();
         return ok;
     }
     
