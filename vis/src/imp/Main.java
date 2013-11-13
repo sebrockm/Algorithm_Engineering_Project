@@ -184,6 +184,13 @@ public class Main
             }; 
         });
         
+        renderer.addButton(new Button(500 + 6*leftPadding, 20, 100, 20, "Reset Viewport") {
+            public void onButtonPressed() 
+            {
+                renderer.resetViewPortSettings();
+            }; 
+        });
+        
         while(true)
         {
             renderer.draw();
