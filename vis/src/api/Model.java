@@ -24,7 +24,7 @@ public abstract class Model extends Observable
         void setY(int y);
         void setW(int w);
         void setH(int h);
-        void setTextY(String text);
+        void setText(String text);
         void setAnchorX(int x);
         void setAnchorY(int y);
         void setVisible(boolean b);

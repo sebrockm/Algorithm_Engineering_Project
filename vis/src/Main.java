@@ -1,5 +1,8 @@
-package imp;
 
+
+import imp.Controlls;
+import imp.LabelModel;
+import imp.SwingRenderer;
 import imp.Parser.RawData;
 
 import java.awt.Color;

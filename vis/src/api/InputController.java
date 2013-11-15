@@ -1,12 +1,16 @@
 package api;
 
 import imp.Parser.ProjectedData;
+import imp.Parser.RawData;
 
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelListener;
+import java.io.File;
 import java.io.IOException;
+
+import javax.swing.JFileChooser;
 
 public abstract class InputController implements KeyListener, MouseListener, MouseWheelListener, MouseMotionListener
 {
@@ -19,7 +23,17 @@ public abstract class InputController implements KeyListener, MouseListener, Mou
     
     public void loadFile()
     {
-        getRenderer().openLoadScreen();
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File("."));
+        if(chooser.showOpenDialog(getRenderer().getScreen()) == JFileChooser.APPROVE_OPTION)
+        {
+            _model.setFile(chooser.getSelectedFile().getPath());
+            getRenderer().setSplashScreen("Loading...");
+            _model.setParser(new RawData());
+            _model.generateData();
+            getRenderer().setSplashScreen("");
+            getRenderer().resetViewPortSettings();
+        }
     }
     
     public void callCppProgProj()

@@ -89,7 +89,7 @@ public class LabelModel extends Model
 		}
 
 		@Override
-		public void setTextY(String text) {
+		public void setText(String text) {
 			this.text = text;
 			
 		}

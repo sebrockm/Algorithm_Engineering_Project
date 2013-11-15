@@ -117,7 +117,7 @@ public class InstanceGenerator
 				ld.setAnchorY(ld.getY());
 				ld.setW(Math.max(1, labelWMean - varx + r.nextInt(2 * varx + 1)));
 				ld.setH(Math.max(1, labelHMean - vary + r.nextInt(2 * vary + 1)));
-				ld.setTextY(String.format("%d/%d", ld.getX(), ld.getY()));
+				ld.setText(String.format("%d/%d", ld.getX(), ld.getY()));
 				ld.setVisible(true);
 				m.addLabelData(ld);
 			}

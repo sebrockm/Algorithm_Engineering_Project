@@ -1,7 +1,5 @@
 package imp;
 
-import imp.Parser.RawData;
-
 import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -9,12 +7,10 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -118,7 +114,9 @@ public class SwingRenderer extends Renderer
         String nodes = String.format("Nodes: %d", _data.size());
         String labeled = String.format("Labeled: %d", _labeled);
         
-        int w = 10 + _strategy.getDrawGraphics().getFontMetrics().charsWidth(labeled.toCharArray(), 0, labeled.length());
+        String max = nodes.length() > labeled.length() ? nodes : labeled;
+        
+        int w = 10 + _strategy.getDrawGraphics().getFontMetrics().charsWidth(max.toCharArray(), 0, max.length());
         int h = 35; int x = 40; int y = 10;
         
         g2d.setColor(_codes.getBackgroundColor());
@@ -490,18 +488,8 @@ public class SwingRenderer extends Renderer
     }
 
     @Override
-    public void openLoadScreen() 
+    public Canvas getScreen() 
     {
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File("."));
-        if(chooser.showOpenDialog(_frame) == JFileChooser.APPROVE_OPTION)
-        {
-            _model.setFile(chooser.getSelectedFile().getPath());
-            setSplashScreen("Loading...");
-            _model.setParser(new RawData());
-            _model.generateData();
-            setSplashScreen("");
-            resetViewPortSettings();
-        }
+    	return _window;
     }
 }

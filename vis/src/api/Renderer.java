@@ -1,5 +1,6 @@
 package api;
 
+import java.awt.Canvas;
 import java.awt.Color;
 import java.util.Iterator;
 import java.util.Observable;
@@ -21,7 +22,7 @@ public abstract class Renderer implements Observer
     
     public abstract void addLabelData(LabelData data);
     
-    public abstract void openLoadScreen();
+    public abstract Canvas getScreen();
     
     public abstract void clearScreen();
     
