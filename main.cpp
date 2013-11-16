@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono>
 #include <cstdlib>
 #include <fstream>
 #include <sstream>
@@ -129,6 +130,9 @@ void writeSolution(int* x, int* y, int* l, int* h, std::string* t, int count, co
 	int* xs = new int[count];
 	int* ys = new int[count];
 
+	int counter = 0;
+	auto t1 = std::chrono::high_resolution_clock::now();
+
 	for(int i = 0; i < count; i++)
 	{
 		//oben links auf Punkt ausprobieren
@@ -137,6 +141,7 @@ void writeSolution(int* x, int* y, int* l, int* h, std::string* t, int count, co
 		if(isPosOk(i, l, h, b, xs, ys))
 		{
 			b[i] = 1;
+			counter++;
 			continue;
 		}
 
@@ -145,6 +150,7 @@ void writeSolution(int* x, int* y, int* l, int* h, std::string* t, int count, co
 		if(isPosOk(i, l, h, b, xs, ys))
 		{
 			b[i] = 1;
+			counter++;
 			continue;
 		}
 
@@ -153,6 +159,7 @@ void writeSolution(int* x, int* y, int* l, int* h, std::string* t, int count, co
 		if(isPosOk(i, l, h, b, xs, ys))
 		{
 			b[i] = 1;
+			counter++;
 			continue;
 		}
 
@@ -161,12 +168,16 @@ void writeSolution(int* x, int* y, int* l, int* h, std::string* t, int count, co
 		if(isPosOk(i, l, h, b, xs, ys))
 		{
 			b[i] = 1;
+			counter++;
 			continue;
 		}
 
 		//keine Position noch frei
 		b[i] = 0;
 	}
+
+	auto t2 = std::chrono::high_resolution_clock::now();
+	std::cout << counter << "\t" << (std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1)).count() << std::endl;
 
 	bool ok = true;
 
