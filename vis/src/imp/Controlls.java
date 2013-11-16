@@ -60,7 +60,7 @@ public class Controlls extends InputController
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) 
     {
-        getRenderer().zoom(e.getWheelRotation() * 1e-1f);
+        getRenderer().zoom(e.getWheelRotation() * -1e-1f);
     }
 
     int _lastX = -1;
