@@ -30,7 +30,7 @@ public abstract class Model extends Observable
         void setVisible(boolean b);
     }
         
-    private List<LabelData> _data = new ArrayList<>();
+    private List<LabelData> _data = new ArrayList<LabelData>();
     private Parser _parser;
     private String _file;
     protected AxisAlignedBB _aabb = new AxisAlignedBB();

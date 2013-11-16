@@ -1,5 +1,5 @@
 CC = g++-4.7
-CFLAGS = -Wall
+CFLAGS = -Wall -std=c++11
 OUT = beschrift
 
 all: main.o

@@ -22,7 +22,7 @@ import api.Renderer;
 
 public class SwingRenderer extends Renderer
 {
-    private List<LabelData> _data = new ArrayList<>();
+    private List<LabelData> _data = new ArrayList<LabelData>();
     private JFrame _frame;
     private Canvas _window;
     BufferStrategy _strategy;
@@ -32,7 +32,7 @@ public class SwingRenderer extends Renderer
     private float _tx = 0, _ty = 0;
     private boolean _drawLabelText = true;
     private boolean _drawDots = true;
-    private List<Button> _gui = new ArrayList<>();
+    private List<Button> _gui = new ArrayList<Button>();
     private String _splashScreen = "";
     private int _labeled = 0;
     
