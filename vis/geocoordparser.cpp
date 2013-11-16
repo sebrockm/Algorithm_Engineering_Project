@@ -18,9 +18,12 @@ int main(int argc, char** argv)
 		if(input>>name>>gn>>b>>mn>>b>>sn>>b>>b
 				>>go>>b>>mo>>b>>so>>b>>b)
 		{
-			output << (-10+go)*60+mo << " " << (-50+gn)*60+mn << " "
+			int x = (-10+go)*60+mo;
+			int y = (-50+gn)*60+mn;
+			output <<  x << " " << y << " "
 				<< std::max(15,so) << " " << std::max(10,sn) << " "
-				<< name << std::endl;
+				<< name << " 1 " << x << " " << y
+				<< std::endl;
 		}
 		input>>a;
 	}
