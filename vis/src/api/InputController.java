@@ -17,7 +17,7 @@ public abstract class InputController implements KeyListener, MouseListener, Mou
     private Model _model;
     private Renderer _renderer;
     
-    private static final String PROG_NAME = "pflp_solver";
+    private static final String PROG_NAME = "./pflp_solver";
     private static final String SOLVE = PROG_NAME + " -in %s -out %s";
     private static final String EVAL = PROG_NAME + " -eval %s";
     
@@ -41,8 +41,10 @@ public abstract class InputController implements KeyListener, MouseListener, Mou
         getRenderer().setSplashScreen("Solving...");
         String outFile = getModel().getFile();
         String inputFile = getModel().getFile();
-        if(_callCppProg(String.format(SOLVE, inputFile, outFile)) > -1)
+        int returnvalue = _callCppProg(String.format(SOLVE, inputFile, outFile));
+        if(returnvalue > -1)
         {
+            getRenderer().showPopUp(String.format("Solving Succeded in '%d' Seconds", returnvalue), false);
             getRenderer().setSplashScreen("Loading...");
             getModel().setFile(outFile);
             getModel().setParser(new ProjectedData());
