@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <cmath>
 #include <cstdlib>
@@ -8,20 +9,51 @@ int main(int argc, char** argv)
 	std::ifstream input(argv[1]);
 	std::ofstream output(argv[2]);
 
-	output << 76 << std::endl;
+	if(!input)
+	{
+		std::cout << "kann " << argv[1] << " nicht oeffnen" << std::endl;
+		return 1;
+	}
+
+	output << 293 << std::endl;
 	
 	while(input)
 	{
-		int gn, mn, sn, go, mo, so;
-		std::string name;
-		int a;
-		char b;
+		std::string line;
+		std::getline(input, line);
 
-		if(input>>name>>gn>>b>>mn>>b>>sn>>b>>b
-				>>go>>b>>mo>>b>>so>>b>>b)
+		if(line.length() < 10)
+			continue;
+
+		std::string name = line.substr(0, line.find_first_of(','));
+		for(auto& c : name)
+			if(c==' ')
+				c = '_';
+
+		int gn, mn, go, mo;
+		std::string b;
+		char ost, nord;
+
+		std::stringstream ss(line.substr(line.find_first_of("0123456789")));
+
+
+		if(ss >>gn>>b>>mn>>b>>nord
+				>>go>>b>>mo>>b>>ost)
 		{
-			double phi = -10 + go + mo/60.0 + so/3600.0;
-			double theta = -50 + gn + mn/60.0 + sn/3600.0;
+			if(nord == 'S')
+			{
+				gn = -gn;
+				mn = -mn;
+			}
+			if(ost == 'W')
+			{
+				go = -go;
+				mo = -mo;
+			}
+
+				
+			double phi = 103 + go + mo/60.0;
+			double theta = -44 + gn + mn/60.0;
 			theta = 90.0 - theta;
 			double r = 637.1;
 
@@ -34,12 +66,13 @@ int main(int argc, char** argv)
 			int x = (int)(r*sin(theta)*sin(phi));
 			int y = (int)(r*cos(theta));
 
+			std::cout << (z<0?name:"") << z << std::endl;
+
 			output <<  x << " " << y << " "
-				<< 2*name.size() << " " << rand()%2+1 << " "
+				<< 4*name.size() << " " << rand()%6+2 << " "
 				<< name << " 1 " << x << " " << y
 				<< std::endl;
 		}
-		input>>a;
 	}
 
 }
