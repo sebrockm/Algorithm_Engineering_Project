@@ -16,5 +16,5 @@
 blob/blatt1/~$ae.pptx
 
 bin/
-.metadata/
-.settings/
+.metadata/*
+.settings/*
