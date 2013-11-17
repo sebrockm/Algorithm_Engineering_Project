@@ -259,11 +259,11 @@ public class SwingRenderer extends Renderer
         
         for(int i = _model.getAxisAlignedBB().getMaxY()-dy; ;i-=dy)
         {
-            drawCSText(1, i, dx, dy);
-            if(_model.getScreenCoords(0, i, this)[1] > getH())
+            if(_model.getScreenCoords(0, i, this)[1] + _strategy.getDrawGraphics().getFontMetrics().getHeight() > getH())
             {
                 break;
             }
+            drawCSText(1, i, dx, dy);
         }
         
         for(int i = _model.getAxisAlignedBB().getMaxY(); ;i+=dy)
