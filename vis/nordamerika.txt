@@ -1,0 +1,293 @@
+Mobile, Alabama (USA)  30° 42´ N  88° 03´ W  CST
+Montgomery, Alabama (USA)  32° 23´ N  86° 19´ W  CST
+Tuscaloosa, Alabama (USA)  33° 12´ N  87° 34´ W  CST
+Birmingham, Alabama (USA)  33° 31´ N  86° 49´ W  CST
+Huntsville, Alabama (USA)  34° 44´ N  86° 35´ W  CST
+Anchorage, Alaska (USA)  61° 13´ N  149° 53´ W  GMT-9
+Fairbanks, Alaska (USA)  64° 51´ N  147° 43´ W  GMT-9
+Tucson, Arizona (USA)  32° 13´ N  110° 58´ W  PST
+Tempe, Arizona (USA)  33° 25´ N  111° 56´ W  PST
+Phoenix, Arizona (USA)  33° 27´ N  112° 04´ W  MST
+Pine Bluff, Arkansas (USA)  34° 13´ N  92° 01´ W  CST
+Little Rock, Arkansas (USA)  34° 45´ N  92° 17´ W  CST
+Ft Smith, Arkansas (USA)  35° 23´ N  94° 25´ W  CST
+Fort Smith, Arkansas (USA)  35° 23´ N  94° 25´ W  CST
+San Diego, California (USA)  32° 43´ N  117° 09´ W  PST
+Long Beach, California (USA)  33° 46´ N  118° 11´ W  PST
+Palm Springs, California (USA)  33° 50´ N  116° 33´ W  PST
+Anaheim, California (USA)  33° 50´ N  117° 55´ W  PST
+Riverside, California (USA)  33° 59´ N  117° 22´ W  PST
+Los Angeles, California (USA)  34° 03´ N  118° 14´ W  PST
+San Bernardino, California (USA)  34° 06´ N  117° 17´ W  PST
+Pasadena, California (USA)  34° 09´ N  118° 09´ W  PST
+Santa Barbara, California (USA)  34° 25´ N  119° 42´ W  PST
+Bakersfield, California (USA)  35° 22´ N  119° 01´ W  PST
+Salinas, California (USA)  36° 40´ N  121° 39´ W  PST
+Fresno, California (USA)  36° 44´ N  119° 47´ W  PST
+San Jose, California (USA)  37° 20´ N  121° 53´ W  PST
+Sunnyvale, California (USA)  37° 23´ N  122° 02´ W  PST
+San Francisco, California (USA)  37° 47´ N  122° 25´ W  PST
+Oakland, California (USA)  37° 48´ N  122° 16´ W  PST
+Stockton, California (USA)  37° 57´ N  121° 17´ W  PST
+Santa Rosa, California (USA)  38° 26´ N  122° 43´ W  PST
+Sacramento, California (USA)  38° 35´ N  121° 30´ W  PST
+Pueblo, Colorado (USA)  38° 16´ N  104° 37´ W  MST
+Colorado Springs, Colorado (USA)  38° 50´ N  104° 49´ W  MST
+Denver, Colorado (USA)  39° 45´ N  104° 59´ W  MST
+Boulder, Colorado (USA)  40° 01´ N  105° 17´ W  MST
+Stamford, Connecticut (USA)  41° 03´ N  73° 32´ W  EST
+Bridgeport, Connecticut (USA)  41° 11´ N  73° 11´ W  EST
+New Haven, Connecticut (USA)  41° 18´ N  72° 55´ W  EST
+Danbury, Connecticut (USA)  41° 24´ N  73° 28´ W  EST
+Norwich, Connecticut (USA)  41° 31´ N  72° 05´ W  EST
+Waterbury, Connecticut (USA)  41° 33´ N  73° 03´ W  EST
+Hartford, Connecticut (USA)  41° 46´ N  72° 41´ W  EST
+Washington, D.c. (USA)  38° 54´ N  77° 01´ W  EST
+Wilmington, Delaware (USA)  39° 45´ N  75° 33´ W  EST
+Key West, Florida (USA)  24° 33´ N  81° 48´ W  EST
+Miami, Florida (USA)  25° 47´ N  80° 12´ W  EST
+Ft Lauderdale, Florida (USA)  26° 07´ N  80° 08´ W  EST
+Fort Lauderdale, Florida (USA)  26° 07´ N  80° 08´ W  EST
+West Palm Beach, Florida (USA)  26° 43´ N  80° 03´ W  EST
+Saint Petersburg, Florida (USA)  27° 46´ N  82° 38´ W  EST
+Tampa, Florida (USA)  27° 57´ N  82° 27´ W  EST
+Melbourne, Florida (USA)  28° 05´ N  80° 36´ W  EST
+Orlando, Florida (USA)  28° 33´ N  81° 23´ W  EST
+Daytona Beach, Florida (USA)  29° 13´ N  81° 01´ W  EST
+Gainesville, Florida (USA)  29° 40´ N  82° 20´ W  EST
+Saint Augustine, Florida (USA)  29° 53´ N  81° 19´ W  EST
+Jacksonville, Florida (USA)  30° 20´ N  81° 40´ W  EST
+Pensacola, Florida (USA)  30° 25´ N  87° 13´ W  CST
+Tallahassee, Florida (USA)  30° 27´ N  84° 17´ W  EST
+Albany, Georgia (USA)  31° 34´ N  84° 09´ W  EST
+Savannah, Georgia (USA)  32° 05´ N  81° 06´ W  EST
+Columbus, Georgia (USA)  32° 28´ N  84° 59´ W  EST
+Macon, Georgia (USA)  32° 50´ N  83° 38´ W  EST
+Augusta, Georgia (USA)  33° 28´ N  81° 58´ W  EST
+Atlanta, Georgia (USA)  33° 45´ N  84° 24´ W  EST
+Hilo, Hawaii (USA)  19° 43´ N  155° 05´ W  Hst
+Honolulu, Hawaii (USA)  21° 19´ N  157° 52´ W  Hst
+Pocatello, Idaho (USA)  42° 52´ N  112° 27´ W  MST
+Idaho Falls, Idaho (USA)  43° 29´ N  112° 02´ W  MST
+Boise, Idaho (USA)  43° 37´ N  116° 12´ W  MST
+Springfield, Illinois (USA)  39° 48´ N  89° 39´ W  CST
+Champaign, Illinois (USA)  40° 07´ N  88° 15´ W  CST
+Peoria, Illinois (USA)  40° 42´ N  89° 36´ W  CST
+Rock Island, Illinois (USA)  41° 29´ N  90° 34´ W  CST
+Chicago, Illinois (USA)  41° 52´ N  87° 38´ W  CST
+Rockford, Illinois (USA)  42° 17´ N  89° 06´ W  CST
+Evansville, Indiana (USA)  37° 58´ N  87° 34´ W  EST
+Terre Haute, Indiana (USA)  39° 28´ N  87° 24´ W  EST
+Indianapolis, Indiana (USA)  39° 46´ N  86° 10´ W  EST
+Muncie, Indiana (USA)  40° 11´ N  85° 23´ W  CST
+Fort Wayne, Indiana (USA)  41° 04´ N  85° 08´ W  EST
+Ft Wayne, Indiana (USA)  41° 04´ N  85° 08´ W  EST
+Gary, Indiana (USA)  41° 36´ N  87° 20´ W  CST
+South Bend, Indiana (USA)  41° 41´ N  86° 15´ W  EST
+Des Moines, Iowa (USA)  41° 35´ N  93° 37´ W  CST
+Cedar Rapids, Iowa (USA)  41° 58´ N  91° 40´ W  CST
+Waterloo, Iowa (USA)  42° 30´ N  92° 20´ W  CST
+Sioux City, Iowa (USA)  42° 30´ N  96° 24´ W  CST
+Windsor, Kanada  42° 18´ N  83° 01´ W  GMT-5
+Saint Catharine's, Kanada  43° 10´ N  79° 15´ W  EST
+Hamilton, Kanada  43° 14´ N  79° 51´ W  GMT-5
+Kitchener, Kanada  43° 27´ N  80° 30´ W  GMT-5
+Toronto, Kanada  43° 39´ N  79° 23´ W  GMT-5
+St.catharine's, Kanada  45° 24´ N  73° 34´ W  GMT-5
+Ottawa, Kanada  45° 25´ N  75° 42´ W  GMT-5
+Montreal, Kanada  45° 30´ N  73° 35´ W  GMT-5
+Sudbury, Kanada  46° 30´ N  81° 00´ W  GMT-5
+Quebec, Kanada  46° 49´ N  71° 13´ W  GMT-5
+Saint John's, Kanada  47° 33´ N  52° 43´ W  GMT-4
+Victoria, Kanada  48° 25´ N  123° 22´ W  GMT-7
+Vancouver, Kanada  49° 17´ N  123° 07´ W  GMT-8
+Winnipeg, Kanada  49° 53´ N  97° 09´ W  GMT-6
+Regina, Kanada  50° 25´ N  104° 39´ W  CST
+Calgary, Kanada  51° 03´ N  114° 05´ W  GMT-7
+Edmonton, Kanada  53° 33´ N  113° 28´ W  GMT-7
+Wichita, Kansas (USA)  37° 41´ N  97° 20´ W  CST
+Lawrence, Kansas (USA)  38° 58´ N  95° 14´ W  CST
+Topeka, Kansas (USA)  39° 03´ N  95° 40´ W  CST
+Kansas City, Kansas (USA)  39° 07´ N  94° 38´ W  CST
+Owensboro, Kentucky (USA)  37° 46´ N  87° 07´ W  CST
+Lexington, Kentucky (USA)  38° 03´ N  84° 30´ W  EST
+Louisville, Kentucky (USA)  38° 15´ N  85° 46´ W  EST
+New Orleans, Louisiana (USA)  29° 57´ N  90° 04´ W  CST
+Baton Rouge, Louisiana (USA)  30° 27´ N  91° 11´ W  CST
+Alexandria, Louisiana (USA)  31° 18´ N  92° 27´ W  CST
+Monroe, Louisiana (USA)  32° 30´ N  92° 07´ W  CST
+Shreveport, Louisiana (USA)  32° 31´ N  93° 45´ W  CST
+Portland, Maine (USA)  43° 40´ N  70° 15´ W  EST
+Lewiston, Maine (USA)  44° 06´ N  70° 13´ W  EST
+Bangor, Maine (USA)  44° 48´ N  68° 46´ W  EST
+Annapolis, Maryland (USA)  38° 59´ N  76° 30´ W  EST
+Baltimore, Maryland (USA)  39° 17´ N  76° 37´ W  EST
+New Bedford, Massachusetts (USA)  41° 38´ N  70° 56´ W  EST
+Springfield, Massachusetts (USA)  42° 06´ N  72° 36´ W  EST
+Worcester, Massachusetts (USA)  42° 16´ N  71° 48´ W  EST
+Boston, Massachusetts (USA)  42° 21´ N  71° 03´ W  EST
+Pittsfield, Massachusetts (USA)  42° 27´ N  73° 15´ W  EST
+Salem, Massachusetts (USA)  42° 31´ N  70° 53´ W  EST
+Lowell, Massachusetts (USA)  42° 38´ N  71° 19´ W  EST
+Lawrence, Massachusetts (USA)  42° 42´ N  71° 10´ W  EST
+Ann Arbor, Michigan (USA)  42° 17´ N  83° 45´ W  EST
+Kalamazoo, Michigan (USA)  42° 17´ N  85° 35´ W  EST
+Detroit, Michigan (USA)  42° 20´ N  83° 03´ W  EST
+Lansing, Michigan (USA)  42° 44´ N  84° 33´ W  EST
+Grand Rapids, Michigan (USA)  42° 58´ N  85° 40´ W  EST
+Flint, Michigan (USA)  43° 01´ N  83° 42´ W  EST
+Saginaw, Michigan (USA)  43° 26´ N  83° 56´ W  CST
+Rochester, Minnesota (USA)  44° 01´ N  92° 28´ W  CST
+Saint Paul, Minnesota (USA)  44° 57´ N  93° 06´ W  CST
+Minneapolis, Minnesota (USA)  44° 59´ N  93° 16´ W  CST
+Duluth, Minnesota (USA)  46° 47´ N  92° 06´ W  CST
+Gulf Port, Mississippi (USA)  30° 22´ N  89° 05´ W  CST
+Biloxi, Mississippi (USA)  30° 24´ N  88° 53´ W  CST
+Natchez, Mississippi (USA)  31° 34´ N  91° 23´ W  CST
+Jackson, Mississippi (USA)  32° 18´ N  90° 11´ W  CST
+Meridian, Mississippi (USA)  32° 22´ N  88° 42´ W  CST
+Springfield, Missouri (USA)  37° 13´ N  93° 18´ W  CST
+Jefferson City, Missouri (USA)  38° 34´ N  92° 10´ W  CST
+Saint Louis, Missouri (USA)  38° 38´ N  90° 12´ W  CST
+Columbia, Missouri (USA)  38° 57´ N  92° 20´ W  CST
+Kansas City, Missouri (USA)  39° 05´ N  94° 35´ W  CST
+Independence, Missouri (USA)  39° 06´ N  94° 25´ W  CST
+Saint Joseph, Missouri (USA)  39° 46´ N  94° 51´ W  CST
+Billings, Montana (USA)  45° 47´ N  108° 30´ W  MST
+Butte, Montana (USA)  46° 00´ N  112° 32´ W  MST
+Helena, Montana (USA)  46° 36´ N  112° 02´ W  MST
+Great Falls, Montana (USA)  47° 30´ N  111° 17´ W  MST
+Lincoln, Nebraska (USA)  40° 49´ N  96° 42´ W  CST
+Omaha, Nebraska (USA)  41° 16´ N  95° 56´ W  CST
+Las Vegas, Nevada (USA)  36° 10´ N  115° 09´ W  PST
+Reno, Nevada (USA)  39° 31´ N  119° 49´ W  PST
+Nashua, New Hampshire (USA)  42° 45´ N  71° 28´ W  EST
+Manchester, New Hampshire (USA)  42° 59´ N  71° 28´ W  EST
+Concord, New Hampshire (USA)  43° 12´ N  71° 32´ W  EST
+Atlantic City, New Jersey (USA)  39° 22´ N  74° 26´ W  EST
+Vineland, New Jersey (USA)  39° 29´ N  75° 02´ W  EST
+Camden, New Jersey (USA)  39° 57´ N  75° 07´ W  EST
+Trenton, New Jersey (USA)  40° 13´ N  74° 46´ W  EST
+Elizabeth, New Jersey (USA)  40° 40´ N  74° 13´ W  EST
+Jersey City, New Jersey (USA)  40° 44´ N  74° 04´ W  EST
+Newark, New Jersey (USA)  40° 44´ N  74° 10´ W  EST
+Paterson, New Jersey (USA)  40° 55´ N  74° 10´ W  EST
+Las Cruces, New Mexico (USA)  32° 19´ N  106° 47´ W  MST
+Albuquerque, New Mexico (USA)  35° 05´ N  106° 39´ W  MST
+Santa Fe, New Mexico (USA)  35° 41´ N  105° 56´ W  MST
+New York, New York (USA)  40° 45´ N  74° 00´ W  EST
+Mount Vernon, New York (USA)  40° 55´ N  73° 49´ W  EST
+Poughkeepsie, New York (USA)  41° 42´ N  73° 56´ W  EST
+Binghamton, New York (USA)  42° 06´ N  75° 55´ W  EST
+Elmira, New York (USA)  42° 06´ N  76° 48´ W  EST
+Malden Bridge, New York (USA)  42° 28´ N  73° 38´ W  EST
+Albany, New York (USA)  42° 39´ N  73° 45´ W  EST
+Troy, New York (USA)  42° 44´ N  73° 41´ W  EST
+Schenectady, New York (USA)  42° 49´ N  73° 57´ W  EST
+Buffalo, New York (USA)  42° 53´ N  78° 52´ W  EST
+Syracuse, New York (USA)  43° 03´ N  76° 09´ W  EST
+Utica, New York (USA)  43° 06´ N  75° 14´ W  EST
+Niagara Falls, New York (USA)  43° 06´ N  79° 03´ W  EST
+Rochester, New York (USA)  43° 10´ N  77° 36´ W  EST
+Wilmington, North Carolina (USA)  34° 14´ N  77° 55´ W  EST
+Fayetteville, North Carolina (USA)  35° 03´ N  78° 53´ W  EST
+Charlotte, North Carolina (USA)  35° 13´ N  80° 51´ W  EST
+Asheville, North Carolina (USA)  35° 36´ N  82° 33´ W  EST
+Raleigh, North Carolina (USA)  35° 47´ N  78° 38´ W  EST
+High Point, North Carolina (USA)  35° 57´ N  80° 00´ W  EST
+Durham, North Carolina (USA)  36° 00´ N  78° 55´ W  EST
+Greensboro, North Carolina (USA)  36° 04´ N  79° 47´ W  EST
+Winston Salem, North Carolina (USA)  36° 06´ N  80° 15´ W  EST
+Bismarck, North Dakota (USA)  46° 48´ N  100° 47´ W  CST
+Fargo, North Dakota (USA)  46° 52´ N  96° 47´ W  CST
+Grand Forks, North Dakota (USA)  47° 55´ N  97° 03´ W  CST
+Williston, North Dakota (USA)  48° 11´ N  103° 37´ W  CST
+Cincinnati, Ohio (USA)  39° 06´ N  84° 31´ W  EST
+Middletown, Ohio (USA)  39° 31´ N  84° 24´ W  EST
+Circleville, Ohio (USA)  39° 34´ N  83° 02´ W  EST
+Dayton, Ohio (USA)  39° 46´ N  84° 12´ W  EST
+Columbus, Ohio (USA)  39° 58´ N  83° 00´ W  EST
+Canton, Ohio (USA)  40° 48´ N  81° 23´ W  EST
+Akron, Ohio (USA)  41° 05´ N  81° 31´ W  EST
+Cleveland, Ohio (USA)  41° 30´ N  81° 42´ W  EST
+Toledo, Ohio (USA)  41° 39´ N  83° 33´ W  EST
+Oklahoma City, Oklahoma (USA)  35° 28´ N  97° 31´ W  CST
+Tulsa, Oklahoma (USA)  36° 09´ N  96° 00´ W  CST
+Eugene, Oregon (USA)  44° 03´ N  123° 05´ W  PST
+Salem, Oregon (USA)  44° 56´ N  123° 02´ W  PST
+Portland, Oregon (USA)  45° 31´ N  122° 41´ W  PST
+Philadelphia, Pennsylvania (USA)  39° 57´ N  75° 09´ W  EST
+York, Pennsylvania (USA)  39° 58´ N  76° 44´ W  EST
+Lancaster, Pennsylvania (USA)  40° 02´ N  76° 18´ W  EST
+Harrisburg, Pennsylvania (USA)  40° 16´ N  76° 53´ W  EST
+Johnstown, Pennsylvania (USA)  40° 20´ N  78° 55´ W  EST
+Pittsburgh, Pennsylvania (USA)  40° 26´ N  80° 00´ W  EST
+Altoona, Pennsylvania (USA)  40° 31´ N  78° 24´ W  EST
+Allentown, Pennsylvania (USA)  40° 36´ N  75° 28´ W  EST
+Bethlehem, Pennsylvania (USA)  40° 37´ N  75° 23´ W  EST
+Youngstown, Pennsylvania (USA)  41° 06´ N  80° 39´ W  EST
+Wilkes Barre, Pennsylvania (USA)  41° 15´ N  75° 53´ W  EST
+Scranton, Pennsylvania (USA)  41° 25´ N  75° 40´ W  EST
+Erie, Pennsylvania (USA)  42° 07´ N  80° 05´ W  EST
+Newport, Rhode Island (USA)  41° 29´ N  71° 19´ W  EST
+Warwick, Rhode Island (USA)  41° 42´ N  71° 27´ W  EST
+Providence, Rhode Island (USA)  41° 50´ N  71° 25´ W  EST
+Charleston, South Carolina (USA)  32° 47´ N  79° 56´ W  EST
+Columbia, South Carolina (USA)  34° 00´ N  81° 02´ W  EST
+Greenville, South Carolina (USA)  34° 51´ N  82° 24´ W  EST
+Sioux Falls, South Dakota (USA)  43° 33´ N  96° 44´ W  CST
+Rapid City, South Dakota (USA)  44° 05´ N  103° 14´ W  MST
+Chattanooga, Tennessee (USA)  35° 03´ N  85° 19´ W  EST
+Memphis, Tennessee (USA)  35° 09´ N  90° 03´ W  CST
+Knoxville, Tennessee (USA)  35° 58´ N  83° 55´ W  EST
+Nashville, Tennessee (USA)  36° 10´ N  86° 47´ W  CST
+Clarksville, Tennessee (USA)  36° 32´ N  87° 21´ W  CST
+Brownsville, Texas (USA)  25° 54´ N  97° 30´ W  CST
+Laredo, Texas (USA)  27° 30´ N  99° 30´ W  CST
+Corpus Christi, Texas (USA)  27° 48´ N  97° 24´ W  CST
+Galveston, Texas (USA)  29° 18´ N  94° 48´ W  CST
+San Antonio, Texas (USA)  29° 26´ N  98° 29´ W  CST
+Houston, Texas (USA)  29° 45´ N  95° 22´ W  CST
+Port Arthur, Texas (USA)  29° 54´ N  93° 56´ W  CST
+Beaumont, Texas (USA)  30° 05´ N  94° 06´ W  CST
+Austin, Texas (USA)  30° 16´ N  97° 45´ W  CST
+Waco, Texas (USA)  31° 33´ N  97° 08´ W  CST
+El Paso, Texas (USA)  31° 46´ N  106° 29´ W  MST
+Odessa, Texas (USA)  31° 51´ N  102° 22´ W  CST
+Midland, Texas (USA)  32° 00´ N  102° 05´ W  CST
+Abilene, Texas (USA)  32° 28´ N  99° 43´ W  CST
+Fort Worth, Texas (USA)  32° 45´ N  97° 20´ W  CST
+Ft Worth, Texas (USA)  32° 45´ N  97° 20´ W  CST
+Dallas, Texas (USA)  32° 47´ N  96° 48´ W  CST
+Garland, Texas (USA)  32° 54´ N  96° 38´ W  CST
+Lubbock, Texas (USA)  33° 35´ N  101° 51´ W  CST
+Wichita Falls, Texas (USA)  33° 55´ N  98° 29´ W  CST
+Amarillo, Texas (USA)  35° 12´ N  101° 50´ W  CST
+Provo, Utah (USA)  40° 14´ N  111° 39´ W  MST
+Ogden, Utah (USA)  41° 14´ N  111° 58´ W  MST
+Burlington, Vermont (USA)  44° 29´ N  73° 13´ W  EST
+Norfolk, Virginia (USA)  36° 51´ N  76° 17´ W  EST
+Newport News, Virginia (USA)  36° 59´ N  76° 25´ W  EST
+Hampton, Virginia (USA)  37° 01´ N  76° 20´ W  EST
+Petersburg, Virginia (USA)  37° 14´ N  77° 24´ W  EST
+Williamsburg, Virginia (USA)  37° 16´ N  76° 42´ W  EST
+Roanoke, Virginia (USA)  37° 16´ N  79° 57´ W  EST
+Lynchburg, Virginia (USA)  37° 25´ N  79° 09´ W  EST
+Richmond, Virginia (USA)  37° 32´ N  77° 26´ W  EST
+Charlottesville, Virginia (USA)  38° 02´ N  78° 30´ W  EST
+Alexandria, Virginia (USA)  38° 48´ N  77° 03´ W  EST
+Arlington, Virginia (USA)  38° 53´ N  77° 07´ W  EST
+Yakima, Washington (USA)  46° 36´ N  120° 31´ W  PST
+Tacoma, Washington (USA)  47° 15´ N  122° 26´ W  PST
+Seattle, Washington (USA)  47° 37´ N  122° 20´ W  PST
+Spokane, Washington (USA)  47° 40´ N  117° 26´ W  PST
+Charleston, West Virginia (USA)  38° 21´ N  81° 38´ W  EST
+Huntington, West Virginia (USA)  38° 25´ N  82° 27´ W  EST
+Wheeling, West Virginia (USA)  40° 04´ N  80° 43´ W  EST
+Milwaukee, Wisconsin (USA)  43° 02´ N  87° 54´ W  CST
+Madison, Wisconsin (USA)  43° 04´ N  89° 23´ W  CST
+La Crosse, Wisconsin (USA)  43° 48´ N  91° 15´ W  CST
+Oshkosh, Wisconsin (USA)  44° 01´ N  88° 33´ W  CST
+Green Bay, Wisconsin (USA)  44° 31´ N  88° 01´ W  CST
+Cheyenne, Wyoming (USA)  41° 08´ N  104° 49´ W  MST
+Casper, Wyoming (USA)  42° 51´ N  106° 19´ W  MST

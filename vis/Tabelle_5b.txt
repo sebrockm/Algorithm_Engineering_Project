@@ -1,0 +1,1232 @@
+Aachen, Deutschland 	50° 47´ N 	6° 05´ O 	MEZ
+Aalborg, Dänemark 	57° 03´ N 	9° 56´ O 	MEZ
+Aarhus, Dänemark 	56° 10´ N 	10° 13´ O 	MEZ
+Aberdeen, Schottland 	57° 08´ N 	2° 06´ W 	GMT
+Abidjan, Elfenbeinküste 	5° 19´ N 	4° 02´ W 	GMT
+Abilene, Texas (USA) 	32° 28´ N 	99° 43´ W 	CST
+Abu Dhabi, Vereinigte Arabische Emirate 	24° 28´ N 	54° 25´ O 	GMT+4
+Acapulco, Mexiko 	16° 50´ N 	99° 55´ W 	GMT-6
+Accra, Ghana 	5° 33´ N 	0° 15´ W 	GMT
+Adana, Türkei 	37° 00´ N 	35° 19´ O 	GMT+2
+Addis Abeba, Äthiopien 	9° 02´ N 	38° 47´ O 	GMT+3
+Adelaide, Australien 	34° 56´ S 	138° 36´ O 	GMT+9
+Aden, Jemen 	12° 46´ N 	45° 01´ O 	GMT+3
+Agadez, Niger 	17° 00´ N 	7° 56´ O 	GMT+1
+Agadir, Marokko 	30° 30´ N 	9° 40´ W 	GMT+1
+Ahmedabad, Indien 	23° 00´ N 	72° 40´ O 	GMT+5
+Akron, Ohio (USA) 	41° 05´ N 	81° 31´ O 	EST
+Akureyri, Island 	65° 41´ N 	18° 04´ W 	GMT
+Akyab, Myanmar 	20° 09´ N 	92° 55´ O 	GMT+6
+Al Mahalla Al-Kubra, Ägypten 	30° 59´ N 	31° 10´ O 	GMT+2
+Al-Mobarraz, Saudi-Arabien 	25° 26´ N 	49° 37´ O 	GMT+3
+Albany, Georgia (USA) 	31° 34´ N 	84° 09´ W 	EST
+Albany, New York (USA) 	42° 39´ N 	73° 45´ W 	EST
+Albuquerque, New Mexico (USA) 	35° 05´ N 	106° 39´ W 	MST
+Aleppo, Syrien 	36° 14´ N 	37° 10´ O 	GMT+3
+Alexandria, Ägypten 	31° 13´ N 	29° 55´ O 	GMT+2
+Alexandria, Louisiana (USA) 	31° 18´ N 	92° 27´ W 	CST
+Alexandria, Virginia (USA) 	38° 48´ N 	77° 03´ W 	EST
+Algier, Algerien 	36° 47´ N 	3° 03´ O 	GMT+1
+Allentown, Pennsylvania (USA) 	40° 36´ N 	75° 28´ W 	EST
+Altoona, Pennsylvania (USA) 	40° 31´ N 	78° 24´ W 	EST
+Amadora, Portugal 	38° 45´ N 	9° 13´ W 	GMT
+Amarillo, Texas (USA) 	35° 12´ N 	101° 50´ W 	CST
+Ambato, Ecuador 	1° 18´ S 	78° 39´ W 	GMT-5
+Amman, Jordanien 	31° 57´ N 	35° 56´ O 	GMT+2
+Amsterdam, Niederlande 	52° 23´ N 	4° 54´ O 	MEZ
+Amstetten, Österreich 	48° 07´ N 	14° 52´ O 	MEZ
+Anaheim, California (USA) 	33° 50´ N 	117° 55´ W 	PST
+Anchorage, Alaska (USA) 	61° 13´ N 	149° 53´ W 	GMT-9
+Andorra La Vella, Andorra 	42° 30´ N 	1° 30´ O 	MEZ
+Angeles, Philippinen 	15° 09´ N 	120° 33´ O 	GMT+8
+Ankara, Türkei 	39° 56´ N 	32° 52´ O 	GMT+2
+Ann Arbor, Michigan (USA) 	42° 17´ N 	83° 45´ W 	EST
+Annaba, Algerien 	36° 55´ N 	7° 47´ O 	GMT+1
+Annapolis, Maryland (USA) 	38° 59´ N 	76° 30´ W 	EST
+Antananarivo, Madagaskar 	18° 52´ S 	47° 30´ O 	GMT+3
+Antofagasta, Chile 	23° 39´ S 	70° 24´ W 	GMT-4
+Antsirabe, Madagaskar 	19° 51´ S 	47° 01´ O 	GMT+3
+Antsiranana, Madagaskar 	12° 25´ S 	49° 20´ O 	GMT+3
+Antwerpen, Belgien 	51° 13´ N 	4° 25´ O 	MEZ
+Apeldoorn, Niederlande 	52° 13´ N 	5° 57´ O 	MEZ
+Apia, Westsamoa 	13° 50´ S 	171° 44´ W 	GMT-1
+Arequipa, Peru 	16° 24´ S 	71° 33´ W 	GMT-5
+Ariana, Tunesien 	36° 52´ N 	10° 12´ O 	GMT+1
+Arica, Chile 	18° 30´ S 	70° 20´ W 	GMT-4
+Arlington, Virginia (USA) 	38° 53´ N 	77° 07´ W 	EST
+Arusha, Tansania 	3° 23´ S 	36° 40´ O 	GMT+3
+As-Smara, Sahara 	26° 48´ N 	11° 41´ W 	GMT
+Asheville, North Carolina (USA) 	35° 36´ N 	82° 33´ W 	EST
+Asmara, Äthiopien 	15° 20´ N 	38° 58´ O 	GMT+3
+Assiut, Ägypten 	27° 14´ N 	31° 07´ O 	GMT+2
+Asuncion, Paraguay 	25° 16´ S 	57° 40´ W 	GMT-4
+Atbara, Sudan 	17° 42´ N 	34° 00´ O 	GMT+2
+Athen, Griechenland 	37° 58´ N 	23° 43´ O 	GMT+2
+Atlanta, Georgia (USA) 	33° 45´ N 	84° 24´ W 	EST
+Atlantic City, New Jersey (USA) 	39° 22´ N 	74° 26´ W 	EST
+Auckland, Neuseeland 	36° 51´ S 	174° 45´ O 	GMT+1
+Augsburg, Deutschland 	48° 22´ N 	10° 53´ O 	MEZ
+Augusta, Georgia (USA) 	33° 28´ N 	81° 58´ W 	EST
+Austin, Texas (USA) 	30° 16´ N 	97° 45´ W 	CST
+Bacolod, Philippinen 	10° 38´ N 	122° 58´ O 	GMT+8
+Baden, Österreich 	48° 01´ N 	16° 14´ O 	MEZ
+Bagdad, Irak 	33° 21´ N 	44° 25´ O 	GMT+3
+Bahia Blanca, Argentinien 	38° 45´ S 	62° 15´ W 	GMT-3
+Bakersfield, California (USA) 	35° 22´ N 	119° 01´ W 	PST
+Bakhtaran, Iran 	31° 28´ N 	54° 54´ O 	GMT+3
+Baku, Sowjetunion 	40° 23´ N 	49° 51´ O 	GMT+4
+Baltimore, Maryland (USA) 	39° 17´ N 	76° 37´ W 	EST
+Bamako, Mali 	12° 40´ N 	7° 59´ W 	GMT
+Bandar Seri Begawan, Brunei 	4° 56´ N 	114° 58´ O 	GMT+8
+Bandung, Indonesien 	6° 57´ S 	107° 34´ O 	GMT+7
+Bangalore, Indien 	12° 58´ N 	77° 35´ O 	GMT+5
+Bangkok, Thailand 	13° 45´ N 	100° 31´ O 	GMT+7
+Bangor, Maine (USA) 	44° 48´ N 	68° 46´ W 	EST
+Bangui, Zentralafriknische Republik 	4° 23´ N 	18° 37´ O 	GMT+1
+Banjul, Gambia 	13° 28´ N 	16° 39´ W 	GMT
+Barcelona, Spanien 	41° 23´ N 	2° 11´ O 	MEZ
+Barcelona, Venezuela 	10° 08´ N 	64° 43´ W 	GMT-4
+Bari, Italien 	41° 07´ N 	16° 52´ O 	MEZ
+Barquisimeto, Venezuela 	10° 03´ N 	69° 18´ W 	GMT-4
+Barranquilla, Kolumbien 	10° 59´ N 	74° 48´ W 	GMT-5
+Barreiro, Portugal 	38° 40´ N 	9° 05´ W 	GMT
+Basel, Schweiz 	47° 33´ N 	7° 36´ O 	MEZ
+Basra, Irak 	30° 30´ N 	47° 50´ O 	GMT+3
+Bassein, Myanmar 	16° 46´ N 	94° 45´ O 	GMT+6
+Basseterre, St.Kitts-Nevis 	17° 17´ N 	62° 43´ W 	GMT-4
+Bata, Äquatorialguinea 	1° 51´ N 	9° 46´ O 	GMT+1
+Baton Rouge, Louisiana (USA) 	30° 27´ N 	91° 11´ W 	CST
+Beaumont, Texas (USA) 	30° 05´ N 	94° 06´ W 	CST
+Beersheba, Israel 	31° 15´ N 	34° 47´ O 	GMT+2
+Beijing, China 	39° 56´ N 	116° 24´ O 	GMT+8
+Beira, Mosambik 	19° 49´ S 	34° 52´ O 	GMT+2
+Beirut, Libanon 	33° 53´ N 	35° 30´ O 	GMT+2
+Belem, Brasilien 	1° 27´ S 	48° 29´ W 	GMT-3
+Belfast, Nordirland 	54° 36´ N 	5° 56´ W 	GMT
+Belize City, Belize 	17° 30´ N 	88° 12´ W 	GMT-6
+Belmopan, Belize 	17° 13´ N 	88° 48´ W 	GMT-6
+Belo Horizonte, Brasilien 	19° 54´ S 	43° 54´ W 	GMT-3
+Bengasi, Libyen 	32° 07´ N 	20° 04´ O 	GMT+1
+Beograd, Jugoslawien 	44° 50´ N 	20° 30´ O 	MEZ
+Berbera, Somalia 	10° 28´ N 	45° 02´ O 	GMT+3
+Bergen, Norwegen 	60° 23´ N 	5° 20´ O 	MEZ
+Bergisch-Gladbach, Deutschland 	50° 59´ N 	7° 08´ O 	MEZ
+Berlin, Deutschland 	52° 33´ N 	13° 22´ O 	MEZ
+Bern, Schweiz 	46° 57´ N 	7° 28´ O 	MEZ
+Bethlehem, Pennsylvania (USA) 	40° 37´ N 	75° 23´ W 	EST
+Biel, Schweiz 	46° 27´ N 	8° 13´ O 	MEZ
+Bielefeld, Deutschland 	52° 02´ N 	8° 32´ O 	MEZ
+Bilbao, Spanien 	43° 15´ N 	2° 56´ W 	MEZ
+Billings, Montana (USA) 	45° 47´ N 	108° 30´ W 	MST
+Biloxi, Mississippi (USA) 	30° 24´ N 	88° 53´ W 	CST
+Binghamton, New York (USA) 	42° 06´ N 	75° 55´ W 	EST
+Birmingham, Alabama (USA) 	33° 31´ N 	86° 49´ W 	CST
+Birmingham, Grossbritannien 	52° 29´ N 	1° 53´ W 	GMT
+Bismarck, North Dakota (USA) 	46° 48´ N 	100° 47´ W 	CST
+Bissau, Guinea-Bissau 	11° 52´ N 	15° 39´ W 	GMT
+Bizerta, Tunesien 	37° 18´ N 	9° 52´ O 	GMT+1
+Blantyre, Malawi 	15° 46´ S 	35° 00´ O 	GMT+2
+Blida, Algerien 	36° 30´ N 	2° 50´ O 	GMT+1
+Bnei Brak, Israel 	32° 05´ N 	34° 52´ O 	GMT+2
+Bo, Sierra Leone 	7° 58´ N 	11° 45´ W 	GMT
+Bobo-Dioulasso, Burkina Faso 	11° 11´ N 	4° 18´ W 	GMT
+Bochum, Deutschland 	51° 29´ N 	7° 13´ O 	MEZ
+Bogata, Kolumbien 	4° 36´ N 	74° 05´ W 	GMT-5
+Boise, Idaho (USA) 	43° 37´ N 	116° 12´ W 	MST
+Bologna, Italien 	44° 30´ N 	11° 20´ O 	MEZ
+Bombay, Indien 	18° 58´ N 	72° 50´ O 	GMT+5
+Bonn, Deutschland 	50° 44´ N 	7° 06´ O 	MEZ
+Boras, Schweden 	57° 44´ N 	12° 55´ O 	MEZ
+Bordeaux, Frankreich 	44° 50´ N 	0° 34´ W 	MEZ
+Boston, Massachusetts (USA) 	42° 21´ N 	71° 03´ W 	EST
+Bottrop, Deutschland 	51° 31´ N 	6° 55´ O 	MEZ
+Boulder, Colorado (USA) 	40° 01´ N 	105° 17´ W 	MST
+Boulogne, Frankreich 	50° 43´ N 	1° 37´ O 	MEZ
+Bozen, Italien 	46° 31´ N 	11° 22´ O 	MEZ
+Bradford, Grossbritannien 	53° 48´ N 	1° 45´ W 	GMT
+Braga, Portugal 	41° 32´ N 	8° 26´ W 	GMT
+Braila, Rumänien 	45° 17´ N 	27° 58´ O 	GMT+2
+Brasilia, Brasilien 	15° 47´ S 	47° 55´ W 	GMT-3
+Bratislava, Tschechoslowakei 	48° 10´ N 	17° 10´ O 	MEZ
+Braunau, Österreich 	48° 16´ N 	13° 02´ O 	MEZ
+Braunschweig, Deutschland 	52° 16´ N 	10° 32´ O 	MEZ
+Brazzaville, Kongo 	4° 14´ S 	15° 14´ O 	GMT+1
+Bregenz, Österreich 	47° 30´ N 	9° 46´ O 	MEZ
+Bremen, Deutschland 	53° 05´ N 	8° 48´ O 	MEZ
+Bremerhaven, Deutschland 	53° 33´ N 	8° 35´ O 	MEZ
+Breslau, Polen 	51° 05´ N 	17° 00´ O 	MEZ
+Bridgeport, Connecticut (USA) 	41° 11´ N 	73° 11´ W 	EST
+Bridgetown, Barbados 	13° 06´ N 	59° 37´ W 	GMT-4
+Brisbane, Australien 	27° 30´ S 	153° 01´ O 	GMT+1
+Bristol, Grossbritannien 	51° 27´ N 	2° 35´ W 	GMT
+Brno, Tschechoslowakei 	49° 13´ N 	16° 40´ O 	MEZ
+Bromberg, Polen 	53° 16´ N 	18° 00´ O 	MEZ
+Brownsville, Texas (USA) 	25° 54´ N 	97° 30´ W 	CST
+Bruck/mur, Österreich 	47° 25´ N 	15° 17´ O 	MEZ
+Bruegge, Belgien 	51° 13´ N 	3° 14´ O 	MEZ
+Brüssel, Belgien 	50° 50´ N 	4° 20´ O 	MEZ
+Buake, Elfenbeinküste 	7° 42´ N 	5° 00´ W 	GMT
+Bucaramanga, Kolumbien 	7° 08´ N 	73° 10´ W 	GMT-5
+Budapest, Ungarn 	47° 30´ N 	19° 05´ O 	MEZ
+Buenos Aires, Argentinien 	34° 36´ S 	58° 27´ W 	GMT-3
+Buffalo, New York (USA) 	42° 53´ N 	78° 52´ W 	EST
+Bujumbura, Burundi 	3° 22´ S 	29° 19´ O 	GMT+2
+Bukarest, Rumänien 	44° 26´ N 	26° 06´ O 	GMT+2
+Bukavu, Zaire 	2° 30´ S 	28° 50´ O 	GMT+2
+Bulawayo, Simbabwe 	20° 10´ S 	28° 43´ O 	GMT+2
+Buraidah, Saudi-Arabien 	26° 20´ N 	43° 59´ O 	GMT+3
+Burgas, Bulgarien 	42° 30´ N 	27° 29´ O 	GMT+2
+Burlington, Vermont (USA) 	44° 29´ N 	73° 13´ W 	EST
+Bursa, Türkei 	40° 12´ N 	29° 04´ O 	GMT+2
+Butare, Ruanda 	2° 35´ S 	29° 44´ O 	GMT+2
+Butte, Montana (USA) 	46° 00´ N 	112° 32´ W 	MST
+Cagayan De Oro, Philippinen 	8° 29´ N 	124° 40´ O 	GMT+8
+Calcutta, Indien 	22° 32´ N 	88° 22´ O 	GMT+5
+Calgary, Kanada 	51° 03´ N 	114° 05´ W 	GMT-7
+Cali, Kolumbien 	3° 27´ N 	76° 31´ W 	GMT-5
+Callao, Peru 	12° 05´ S 	77° 08´ W 	GMT-5
+Caloocan, Philippinen 	14° 38´ N 	120° 58´ O 	GMT+8
+Cam Ranh, Vietnam 	11° 54´ N 	109° 14´ O 	GMT+7
+Camaguey, Kuba 	21° 25´ N 	77° 55´ W 	GMT-5
+Camden, New Jersey (USA) 	39° 57´ N 	75° 07´ W 	EST
+Canberra, Australien 	35° 20´ S 	149° 10´ O 	GMT+1
+Canton, Ohio (USA) 	40° 48´ N 	81° 23´ W 	EST
+Cap-Haitien, Haiti 	19° 47´ N 	72° 17´ W 	GMT-5
+Caracas, Venezuela 	10° 30´ N 	66° 55´ W 	GMT-4
+Cardiff, Wales 	51° 29´ N 	3° 10´ W 	GMT
+Cartagena, Kolumbien 	10° 24´ N 	75° 33´ W 	GMT-5
+Casablanca, Marokko 	33° 36´ N 	7° 37´ W 	GMT+1
+Casper, Wyoming (USA) 	42° 51´ N 	106° 19´ W 	MST
+Castries, St.lucia 	14° 01´ N 	60° 59´ W 	GMT-4
+Catania, Italien 	37° 31´ N 	15° 04´ O 	MEZ
+Cebu, Philippinen 	10° 17´ N 	123° 56´ O 	GMT+8
+Cedar Rapids, Iowa (USA) 	41° 58´ N 	91° 40´ W 	CST
+Champaign, Illinois (USA) 	40° 07´ N 	88° 15´ W 	CST
+Chania, Griechenland 	35° 31´ N 	24° 01´ O 	GMT+2
+Charkow, Sowjetunion 	50° 00´ N 	36° 15´ O 	GMT+3
+Charleroi, Belgien 	50° 25´ N 	4° 27´ O 	MEZ
+Charleston, South Carolina (USA) 	32° 47´ N 	79° 56´ W 	EST
+Charleston, West Virginia (USA) 	38° 21´ N 	81° 38´ W 	EST
+Charlotte, North Carolina (USA) 	35° 13´ N 	80° 51´ W 	EST
+Charlottesville, Virginia (USA) 	38° 02´ N 	78° 30´ W 	EST
+Chattanooga, Tennessee (USA) 	35° 03´ N 	85° 19´ W 	EST
+Chemnitz, Deutschland 	50° 50´ N 	12° 55´ O 	MEZ
+Chengdu, China 	30° 37´ N 	104° 06´ O 	GMT+8
+Cheyenne, Wyoming (USA) 	41° 08´ N 	104° 49´ W 	MST
+Chiang Mai, Thailand 	18° 48´ N 	98° 59´ O 	GMT+7
+Chiayi, Taiwan 	23° 09´ N 	120° 11´ O 	GMT+8
+Chicago, Illinois (USA) 	41° 52´ N 	87° 38´ W 	CST
+Chiclayo, Peru 	6° 47´ S 	79° 47´ W 	GMT-5
+Chihuahua, Mexiko 	28° 38´ N 	106° 05´ W 	GMT-6
+Chillan, Chile 	36° 37´ S 	72° 10´ W 	GMT-4
+Chimbote, Peru 	9° 04´ S 	78° 34´ W 	GMT-5
+Chingola, Sambia 	12° 31´ S 	27° 53´ O 	GMT+2
+Chittagong, Bangladesch 	22° 20´ N 	91° 48´ O 	GMT+6
+Chitungwiza, Simbabwe 	18° 00´ S 	31° 06´ O 	GMT+2
+Choluteca, Honduras 	13° 15´ N 	87° 10´ W 	GMT-6
+Chon Buri, Thailand 	13° 24´ N 	100° 59´ O 	GMT+7
+Chongjin, Nordkorea 	41° 50´ N 	129° 55´ O 	GMT+9
+Chongqing, China 	29° 30´ N 	106° 35´ O 	GMT+8
+Choybalsan, Mongolei 	48° 02´ N 	114° 32´ O 	GMT+8
+Christchurch, Neuseeland 	43° 35´ S 	172° 36´ O 	GMT+1
+Chungli, Taiwan 	24° 55´ N 	121° 08´ O 	GMT+8
+Chur, Schweiz 	46° 50´ N 	9° 35´ O 	MEZ
+Cincinnati, Ohio (USA) 	39° 06´ N 	84° 31´ W 	EST
+Circleville, Ohio (USA) 	39° 34´ N 	83° 02´ W 	EST
+Ciudad Guayana, Venezuela 	8° 22´ N 	62° 37´ W 	GMT-4
+Ciudad Juarez, Mexiko 	31° 42´ N 	106° 29´ W 	GMT-6
+Clarksville, Tennessee (USA) 	36° 32´ N 	87° 21´ W 	CST
+Cleveland, Ohio (USA) 	41° 30´ N 	81° 42´ W 	EST
+Cochabamba, Bolivien 	17° 24´ S 	66° 09´ W 	GMT-4
+Coimbra, Portugal 	40° 12´ N 	8° 25´ W 	GMT
+Colombo, Sri Lanka 	6° 56´ N 	79° 51´ O 	GMT+5
+Colon, Panama 	9° 21´ N 	79° 54´ W 	GMT-5
+Colorado Springs, Colorado (USA) 	38° 50´ N 	104° 49´ W 	MST
+Columbia, Missouri (USA) 	38° 57´ N 	92° 20´ W 	CST
+Columbia, South Carolina (USA) 	34° 00´ N 	81° 02´ W 	EST
+Columbus, Georgia (USA) 	32° 28´ N 	84° 59´ W 	EST
+Columbus, Ohio (USA) 	39° 58´ N 	83° 00´ W 	EST
+Conakry, Guinea 	9° 31´ N 	13° 43´ W 	GMT
+Concepcion, Chile 	36° 50´ S 	73° 03´ W 	GMT-4
+Concepcion, Paraguay 	23° 22´ S 	57° 26´ W 	GMT-4
+Concord, New Hampshire (USA) 	43° 12´ N 	71° 32´ W 	EST
+Constantine, Algerien 	36° 22´ N 	6° 40´ O 	GMT+1
+Cordoba, Argentinien 	31° 24´ S 	64° 11´ W 	GMT-3
+Cork, Irland 	51° 54´ N 	8° 28´ W 	GMT
+Corozal, Belize 	18° 23´ N 	88° 23´ W 	GMT-6
+Corpus Christi, Texas (USA) 	27° 48´ N 	97° 24´ W 	CST
+Cotonou, Benin 	6° 24´ N 	2° 31´ O 	GMT+1
+Cottbus, Deutschland 	51° 46´ N 	14° 20´ O 	MEZ
+Craiova, Rumänien 	44° 18´ N 	23° 47´ O 	GMT+2
+Cucuta, Kolumbien 	7° 55´ N 	72° 31´ W 	GMT-5
+Cuenca, Ecuador 	2° 54´ S 	79° 00´ W 	GMT-5
+Curitiba, Brasilien 	25° 25´ S 	49° 15´ W 	GMT-3
+Cuzco, Peru 	13° 32´ S 	71° 57´ W 	GMT-5
+Da Nang, Vietnam 	16° 04´ N 	108° 14´ O 	GMT+7
+Dachla, Sahara 	23° 50´ N 	15° 33´ W 	GMT
+Dakar, Senegal 	14° 40´ N 	17° 26´ W 	GMT
+Dallas, Texas (USA) 	32° 47´ N 	96° 48´ W 	CST
+Daloa, Elfenbeinküste 	6° 56´ N 	6° 28´ W 	GMT
+Damaskus, Syrien 	33° 30´ N 	36° 18´ O 	GMT+3
+Damman, Saudi-Arabien 	26° 25´ N 	50° 06´ O 	GMT+3
+Danbury, Connecticut (USA) 	41° 24´ N 	73° 28´ W 	EST
+Dangriga, Belize 	16° 59´ N 	88° 13´ W 	GMT-6
+Danzig, Polen 	54° 20´ N 	18° 40´ O 	MEZ
+Darchan, Mongolei 	46° 29´ N 	109° 24´ O 	GMT+8
+Daressalam, Tansania 	6° 48´ S 	39° 17´ O 	GMT+3
+Darmstadt, Deutschland 	49° 52´ N 	8° 39´ O 	MEZ
+Davao, Philippinen 	7° 04´ N 	125° 36´ O 	GMT+8
+David, Panama 	8° 26´ N 	82° 26´ W 	GMT-5
+Dayton, Ohio (USA) 	39° 46´ N 	84° 12´ W 	EST
+Daytona Beach, Florida (USA) 	29° 13´ N 	81° 01´ W 	EST
+Debrecen, Ungarn 	47° 30´ N 	21° 37´ O 	MEZ
+Dehiwala, Sri Lanka 	6° 52´ N 	79° 52´ O 	GMT+5
+Deir-Ez-Zor, Syrien 	35° 20´ N 	40° 05´ O 	GMT+3
+Den Haag, Niederlande 	52° 04´ N 	4° 19´ O 	MEZ
+Denver, Colorado (USA) 	39° 45´ N 	104° 59´ W 	MST
+Des Moines, Iowa (USA) 	41° 35´ N 	93° 37´ W 	CST
+Dessau, Deutschland 	51° 50´ N 	12° 15´ O 	MEZ
+Detroit, Michigan (USA) 	42° 20´ N 	83° 03´ W 	EST
+Dhaka, Bangladesch 	23° 43´ N 	90° 25´ O 	GMT+6
+Differdingen, Luxemburg 	49° 32´ N 	5° 53´ O 	MEZ
+Djerba, Tunesien 	33° 52´ N 	10° 51´ O 	GMT+1
+Dodoma, Tansania 	6° 10´ S 	35° 40´ O 	GMT+3
+Doha, Katar 	25° 15´ N 	51° 36´ O 	GMT+3
+Donetzk, Sowjetunion 	48° 00´ N 	37° 48´ O 	GMT+3
+Dornbirn, Österreich 	47° 25´ N 	9° 44´ O 	MEZ
+Dortmund, Deutschland 	51° 32´ N 	7° 27´ O 	MEZ
+Douala, Kamerun 	4° 04´ N 	9° 43´ O 	GMT+1
+Drammen, Norwegen 	59° 45´ N 	10° 15´ O 	MEZ
+Dresden, Deutschland 	51° 03´ N 	13° 44´ O 	MEZ
+Dschibuti, Dschibuti 	11° 30´ N 	45° 05´ O 	GMT+3
+Dschidda, Saudi-Arabien 	21° 30´ N 	39° 10´ O 	GMT+3
+Dubai, Vereinigte Arabische Emiratete 	25° 14´ N 	55° 17´ O 	GMT+4
+Dublin, Irland 	53° 20´ N 	6° 15´ W 	GMT
+Duedelingen, Luxemburg 	49° 28´ N 	6° 05´ O 	MEZ
+Duisburg, Deutschland 	51° 26´ N 	6° 45´ O 	MEZ
+Duluth, Minnesota (USA) 	46° 47´ N 	92° 06´ W 	CST
+Dunedin, Neuseeland 	45° 52´ S 	170° 30´ O 	GMT+1
+Durban, Südafrika 	29° 53´ S 	31° 00´ O 	GMT+2
+Durham, North Carolina (USA) 	36° 00´ N 	78° 55´ W 	EST
+Durres, Albanien 	41° 18´ N 	19° 28´ O 	MEZ
+Düsseldorf, Deutschland 	51° 13´ N 	6° 47´ O 	MEZ
+Edinburgh, Schottland 	55° 57´ N 	3° 12´ W 	GMT
+Edmonton, Kanada 	53° 33´ N 	113° 28´ W 	GMT-7
+Eerdenet, Mongolei 	46° 18´ N 	100° 35´ O 	GMT+8
+Eindhoven, Niederlande 	51° 26´ N 	5° 30´ O 	MEZ
+Eisenstadt, Österreich 	47° 51´ N 	16° 31´ O 	MEZ
+El Alaiun, Sahara 	27° 10´ N 	13° 11´ W 	GMT
+El Paso, Texas (USA) 	31° 46´ N 	106° 29´ W 	MST
+El-Mansoura, Ägypten 	31° 03´ N 	31° 23´ O 	GMT+2
+Elizabeth, New Jersey (USA) 	40° 40´ N 	74° 13´ W 	EST
+Elmira, New York (USA) 	42° 06´ N 	76° 48´ W 	EST
+Elobied, Sudan 	13° 11´ N 	30° 10´ O 	GMT+2
+Elsinore, Dänemark 	56° 03´ N 	12° 38´ O 	MEZ
+Encarnacion, Paraguay 	27° 20´ S 	55° 50´ W 	GMT-4
+Enschede, Niederlande 	52° 13´ N 	6° 55´ O 	MEZ
+Entebbe, Uganda 	0° 04´ N 	32° 27´ O 	GMT+3
+Erfurt, Deutschland 	50° 58´ N 	11° 02´ O 	MEZ
+Erie, Pennsylvania (USA) 	42° 07´ N 	80° 05´ W 	EST
+Erlangen, Deutschland 	49° 36´ N 	11° 01´ O 	MEZ
+Esbjerg, Dänemark 	55° 28´ N 	8° 28´ O 	MEZ
+Esch, Luxemburg 	49° 32´ N 	6° 00´ O 	MEZ
+Escuintla, Guatemala 	14° 18´ N 	90° 47´ W 	GMT-6
+Esmeraldas, Ecuador 	0° 56´ N 	79° 40´ W 	GMT-5
+Espoo, Finnland 	60° 10´ N 	24° 42´ O 	GMT+2
+Essen, Deutschland 	52° 43´ N 	7° 56´ O 	MEZ
+Eugene, Oregon (USA) 	44° 03´ N 	123° 05´ W 	PST
+Evansville, Indiana (USA) 	37° 58´ N 	87° 34´ W 	EST
+Fairbanks, Alaska (USA) 	64° 51´ N 	147° 43´ W 	GMT-9
+Faisalabad, Pakistan 	31° 25´ N 	73° 09´ O 	GMT+5
+Fargo, North Dakota (USA) 	46° 52´ N 	96° 47´ W 	CST
+Fayetteville, North Carolina (USA) 	35° 03´ N 	78° 53´ W 	EST
+Feldkirch, Österreich 	47° 14´ N 	9° 36´ O 	MEZ
+Fernando De La Mora, Paraguay 	25° 19´ S 	57° 36´ W 	GMT-4
+Fes, Marokko 	34° 05´ N 	5° 00´ W 	GMT+1
+Fianar, Madagaskar 	21° 27´ S 	47° 05´ O 	GMT+3
+Flint, Michigan (USA) 	43° 01´ N 	83° 42´ W 	EST
+Florenz, Italien 	43° 46´ N 	11° 15´ O 	MEZ
+Fort Lauderdale, Florida (USA) 	26° 07´ N 	80° 08´ W 	EST
+Fort Smith, Arkansas (USA) 	35° 23´ N 	94° 25´ W 	CST
+Fort Wayne, Indiana (USA) 	41° 04´ N 	85° 08´ W 	EST
+Fort Worth, Texas (USA) 	32° 45´ N 	97° 20´ W 	CST
+Fort-de-France, Martinique 	14° 36´ N 	61° 05´ W 	GMT-4
+Fortaleza, Brasilien 	3° 45´ S 	38° 35´ W 	GMT-3
+Francistown, Botswana 	21° 07´ S 	27° 32´ O 	GMT+2
+Frankfurt, Deutschland 	50° 07´ N 	8° 41´ O 	MEZ
+Freeport, Bahamas 	26° 30´ N 	78° 42´ W 	GMT-5
+Freetown, Sierra Leone 	8° 29´ N 	13° 13´ W 	GMT
+Freiburg, Deutschland 	48° 00´ N 	7° 51´ O 	MEZ
+Freising, Deutschland 	48° 24´ N 	11° 44´ O 	MEZ
+Fresno, California (USA) 	36° 44´ N 	119° 47´ W 	PST
+Fribourg, Schweiz 	46° 50´ N 	7° 10´ O 	MEZ
+Ft Lauderdale, Florida (USA) 	26° 07´ N 	80° 08´ W 	EST
+Ft Smith, Arkansas (USA) 	35° 23´ N 	94° 25´ W 	CST
+Ft Wayne, Indiana (USA) 	41° 04´ N 	85° 08´ W 	EST
+Ft Worth, Texas (USA) 	32° 45´ N 	97° 20´ W 	CST
+Fukuoka, Japan 	33° 39´ N 	130° 21´ O 	GMT+9
+Funafuti, Tuvalu 	8° 30´ S 	179° 12´ O 	GMT+1
+Funchal, Portugal 	40° 08´ N 	7° 30´ W 	GMT
+Gaborone, Botswana 	24° 45´ S 	25° 55´ O 	GMT+2
+Gainesville, Florida (USA) 	29° 40´ N 	82° 20´ W 	EST
+Galatz, Rumänien 	45° 27´ N 	28° 02´ O 	GMT+2
+Galle, Sri Lanka 	6° 01´ N 	80° 13´ O 	GMT+5
+Galveston, Texas (USA) 	29° 18´ N 	94° 48´ W 	CST
+Galway, Irland 	53° 16´ N 	9° 03´ W 	GMT
+Gao, Mali 	16° 19´ N 	0° 09´ W 	GMT
+Garland, Texas (USA) 	32° 54´ N 	96° 38´ W 	CST
+Gary, Indiana (USA) 	41° 36´ N 	87° 20´ W 	CST
+Gasiantep, Türkei 	37° 06´ N 	37° 23´ O 	GMT+2
+Geelong, Australien 	38° 10´ S 	144° 26´ O 	GMT+1
+Gelsenkirchen, Deutschland 	51° 31´ N 	7° 06´ O 	MEZ
+Geneve, Schweiz 	46° 12´ N 	6° 10´ O 	MEZ
+Gent, Belgien 	51° 02´ N 	3° 42´ O 	MEZ
+Genua, Italien 	44° 24´ N 	8° 56´ O 	MEZ
+Georgetown, Guyana 	6° 46´ N 	58° 10´ W 	GMT-3
+Gera, Deutschland 	50° 52´ N 	12° 05´ O 	MEZ
+Germiston, Südafrika 	26° 15´ S 	28° 10´ O 	GMT+2
+Gibraltar, Gibraltar 	36° 06´ N 	5° 21´ W 	MEZ
+Gize, Ägypten 	30° 01´ N 	31° 10´ O 	GMT+2
+Glasgow, Schottland 	55° 51´ N 	4° 16´ W 	GMT
+Gold Coast, Australien 	27° 59´ S 	153° 22´ O 	GMT+1
+Gorki, Sowjetunion 	56° 20´ N 	44° 00´ O 	GMT+4
+Goeteborg, Schweden 	57° 43´ N 	11° 58´ O 	MEZ
+Göttingen, Deutschland 	51° 32´ N 	9° 56´ O 	MEZ
+Granada, Nicaragua 	11° 58´ N 	85° 59´ W 	GMT-6
+Grand Forks, North Dakota (USA) 	47° 55´ N 	97° 03´ W 	CST
+Grand Rapids, Michigan (USA) 	42° 58´ N 	85° 40´ W 	EST
+Graz, Österreich 	47° 05´ N 	15° 22´ O 	MEZ
+Great Falls, Montana (USA) 	47° 30´ N 	111° 17´ W 	MST
+Green Bay, Wisconsin (USA) 	44° 31´ N 	88° 01´ W 	CST
+Greensboro, North Carolina (USA) 	36° 04´ N 	79° 47´ W 	EST
+Greenville, South Carolina (USA) 	34° 51´ N 	82° 24´ W 	EST
+Groningen, Niederlande 	53° 13´ N 	6° 34´ O 	MEZ
+Guadalajara, Mexiko 	20° 40´ N 	103° 20´ W 	GMT-6
+Guangzhou, China 	23° 07´ N 	113° 15´ O 	GMT+8
+Guantanamo, Kuba 	19° 59´ N 	75° 10´ W 	GMT-5
+Guatemala City, Guatemala 	14° 38´ N 	90° 31´ W 	GMT-6
+Guayaquil, Ecuador 	2° 10´ S 	79° 50´ W 	GMT-5
+Gujranwala, Pakistan 	32° 06´ N 	74° 11´ O 	GMT+5
+Gulf Port, Mississippi (USA) 	30° 22´ N 	89° 05´ W 	CST
+Gweru, Simbabwe 	19° 27´ S 	29° 49´ O 	GMT+2
+Gyoer, Ungarn 	47° 41´ N 	17° 40´ O 	MEZ
+Haarlem, Niederlande 	52° 23´ N 	4° 38´ O 	MEZ
+Hagen, Deutschland 	51° 21´ N 	7° 28´ O 	MEZ
+Haifa, Israel 	32° 49´ N 	34° 59´ O 	GMT+2
+Haiphong, Vietnam 	20° 50´ N 	106° 41´ O 	GMT+7
+Halle, Deutschland 	51° 28´ N 	11° 58´ O 	MEZ
+Hallein, Österreich 	47° 41´ N 	13° 06´ O 	MEZ
+Hama, Syrien 	35° 05´ N 	36° 40´ O 	GMT+3
+Hamburg, Deutschland 	53° 33´ N 	10° 00´ O 	MEZ
+Hamilton, Bermuda-Inseln 	32° 17´ N 	64° 46´ W 	GMT-4
+Hamilton, Kanada 	43° 14´ N 	79° 51´ W 	GMT-5
+Hamilton, Neuseeland 	37° 46´ S 	175° 18´ O 	GMT+1
+Hamm, Deutschland 	51° 41´ N 	7° 48´ O 	MEZ
+Hampton, Virginia (USA) 	37° 01´ N 	76° 20´ W 	EST
+Hannover, Deutschland 	52° 22´ N 	9° 43´ O 	MEZ
+Hanoi, Vietnam 	21° 02´ N 	105° 51´ O 	GMT+7
+Harare, Simbabwe 	17° 50´ S 	31° 03´ O 	GMT+2
+Harbin, China 	45° 45´ N 	126° 41´ O 	GMT+8
+Hargeisa, Somalia 	9° 31´ N 	44° 02´ O 	GMT+3
+Harrisburg, Pennsylvania (USA) 	40° 16´ N 	76° 53´ W 	EST
+Hartford, Connecticut (USA) 	41° 46´ N 	72° 41´ W 	EST
+Havanna, Kuba 	23° 08´ N 	82° 22´ W 	GMT-5
+Heidelberg, Deutschland 	49° 25´ N 	8° 42´ O 	MEZ
+Heilbronn, Deutschland 	49° 08´ N 	9° 13´ O 	MEZ
+Helena, Montana (USA) 	46° 36´ N 	112° 02´ W 	MST
+Helsingborg, Schweden 	56° 05´ N 	12° 45´ O 	MEZ
+Helsinki, Finnland 	60° 10´ N 	24° 58´ O 	GMT+2
+Herat, Afghanistan 	34° 20´ N 	62° 12´ O 	GMT+4
+Herne, Deutschland 	51° 33´ N 	7° 13´ O 	MEZ
+High Point, North Carolina (USA) 	35° 57´ N 	80° 00´ W 	EST
+Hilo, Hawaii (USA) 	19° 43´ N 	155° 05´ W 	Hst
+Hiroshima, Japan 	34° 23´ N 	132° 27´ O 	GMT+9
+Ho-Chi-Minh-Stadt, Vietnam 	10° 45´ N 	106° 40´ O 	GMT+7
+Hobart, Australien 	42° 55´ S 	147° 20´ O 	GMT+1
+Hodeida, Jemen 	14° 50´ N 	42° 58´ O 	GMT+3
+Hofuf, Saudi-Arabien 	25° 20´ N 	49° 34´ O 	GMT+3
+Holguin, Kuba 	20° 54´ N 	76° 15´ W 	GMT-5
+Holon, Israel 	32° 02´ N 	34° 47´ O 	GMT+2
+Homs, Syrien 	34° 44´ N 	37° 17´ O 	GMT+3
+Hongkong, Hongkong 	22° 17´ N 	114° 09´ O 	GMT+8
+Honiara, Salomonen 	9° 28´ S 	159° 57´ O 	GMT+1
+Honolulu, Hawaii (USA) 	21° 19´ N 	157° 52´ W 	Hst
+Horsens, Dänemark 	57° 07´ N 	10° 07´ O 	MEZ
+Hospitalet, Spanien 	41° 21´ N 	2° 06´ O 	MEZ
+Houston, Texas (USA) 	29° 45´ N 	95° 22´ W 	CST
+Hsinchu, Taiwan 	24° 48´ N 	120° 59´ O 	GMT+8
+Huambo, Angola 	12° 44´ S 	15° 47´ O 	GMT+1
+Hungnam, Nordkorea 	39° 49´ N 	127° 40´ O 	GMT+9
+Huntington, West Virginia (USA) 	38° 25´ N 	82° 27´ W 	EST
+Huntsville, Alabama (USA) 	34° 44´ N 	86° 35´ W 	CST
+Hyderabad, Indien 	17° 22´ N 	78° 26´ O 	GMT+5
+Hyderabad, Pakistan 	25° 23´ N 	68° 24´ O 	GMT+5
+Iasi, Rumänien 	47° 09´ N 	27° 38´ O 	GMT+2
+Ibadan, Nigeria 	7° 23´ N 	3° 56´ O 	GMT+1
+Ibague, Kolumbien 	4° 25´ N 	75° 20´ W 	GMT-5
+Idaho Falls, Idaho (USA) 	43° 29´ N 	112° 02´ W 	MST
+Iloilo, Philippinen 	10° 41´ N 	122° 33´ O 	GMT+8
+Inchon, Korea 	37° 30´ N 	126° 38´ O 	GMT+9
+Independence, Missouri (USA) 	39° 06´ N 	94° 25´ W 	CST
+Indianapolis, Indiana (USA) 	39° 46´ N 	86° 10´ W 	EST
+Innsbruck, Österreich 	47° 16´ N 	11° 24´ O 	MEZ
+Ipoh, Malaysia 	4° 36´ N 	101° 02´ O 	GMT+8
+Iquitos, Peru 	3° 51´ S 	73° 13´ W 	GMT-5
+Iraklion, Griechenland 	35° 20´ N 	25° 12´ O 	GMT+2
+Irbid, Jordanien 	32° 33´ N 	35° 51´ O 	GMT+2
+Irkutsk, Sowjetunion 	52° 16´ N 	104° 20´ O 	GMT+8
+Isfahan, Iran 	32° 41´ N 	51° 41´ O 	GMT+3
+Islamabad, Pakistan 	33° 42´ N 	73° 10´ O 	GMT+5
+Istanbul, Türkei 	41° 01´ N 	28° 58´ O 	GMT+2
+Izmir, Türkei 	38° 25´ N 	27° 10´ O 	GMT+2
+Jackson, Mississippi (USA) 	32° 18´ N 	90° 11´ W 	CST
+Jacksonville, Florida (USA) 	30° 20´ N 	81° 40´ W 	EST
+Jaffna, Sri Lanka 	9° 40´ N 	80° 01´ O 	GMT+5
+Jaipur, Indien 	26° 53´ N 	75° 50´ O 	GMT+5
+Jakarta, Indonesien 	6° 10´ S 	106° 49´ O 	GMT+7
+Jalalabad, Afghanistan 	34° 26´ N 	70° 28´ O 	GMT+4
+Jefferson City, Missouri (USA) 	38° 34´ N 	92° 10´ W 	CST
+Jena, Deutschland 	50° 56´ N 	11° 35´ O 	MEZ
+Jerewan, Sowjetunion 	40° 11´ N 	44° 30´ O 	GMT+3
+Jersey City, New Jersey (USA) 	40° 44´ N 	74° 04´ W 	EST
+Jerusalem, Israel 	31° 47´ N 	35° 13´ O 	GMT+2
+Jinja, Uganda 	0° 27´ N 	33° 14´ O 	GMT+3
+Johannesburg, Südafrika 	26° 10´ S 	28° 02´ O 	GMT+2
+Johnstown, Pennsylvania (USA) 	40° 20´ N 	78° 55´ W 	EST
+Johore Bharu, Malaysia 	1° 29´ N 	103° 44´ O 	GMT+8
+Joenkoeping, Schweden 	57° 45´ N 	14° 10´ O 	MEZ
+Jumla, Nepal 	29° 17´ N 	82° 10´ O 	GMT+5
+Jurong, Singapur 	1° 21´ N 	103° 42´ O 	GMT+7
+Kabul, Afghanistan 	34° 30´ N 	69° 13´ O 	GMT+4
+Kaesong, Nordkorea 	37° 59´ N 	126° 30´ O 	GMT+9
+Kairo, Ägypten 	30° 03´ N 	31° 15´ O 	GMT+2
+Kaiserslautern, Deutschland 	49° 27´ N 	7° 45´ O 	MEZ
+Kalamazoo, Michigan (USA) 	42° 17´ N 	85° 35´ W 	EST
+Kampala, Uganda 	0° 20´ N 	32° 35´ O 	GMT+3
+Kananga, Zaire 	5° 53´ S 	22° 26´ O 	GMT+2
+Kandahar, Afghanistan 	31° 35´ N 	65° 45´ O 	GMT+4
+Kandy, Sri Lanka 	7° 17´ N 	80° 40´ O 	GMT+5
+Kankan, Guinea 	10° 23´ N 	9° 18´ W 	GMT
+Kano, Nigeria 	12° 00´ N 	8° 30´ O 	GMT+1
+Kanpur, Indien 	26° 27´ N 	80° 14´ O 	GMT+5
+Kansas City, Kansas (USA) 	39° 07´ N 	94° 38´ W 	CST
+Kansas City, Missouri (USA) 	39° 05´ N 	94° 35´ W 	CST
+Kaolack, Senegal 	14° 09´ N 	16° 08´ W 	GMT
+Kapfenberg, Österreich 	47° 26´ N 	15° 18´ O 	MEZ
+Kapstadt, Südafrika 	33° 55´ S 	18° 27´ O 	GMT+2
+Karachi, Pakistan 	24° 52´ N 	67° 03´ O 	GMT+5
+Karlsruhe, Deutschland 	49° 01´ N 	8° 24´ O 	MEZ
+Karonga, Malawi 	9° 54´ S 	35° 55´ O 	GMT+2
+Kasan, Sowjetunion 	55° 45´ N 	49° 00´ O 	GMT+4
+Kassel, Deutschland 	51° 19´ N 	9° 30´ O 	MEZ
+Katmandu, Nepal 	27° 42´ N 	85° 20´ O 	GMT+5
+Kattowitz, Polen 	50° 15´ N 	18° 59´ O 	MEZ
+Kavala, Griechenland 	41° 05´ N 	24° 55´ O 	GMT+2
+Kawasaki, Japan 	35° 32´ N 	139° 41´ O 	GMT+9
+Kayes, Mali 	14° 26´ N 	11° 28´ W 	GMT
+Keelung, Taiwan 	25° 08´ N 	121° 44´ O 	GMT+8
+Keetmanshoop, Namibia 	26° 36´ S 	18° 08´ O 	GMT+2
+Kenitra, Marokko 	34° 20´ N 	6° 34´ W 	GMT+1
+Key West, Florida (USA) 	24° 33´ N 	81° 48´ W 	EST
+Khamis-Mushait, Saudi-Arabien 	18° 19´ N 	42° 45´ O 	GMT+3
+Khaosiung, Taiwan 	22° 38´ N 	120° 17´ O 	GMT+8
+Khartum, Sudan 	15° 36´ N 	32° 32´ O 	GMT+2
+Kiel, Deutschland 	54° 20´ N 	10° 08´ O 	MEZ
+Kiew, Sowjetunion 	50° 26´ N 	30° 31´ O 	GMT+3
+Kigali, Ruanda 	1° 56´ S 	30° 04´ O 	GMT+2
+Kingston, Jamaika 	18° 00´ N 	76° 48´ W 	GMT-5
+Kingstown, St.vincent 	13° 12´ N 	61° 14´ W 	GMT-4
+Kinshasa, Zaire 	4° 18´ S 	15° 18´ O 	GMT+1
+Kirkuk, Irak 	35° 28´ N 	44° 26´ O 	GMT+3
+Kisangani, Zaire 	0° 33´ N 	25° 14´ O 	GMT+2
+Kisimayu, Somalia 	0° 25´ S 	42° 31´ O 	GMT+3
+Kisumu, Kenia 	0° 08´ S 	34° 47´ O 	GMT+3
+Kitakiushu, Japan 	33° 52´ N 	130° 49´ O 	GMT+9
+Kitchener, Kanada 	43° 27´ N 	80° 30´ W 	GMT-5
+Kitwe, Sambia 	12° 50´ S 	28° 11´ O 	GMT+2
+Klagenfurt, Österreich 	46° 38´ N 	14° 20´ O 	MEZ
+Klausenburg, Rumänien 	46° 47´ N 	23° 37´ O 	GMT+2
+Klosterneuburg, Österreich 	48° 18´ N 	16° 19´ O 	MEZ
+Knoxville, Tennessee (USA) 	35° 58´ N 	83° 55´ W 	EST
+Kobe, Japan 	34° 40´ N 	135° 12´ O 	GMT+9
+Koblenz, Deutschland 	50° 21´ N 	7° 36´ O 	MEZ
+Kolding, Dänemark 	55° 29´ N 	9° 30´ O 	MEZ
+Köln, Deutschland 	50° 56´ N 	6° 57´ O 	MEZ
+Köniz, Schweiz 	46° 56´ N 	7° 25´ O 	MEZ
+Konstanza, Rumänien 	44° 12´ N 	28° 40´ O 	GMT+2
+Kopenhagen, Dänemark 	55° 40´ N 	12° 35´ O 	MEZ
+Kortrijk, Belgien 	50° 50´ N 	3° 17´ O 	MEZ
+Kosice, Tschechoslowakei 	48° 44´ N 	21° 15´ O 	MEZ
+Kota Bharu, Malaysia 	6° 07´ N 	102° 15´ O 	GMT+8
+Kowloon, Hongkong 	22° 20´ N 	114° 15´ O 	GMT+8
+Krakau, Polen 	50° 05´ N 	19° 55´ O 	MEZ
+Krefeld, Deutschland 	51° 20´ N 	6° 34´ O 	MEZ
+Krems, Österreich 	48° 25´ N 	15° 36´ O 	MEZ
+Kristiansand, Norwegen 	58° 08´ N 	8° 01´ O 	MEZ
+Kronstadt, Rumänien 	45° 39´ N 	25° 35´ O 	GMT+2
+Kuala Lumpur, Malaysia 	3° 01´ N 	101° 42´ O 	GMT+8
+Kuala Trengganu, Malaysia 	5° 20´ N 	103° 07´ O 	GMT+8
+Kuibyschew, Sowjetunion 	53° 12´ N 	50° 09´ O 	GMT+4
+Kumasi, Ghana 	6° 45´ N 	1° 35´ W 	GMT
+Kuopio, Finnland 	62° 54´ N 	27° 40´ O 	GMT+2
+Kuwait City, Kuwait 	29° 20´ N 	47° 59´ O 	GMT+3
+Kwangju, Korea 	35° 07´ N 	126° 52´ O 	GMT+9
+Kyoto, Japan 	35° 02´ N 	135° 45´ O 	GMT+9
+La Ceiba, Honduras 	15° 45´ N 	86° 45´ W 	GMT-6
+La Chorrera, Panama 	8° 51´ N 	79° 46´ W 	GMT-5
+La Crosse, Wisconsin (USA) 	43° 48´ N 	91° 15´ W 	CST
+La Paz, Bolivien 	16° 30´ S 	68° 09´ W 	GMT-4
+La Plata, Argentinien 	44° 55´ S 	71° 50´ W 	GMT-3
+La Romana, Dominikan.republik 	18° 27´ N 	68° 57´ W 	GMT-4
+La-Chaux-de-Fonds, Schweiz 	47° 06´ N 	6° 50´ O 	MEZ
+Labe, Guinea 	11° 19´ N 	12° 17´ W 	GMT
+Lae, Papua-Neuguinea 	6° 45´ S 	147° 00´ O 	GMT+1
+Lagos, Nigeria 	6° 26´ N 	3° 32´ O 	GMT+1
+Lahore, Pakistan 	31° 34´ N 	74° 22´ O 	GMT+5
+Lahti, Finnland 	61° 00´ N 	25° 40´ O 	GMT+2
+Lancaster, Pennsylvania (USA) 	40° 02´ N 	76° 18´ W 	EST
+Lansing, Michigan (USA) 	42° 44´ N 	84° 33´ W 	EST
+Laredo, Texas (USA) 	27° 30´ N 	99° 30´ W 	CST
+Larissa, Griechenland 	39° 38´ N 	22° 25´ O 	GMT+2
+Las Cruces, New Mexico (USA) 	32° 19´ N 	106° 47´ W 	MST
+Las Palmas, Kanarische Inseln 	28° 06´ N 	15° 24´ W 	MEZ
+Las Piedras, Uruguay 	34° 42´ S 	56° 14´ W 	GMT-3
+Las Vegas, Nevada (USA) 	36° 10´ N 	115° 09´ W 	PST
+Latakia, Syrien 	35° 31´ N 	35° 47´ O 	GMT+3
+Lausanne, Schweiz 	46° 32´ N 	6° 39´ O 	MEZ
+Lawrence, Kansas (USA) 	38° 58´ N 	95° 14´ W 	CST
+Lawrence, Massachusetts (USA) 	42° 42´ N 	71° 10´ W 	EST
+Le Havre, Frankreich 	49° 30´ N 	0° 06´ O 	MEZ
+Leeds, Grossbritannien 	53° 50´ N 	1° 35´ W 	GMT
+Leipzig, Deutschland 	51° 20´ N 	12° 25´ O 	MEZ
+Leningrad, Sowjetunion 	59° 55´ N 	30° 15´ O 	GMT+3
+Leoben, Österreich 	47° 23´ N 	15° 06´ O 	MEZ
+Leon, Mexiko 	21° 07´ N 	101° 40´ W 	GMT-6
+Leverkusen, Deutschland 	51° 01´ N 	6° 59´ O 	MEZ
+Lewiston, Maine (USA) 	44° 06´ N 	70° 13´ W 	EST
+Lexington, Kentucky (USA) 	38° 03´ N 	84° 30´ W 	EST
+Liberec, Tschechoslowakei 	50° 48´ N 	15° 05´ O 	MEZ
+Libreville, Gabun 	0° 30´ N 	9° 25´ O 	GMT+1
+Lilongwe, Malawi 	13° 58´ S 	33° 49´ O 	GMT+2
+Lima, Peru 	12° 03´ S 	77° 03´ W 	GMT-5
+Limassol, Zypern 	34° 40´ N 	33° 03´ O 	GMT+2
+Limerick, Irland 	52° 40´ N 	8° 38´ W 	GMT
+Limon, Costa Rica 	10° 00´ N 	83° 01´ W 	GMT-6
+Lincoln, Nebraska (USA) 	40° 49´ N 	96° 42´ W 	CST
+Linden, Guyana 	5° 59´ N 	58° 19´ W 	GMT-3
+Linkoeping, Schweden 	58° 25´ N 	15° 35´ O 	MEZ
+Linz, Österreich 	48° 19´ N 	14° 18´ O 	MEZ
+Lissabon, Portugal 	38° 43´ N 	9° 08´ W 	GMT
+Little Rock, Arkansas (USA) 	34° 45´ N 	92° 17´ W 	CST
+Liverpool, Grossbritannien 	53° 23´ N 	3° 00´ W 	GMT
+Ljubljana, Jugoslawien 	46° 04´ N 	14° 30´ O 	MEZ
+Lodsch, Polen 	51° 49´ N 	19° 28´ O 	MEZ
+Lome, Togo 	6° 08´ N 	1° 13´ O 	GMT
+London, Grossbritannien 	51° 31´ N 	0° 05´ W 	GMT
+Long Beach, California (USA) 	33° 46´ N 	118° 11´ W 	PST
+Los Angeles, California (USA) 	34° 03´ N 	118° 14´ W 	PST
+Louisville, Kentucky (USA) 	38° 15´ N 	85° 46´ W 	EST
+Lowell, Massachusetts (USA) 	42° 38´ N 	71° 19´ W 	EST
+Luanda, Angola 	8° 50´ S 	13° 15´ O 	GMT+1
+Luang Prabang, Laos 	19° 53´ N 	102° 10´ O 	GMT+7
+Lubango, Angola 	14° 55´ S 	13° 30´ O 	GMT+1
+Lubbock, Texas (USA) 	33° 35´ N 	101° 51´ W 	CST
+Lübeck, Deutschland 	53° 52´ N 	10° 42´ O 	MEZ
+Lublin, Polen 	51° 18´ N 	22° 31´ O 	MEZ
+Lubumbashi, Zaire 	11° 41´ S 	27° 29´ O 	GMT+2
+Ludwigshafen, Deutschland 	49° 29´ N 	8° 27´ O 	MEZ
+Lusaka, Sambia 	15° 25´ S 	28° 17´ O 	GMT+2
+Luettich, Belgien 	50° 38´ N 	5° 35´ O 	MEZ
+Luxemburg, Luxemburg 	49° 36´ N 	6° 07´ O 	MEZ
+Luzern, Schweiz 	47° 02´ N 	7° 55´ O 	MEZ
+Lynchburg, Virginia (USA) 	37° 25´ N 	79° 09´ W 	EST
+Lyon, Frankreich 	45° 45´ N 	4° 51´ O 	MEZ
+Maastricht, Belgien 	50° 51´ N 	5° 42´ O 	MEZ
+Macao, Macao 	22° 12´ N 	113° 32´ O 	GMT+8
+Machala, Ecuador 	3° 20´ S 	79° 57´ W 	GMT-5
+Machaze, Mosambik 	20° 51´ S 	33° 26´ O 	GMT+2
+Macon, Georgia (USA) 	32° 50´ N 	83° 38´ W 	EST
+Madison, Wisconsin (USA) 	43° 04´ N 	89° 23´ W 	CST
+Madras, Indien 	13° 05´ N 	80° 17´ O 	GMT+5
+Madrid, Spanien 	40° 24´ N 	3° 41´ W 	MEZ
+Magdeburg, Deutschland 	52° 08´ N 	11° 37´ O 	MEZ
+Mailand, Italien 	45° 28´ N 	9° 12´ O 	MEZ
+Mainz, Deutschland 	50° 00´ N 	8° 15´ O 	MEZ
+Majunga, Madagaskar 	15° 40´ S 	46° 20´ O 	GMT+3
+Malabo, Äquatorialguinea 	3° 45´ N 	8° 48´ O 	GMT+1
+Malaga, Spanien 	36° 43´ N 	4° 25´ W 	MEZ
+Malang, Indonesien 	7° 59´ S 	112° 45´ O 	GMT+7
+Malden Bridge, New York (USA) 	42° 28´ N 	73° 38´ W 	EST
+Male, Malediven 	4° 00´ N 	73° 28´ O 	GMT+5
+Malmö, Schweden 	55° 36´ N 	13° 00´ O 	MEZ
+Managua, Nicaragua 	12° 09´ N 	86° 17´ W 	GMT-6
+Manama, Bahrain 	26° 12´ N 	50° 38´ O 	GMT+3
+Manaus, Brasilien 	3° 08´ S 	60° 01´ W 	GMT-3
+Manchester, Grossbritannien 	53° 28´ N 	2° 14´ W 	GMT
+Manchester, New Hampshire (USA) 	42° 59´ N 	71° 28´ W 	EST
+Mandalay, Myanmar 	21° 57´ N 	96° 04´ O 	GMT+6
+Manila, Philippinen 	14° 36´ N 	120° 59´ O 	GMT+8
+Manizales, Kolumbien 	5° 03´ N 	75° 32´ W 	GMT-5
+Mannheim, Deutschland 	49° 29´ N 	8° 28´ O 	MEZ
+Manta, Ecuador 	0° 59´ S 	80° 44´ W 	GMT-5
+Maputo, Mosambik 	25° 58´ S 	32° 35´ O 	GMT+2
+Mar Del Plata, Argentinien 	38° 00´ S 	57° 33´ W 	GMT-3
+Maracaibo, Venezuela 	10° 40´ N 	71° 37´ W 	GMT-4
+Maracay, Venezuela 	10° 15´ N 	67° 36´ W 	GMT-4
+Maradi, Niger 	13° 29´ N 	7° 10´ O 	GMT+1
+Maroua, Kamerun 	10° 35´ N 	14° 20´ O 	GMT+1
+Marrakesch, Marokko 	31° 49´ N 	8° 00´ W 	GMT+1
+Marseille, Frankreich 	43° 18´ N 	5° 24´ O 	MEZ
+Maseru, Lesotho 	29° 19´ S 	27° 29´ O 	GMT+2
+Mashhad, Iran 	36° 41´ N 	52° 39´ O 	GMT+3
+Maskat, Oman 	23° 37´ N 	58° 38´ O 	GMT+4
+Mazar-i-Sharif, Afghanistan 	36° 42´ N 	67° 06´ O 	GMT+4
+Mbabane, Swasiland 	26° 20´ S 	31° 08´ O 	GMT+2
+Mbale, Uganda 	1° 04´ N 	34° 12´ O 	GMT+3
+Mbuji-Mayi, Zaire 	6° 10´ S 	23° 39´ O 	GMT+2
+Mechelen, Belgien 	51° 02´ N 	4° 29´ O 	MEZ
+Medan, Indonesien 	3° 35´ N 	98° 39´ O 	GMT+7
+Medellin, Kolumbien 	6° 15´ N 	74° 35´ W 	GMT-5
+Medina, Saudi-Arabien 	24° 30´ N 	39° 35´ O 	GMT+3
+Mekka, Saudi-Arabien 	21° 27´ N 	39° 49´ O 	GMT+3
+Meknes, Marokko 	33° 53´ N 	5° 37´ W 	GMT+1
+Melbourne, Australien 	37° 50´ S 	145° 00´ O 	GMT+1
+Melbourne, Florida (USA) 	28° 05´ N 	80° 36´ W 	EST
+Memphis, Tennessee (USA) 	35° 09´ N 	90° 03´ W 	CST
+Mendoza, Argentinien 	32° 53´ S 	68° 49´ W 	GMT-3
+Merida, Mexiko 	20° 58´ N 	89° 37´ W 	GMT-6
+Meridian, Mississippi (USA) 	32° 22´ N 	88° 42´ W 	CST
+Mexicali, Mexiko 	32° 36´ N 	115° 30´ W 	GMT-8
+Mexico City, Mexiko 	19° 24´ N 	99° 09´ W 	GMT-6
+Miami, Florida (USA) 	25° 47´ N 	80° 12´ W 	EST
+Middletown, Ohio (USA) 	39° 31´ N 	84° 24´ W 	EST
+Midland, Texas (USA) 	32° 00´ N 	102° 05´ W 	CST
+Milwaukee, Wisconsin (USA) 	43° 02´ N 	87° 54´ W 	CST
+Mindelo, Kapverden 	16° 54´ N 	25° 00´ W 	GMT-1
+Minneapolis, Minnesota (USA) 	44° 59´ N 	93° 16´ W 	CST
+Minsk, Sowjetunion 	53° 54´ N 	27° 34´ O 	GMT+3
+Miskolc, Ungarn 	48° 07´ N 	20° 47´ O 	MEZ
+Mobile, Alabama (USA) 	30° 42´ N 	88° 03´ W 	CST
+Moers, Deutschland 	51° 27´ N 	6° 39´ O 	MEZ
+Mogadischu, Somalia 	2° 02´ N 	45° 21´ O 	GMT+3
+Mombasa, Kenia 	4° 04´ S 	39° 40´ O 	GMT+3
+Monaco, Monaco 	43° 44´ N 	7° 25´ O 	MEZ
+Mönchengladbach, Deutschland 	51° 12´ N 	6° 26´ O 	MEZ
+Monroe, Louisiana (USA) 	32° 30´ N 	92° 07´ W 	CST
+Monrovia, Liberia 	6° 20´ N 	10° 46´ W 	GMT
+Mons, Belgien 	50° 28´ N 	3° 58´ O 	MEZ
+Monte Carlo, Monaco 	43° 44´ N 	7° 25´ O 	MEZ
+Montego Bay, Jamaika 	18° 27´ N 	77° 56´ W 	GMT-5
+Monterrey, Mexiko 	25° 40´ N 	100° 19´ W 	GMT-6
+Montevideo, Uruguay 	34° 53´ S 	56° 11´ W 	GMT-3
+Montgomery, Alabama (USA) 	32° 23´ N 	86° 19´ W 	CST
+Montpellier, Frankreich 	43° 36´ N 	3° 53´ O 	MEZ
+Montreal, Kanada 	45° 30´ N 	73° 35´ W 	GMT-5
+Mopti, Mali 	14° 29´ N 	4° 10´ W 	GMT
+Moratuwa, Sri Lanka 	6° 47´ N 	79° 53´ O 	GMT+5
+Moroni, Komoren 	11° 40´ S 	43° 16´ O 	GMT+3
+Moskau, Sowjetunion 	55° 45´ N 	37° 35´ O 	GMT+3
+Mossul, Irak 	36° 21´ N 	43° 08´ O 	GMT+3
+Moulmein, Myanmar 	16° 30´ N 	97° 39´ O 	GMT+6
+Mount Vernon, New York (USA) 	40° 55´ N 	73° 49´ W 	EST
+Mukalla, Jemen 	14° 34´ N 	49° 07´ O 	GMT+3
+Mülheim, Deutschland 	51° 26´ N 	6° 53´ O 	MEZ
+Multan, Pakistan 	30° 10´ N 	71° 36´ O 	GMT+5
+München, Deutschland 	48° 09´ N 	11° 35´ O 	MEZ
+Muncie, Indiana (USA) 	40° 11´ N 	85° 23´ W 	CST
+Münster, Deutschland 	51° 58´ N 	7° 38´ O 	MEZ
+Mwanza, Tansania 	2° 31´ S 	32° 56´ O 	GMT+3
+N'djamena, Tschad 	12° 10´ N 	14° 59´ O 	GMT+1
+Nacala, Mosambik 	14° 33´ S 	40° 40´ O 	GMT+2
+Nagasaki, Japan 	32° 48´ N 	129° 55´ O 	GMT+9
+Nagoya, Japan 	35° 08´ N 	136° 53´ O 	GMT+9
+Nagpur, Indien 	21° 10´ N 	79° 12´ O 	GMT+5
+Nairobi, Kenia 	1° 17´ S 	36° 49´ O 	GMT+3
+Najaf, Irak 	31° 59´ N 	44° 19´ O 	GMT+3
+Nakhon Rathisama, Thailand 	15° 00´ N 	102° 06´ O 	GMT+7
+Nakhon Si Thammarat, Thailand 	8° 24´ N 	99° 58´ O 	GMT+7
+Nakuru, Kenia 	0° 16´ S 	36° 04´ O 	GMT+3
+Namur, Belgien 	50° 28´ N 	4° 52´ O 	MEZ
+Nanjing, China 	32° 03´ N 	118° 47´ O 	GMT+8
+Nantes, Frankreich 	47° 13´ N 	1° 33´ W 	MEZ
+Nashua, New Hampshire (USA) 	42° 45´ N 	71° 28´ W 	EST
+Nashville, Tennessee (USA) 	36° 10´ N 	86° 47´ W 	CST
+Nassau, Bahamas 	25° 05´ N 	77° 21´ W 	GMT-5
+Natchez, Mississippi (USA) 	31° 34´ N 	91° 23´ W 	CST
+Natitingou, Benin 	10° 17´ N 	1° 29´ O 	GMT+1
+Ndola, Sambia 	13° 00´ S 	28° 39´ O 	GMT+2
+Neapel, Italien 	40° 50´ N 	14° 15´ O 	MEZ
+Nee Soon, Singapur 	1° 24´ N 	103° 49´ O 	GMT+7
+Neu-Delhi, Indien 	28° 36´ N 	77° 12´ O 	GMT+5
+Neuchatel, Schweiz 	46° 59´ N 	6° 56´ O 	MEZ
+Neuss, Deutschland 	51° 12´ N 	6° 42´ O 	MEZ
+New Bedford, Massachusetts (USA) 	41° 38´ N 	70° 56´ W 	EST
+New Haven, Connecticut (USA) 	41° 18´ N 	72° 55´ W 	EST
+New Orleans, Louisiana (USA) 	29° 57´ N 	90° 04´ W 	CST
+New York, New York (USA) 	40° 45´ N 	74° 00´ W 	EST
+Newark, New Jersey (USA) 	40° 44´ N 	74° 10´ W 	EST
+Newcastle, Australien 	32° 55´ S 	151° 45´ O 	GMT+1
+Newport News, Virginia (USA) 	36° 59´ N 	76° 25´ W 	EST
+Newport, Rhode Island (USA) 	41° 29´ N 	71° 19´ W 	EST
+Nha Trang, Vietnam 	12° 15´ N 	109° 10´ O 	GMT+7
+Niagara Falls, New York (USA) 	43° 06´ N 	79° 03´ W 	EST
+Niamey, Niger 	13° 32´ N 	2° 05´ O 	GMT+1
+Nice, Frankreich 	43° 42´ N 	7° 15´ O 	MEZ
+Nijmegen, Niederlande 	51° 50´ N 	5° 52´ O 	MEZ
+Nikosia, Zypern 	35° 11´ N 	33° 23´ O 	GMT+2
+Nisch, Jugoslawien 	43° 20´ N 	21° 54´ O 	MEZ
+Nordpol 	89° 59´ N 	00° 00´ W 	GMT
+Norfolk, Virginia (USA) 	36° 51´ N 	76° 17´ W 	EST
+Norrkoeping, Schweden 	58° 35´ N 	16° 10´ O 	MEZ
+Norwich, Connecticut (USA) 	41° 31´ N 	72° 05´ W 	EST
+Nouadhibou, Mauretanien 	20° 54´ N 	17° 01´ W 	GMT
+Nouakchott, Mauretanien 	18° 09´ N 	15° 58´ W 	GMT
+Nova Iguacu, Brasilien 	22° 45´ S 	43° 28´ W 	GMT-3
+Novi Sad, Jugoslawien 	45° 15´ N 	19° 51´ O 	MEZ
+Novosibirsk, Sowjetunion 	55° 02´ N 	82° 55´ O 	GMT+7
+Nuku'alofa, Tonga 	21° 09´ S 	175° 14´ W 	GMT+1
+Nürnberg, Deutschland 	49° 27´ N 	11° 05´ O 	MEZ
+Nzerekore, Guinea 	7° 45´ N 	8° 49´ W 	GMT
+Oakland, California (USA) 	37° 48´ N 	122° 16´ W 	PST
+Oberhausen, Deutschland 	51° 28´ N 	6° 51´ O 	MEZ
+Odense, Dänemark 	55° 24´ N 	10° 25´ O 	MEZ
+Odessa, Sowjetunion 	46° 28´ N 	30° 44´ O 	GMT+3
+Odessa, Texas (USA) 	31° 51´ N 	102° 22´ W 	CST
+Offenbach, Deutschland 	50° 06´ N 	8° 46´ O 	MEZ
+Ogbomosho, Nigeria 	8° 05´ N 	4° 11´ O 	GMT+1
+Ogden, Utah (USA) 	41° 14´ N 	111° 58´ W 	MST
+Oklahoma City, Oklahoma (USA) 	35° 28´ N 	97° 31´ W 	CST
+Oldenburg, Deutschland 	53° 10´ N 	8° 12´ O 	MEZ
+Olomouc, Tschechoslowakei 	49° 38´ N 	17° 15´ O 	MEZ
+Omaha, Nebraska (USA) 	41° 16´ N 	95° 56´ W 	CST
+Omdurman, Sudan 	15° 37´ N 	32° 29´ O 	GMT+2
+Omsk, Sowjetunion 	55° 00´ N 	73° 24´ O 	GMT+7
+Oostende, Belgien 	51° 13´ N 	2° 55´ O 	MEZ
+Oran, Algerien 	35° 45´ N 	0° 38´ W 	GMT+1
+Orange Walk, Belize 	18° 06´ N 	88° 31´ W 	GMT-6
+Oranjestad, Niederländische Antillen 	12° 32´ N 	70° 02´ W 	GMT-4
+Oerebro, Schweden 	59° 18´ N 	15° 05´ O 	MEZ
+Orlando, Florida (USA) 	28° 33´ N 	81° 23´ W 	EST
+Oruro, Bolivien 	17° 59´ S 	67° 08´ W 	GMT-4
+Osaka, Japan 	34° 40´ N 	135° 30´ O 	GMT+9
+Oshkosh, Wisconsin (USA) 	44° 01´ N 	88° 33´ W 	CST
+Osijek, Jugoslawien 	45° 33´ N 	18° 41´ O 	MEZ
+Oslo, Norwegen 	59° 55´ N 	10° 44´ O 	MEZ
+Osnabrück, Deutschland 	52° 16´ N 	8° 03´ O 	MEZ
+Ostrava, Tschechoslowakei 	49° 50´ N 	18° 15´ O 	MEZ
+Ottawa, Kanada 	45° 25´ N 	75° 42´ W 	GMT-5
+Ouagadougou, Burkina Faso 	12° 22´ N 	1° 31´ W 	GMT
+Oujda, Marokko 	34° 41´ N 	1° 45´ W 	GMT+1
+Oulu, Finnland 	65° 00´ N 	25° 26´ O 	GMT+2
+Owensboro, Kentucky (USA) 	37° 46´ N 	87° 07´ W 	CST
+Oxford, Grossbritannien 	51° 45´ N 	1° 15´ W 	GMT
+Padang, Indonesien 	6° 12´ S 	120° 27´ O 	GMT+7
+Paderborn, Deutschland 	51° 43´ N 	8° 46´ O 	MEZ
+Pakse, Laos 	14° 09´ N 	105° 50´ O 	GMT+7
+Palembang, Indonesien 	2° 59´ S 	104° 45´ O 	GMT+7
+Palermo, Italien 	38° 07´ N 	13° 22´ O 	MEZ
+Palm Springs, California (USA) 	33° 50´ N 	116° 33´ W 	PST
+Palma De Mallorca, Spanien 	39° 35´ N 	2° 39´ O 	MEZ
+Panama City, Panama 	8° 57´ N 	79° 32´ W 	GMT-5
+Panchiao, Taiwan 	25° 01´ N 	121° 27´ O 	GMT+8
+Papeete, Tahiti 	17° 32´ S 	149° 34´ W 	GMT-1
+Paramaribo, Surinam 	5° 50´ N 	55° 13´ W 	GMT-3
+Paris, Frankreich 	48° 52´ N 	2° 20´ O 	MEZ
+Pasadena, California (USA) 	34° 09´ N 	118° 09´ W 	PST
+Pasay, Philippinen 	14° 33´ N 	121° 00´ O 	GMT+8
+Paterson, New Jersey (USA) 	40° 55´ N 	74° 10´ W 	EST
+Patras, Griechenland 	38° 14´ N 	21° 44´ O 	GMT+2
+Pau, Frankreich 	43° 18´ N 	0° 22´ W 	MEZ
+Paysandu, Uruguay 	32° 21´ S 	58° 05´ W 	GMT-3
+Pecs, Ungarn 	46° 04´ N 	18° 15´ O 	MEZ
+Pedro Juan Caballero, Paraguay 	22° 30´ S 	55° 44´ W 	GMT-4
+Pensacola, Florida (USA) 	30° 25´ N 	87° 13´ W 	CST
+Peoria, Illinois (USA) 	40° 42´ N 	89° 36´ W 	CST
+Pereira, Kolumbien 	4° 47´ N 	75° 46´ W 	GMT-5
+Perm, Sowjetunion 	58° 00´ N 	56° 15´ O 	GMT+5
+Perth, Australien 	31° 56´ S 	115° 50´ O 	GMT+8
+Petach Tikwa, Israel 	31° 52´ N 	34° 55´ O 	GMT+2
+Petersburg, Virginia (USA) 	37° 14´ N 	77° 24´ W 	EST
+Petingen, Luxemburg 	49° 33´ N 	5° 53´ O 	MEZ
+Pforzheim, Deutschland 	48° 53´ N 	8° 42´ O 	MEZ
+Philadelphia, Pennsylvania (USA) 	39° 57´ N 	75° 09´ W 	EST
+Phnom Penh, Kambodscha 	11° 33´ N 	104° 55´ O 	GMT+7
+Phoenix, Arizona (USA) 	33° 27´ N 	112° 04´ W 	MST
+Pinang, Malaysia 	5° 30´ N 	100° 28´ O 	GMT+8
+Pine Bluff, Arkansas (USA) 	34° 13´ N 	92° 01´ W 	CST
+Piräus, Griechenland 	37° 57´ N 	23° 42´ O 	GMT+2
+Pittsburgh, Pennsylvania (USA) 	40° 26´ N 	80° 00´ W 	EST
+Pittsfield, Massachusetts (USA) 	42° 27´ N 	73° 15´ W 	EST
+Piura, Peru 	5° 15´ S 	80° 38´ W 	GMT-5
+Plovdiv, Bulgarien 	42° 08´ N 	24° 45´ O 	GMT+2
+Plymouth, Grossbritannien 	50° 23´ N 	4° 06´ W 	GMT
+Plzen, Tschechoslowakei 	49° 45´ N 	13° 25´ O 	MEZ
+Pocatello, Idaho (USA) 	42° 52´ N 	112° 27´ W 	MST
+Pointe-Noire, Kongo 	4° 46´ S 	11° 53´ O 	GMT+1
+Poona, Indien 	18° 34´ N 	73° 58´ O 	GMT+5
+Pori, Finnland 	61° 28´ N 	21° 45´ O 	GMT+2
+Port Arthur, Texas (USA) 	29° 54´ N 	93° 56´ W 	CST
+Port Elizabeth, Südafrika 	33° 58´ S 	25° 36´ O 	GMT+2
+Port Louis, Mauritius 	20° 10´ S 	57° 30´ O 	GMT+4
+Port Moresby, Papua-Neuguinea 	9° 29´ S 	147° 08´ O 	GMT+1
+Port Of Spain, Trinidad & Tobago 	10° 39´ N 	61° 31´ W 	GMT-4
+Port Said, Ägypten 	31° 17´ N 	32° 18´ O 	GMT+2
+Port Sudan, Sudan 	19° 38´ N 	37° 07´ O 	GMT+2
+Port Vila, Vanuatu 	17° 45´ S 	168° 18´ O 	GMT+1
+Port-au-Prince, Haiti 	18° 32´ N 	72° 20´ W 	GMT-5
+Port-Gentil, Gabun 	0° 40´ S 	8° 50´ O 	GMT+1
+Portland, Maine (USA) 	43° 40´ N 	70° 15´ W 	EST
+Portland, Oregon (USA) 	45° 31´ N 	122° 41´ W 	PST
+Porto Alegre, Brasilien 	8° 58´ S 	67° 48´ W 	GMT-3
+Porto Novo, Benin 	6° 30´ N 	2° 47´ O 	GMT+1
+Porto, Portugal 	41° 09´ N 	8° 37´ W 	GMT
+Portoviejo, Ecuador 	1° 07´ S 	80° 28´ W 	GMT-5
+Portsmouth, Dominica 	15° 34´ N 	61° 27´ W 	GMT-4
+Posen, Polen 	52° 25´ N 	16° 53´ O 	MEZ
+Potosi, Bolivien 	19° 35´ S 	65° 45´ W 	GMT-4
+Potsdam, Deutschland 	52° 24´ N 	13° 04´ O 	MEZ
+Poughkeepsie, New York (USA) 	41° 42´ N 	73° 56´ W 	EST
+Praha, Tschechoslowakei 	50° 04´ N 	14° 27´ O 	MEZ
+Praia, Kapverden 	14° 55´ N 	23° 30´ W 	GMT-1
+Pretoria, Südafrika 	25° 45´ S 	28° 12´ O 	GMT+2
+Providence, Rhode Island (USA) 	41° 50´ N 	71° 25´ W 	EST
+Provo, Utah (USA) 	40° 14´ N 	111° 39´ W 	MST
+Puebla De Zaragoza, Mexiko 	28° 31´ N 	100° 54´ W 	GMT-6
+Puebla, Mexiko 	19° 03´ N 	98° 12´ W 	GMT-6
+Pueblo, Colorado (USA) 	38° 16´ N 	104° 37´ W 	MST
+Puerto Barrios, Guatemala 	15° 41´ N 	88° 32´ W 	GMT-6
+Puerto Plata, Dominikan.republik 	19° 48´ N 	70° 41´ W 	GMT-4
+Puerto Stroessner, Paraguay 	25° 32´ S 	54° 34´ W 	GMT-4
+Puntarenas, Costa Rica 	10° 00´ N 	84° 50´ W 	GMT-6
+Pusan, Korea 	35° 06´ N 	129° 03´ O 	GMT+9
+Pyoengyang, Nordkorea 	39° 01´ N 	125° 45´ O 	GMT+9
+Pyuthan, Nepal 	28° 05´ N 	82° 53´ O 	GMT+5
+Quebec, Kanada 	46° 49´ N 	71° 13´ W 	GMT-5
+Quezaltenango, Guatemala 	14° 50´ N 	91° 30´ W 	GMT-6
+Quezon City, Philippinen 	14° 39´ N 	121° 02´ O 	GMT+8
+Qui Nhon, Vietnam 	13° 47´ N 	109° 11´ O 	GMT+7
+Quito, Ecuador 	0° 13´ S 	78° 30´ W 	GMT-5
+Rabat, Marokko 	34° 02´ N 	6° 51´ W 	GMT+1
+Rabaul, Papua-Neuguinea 	4° 13´ S 	152° 11´ O 	GMT+1
+Raleigh, North Carolina (USA) 	35° 47´ N 	78° 38´ W 	EST
+Ramat Gan, Israel 	32° 04´ N 	34° 48´ O 	GMT+2
+Rancagua, Chile 	34° 10´ S 	70° 45´ W 	GMT-4
+Randers, Dänemark 	56° 28´ N 	10° 03´ O 	MEZ
+Rangoon, Myanmar 	16° 47´ N 	96° 10´ O 	GMT+6
+Rapid City, South Dakota (USA) 	44° 05´ N 	103° 14´ W 	MST
+Raqqa, Syrien 	35° 57´ N 	39° 03´ O 	GMT+3
+Rawalpindi, Pakistan 	33° 40´ N 	73° 08´ O 	GMT+5
+Recife, Brasilien 	8° 06´ S 	34° 53´ W 	GMT-3
+Recklinghausen, Deutschland 	51° 37´ N 	7° 12´ O 	MEZ
+Regensburg, Deutschland 	49° 01´ N 	12° 06´ O 	MEZ
+Regina, Kanada 	50° 25´ N 	104° 39´ W 	CST
+Remich, Luxemburg 	49° 33´ N 	6° 23´ O 	MEZ
+Remscheid, Deutschland 	51° 11´ N 	7° 12´ O 	MEZ
+Reno, Nevada (USA) 	39° 31´ N 	119° 49´ W 	PST
+Reykjavik, Island 	64° 09´ N 	21° 57´ W 	GMT
+Riad, Saudi-Arabien 	24° 38´ N 	46° 43´ O 	GMT+3
+Richmond, Virginia (USA) 	37° 32´ N 	77° 26´ W 	EST
+Riga, Sowjetunion 	56° 57´ N 	24° 06´ O 	GMT+2
+Rio De Janeiro, Brasilien 	22° 54´ S 	43° 14´ W 	GMT-3
+Rivera, Uruguay 	31° 00´ S 	55° 50´ W 	GMT-3
+Riverside, California (USA) 	33° 59´ N 	117° 22´ W 	PST
+Roanoke, Virginia (USA) 	37° 16´ N 	79° 57´ W 	EST
+Rochester, Minnesota (USA) 	44° 01´ N 	92° 28´ W 	CST
+Rochester, New York (USA) 	43° 10´ N 	77° 36´ W 	EST
+Rock Island, Illinois (USA) 	41° 29´ N 	90° 34´ W 	CST
+Rockford, Illinois (USA) 	42° 17´ N 	89° 06´ W 	CST
+Rom, Italien 	41° 54´ N 	12° 29´ O 	MEZ
+Roodepoort, Südafrika 	26° 10´ S 	27° 53´ O 	GMT+2
+Rosario, Argentinien 	32° 57´ S 	60° 40´ W 	GMT-3
+Roseau, Dominica 	15° 18´ N 	61° 23´ W 	GMT-4
+Roskilde, Dänemark 	55° 39´ N 	12° 07´ O 	MEZ
+Rostock, Deutschland 	54° 05´ N 	12° 08´ O 	MEZ
+Rostow, Sowjetunion 	47° 14´ N 	39° 42´ O 	GMT+3
+Rotterdam, Niederlande 	51° 55´ N 	4° 29´ O 	MEZ
+Ruse, Bulgarien 	43° 50´ N 	27° 59´ O 	GMT+2
+Saarbrücken, Deutschland 	49° 14´ N 	7° 00´ O 	MEZ
+Sacramento, California (USA) 	38° 35´ N 	121° 30´ W 	PST
+Safi, Marokko 	32° 18´ N 	9° 20´ W 	GMT+1
+Saginaw, Michigan (USA) 	43° 26´ N 	83° 56´ W 	CST
+Saint Augustine, Florida (USA) 	29° 53´ N 	81° 19´ W 	EST
+Saint Catharine's, Kanada 	43° 10´ N 	79° 15´ W 	EST
+Saint John's, Kanada 	47° 33´ N 	52° 43´ W 	GMT-4
+Saint Joseph, Missouri (USA) 	39° 46´ N 	94° 51´ W 	CST
+Saint Louis, Missouri (USA) 	38° 38´ N 	90° 12´ W 	CST
+Saint Paul, Minnesota (USA) 	44° 57´ N 	93° 06´ W 	CST
+Saint Petersburg, Florida (USA) 	27° 46´ N 	82° 38´ W 	EST
+Saint-Etienne, Frankreich 	45° 26´ N 	4° 23´ O 	MEZ
+Saint-Louis, Senegal 	16° 01´ N 	16° 30´ W 	GMT
+Salem, Massachusetts (USA) 	42° 31´ N 	70° 53´ W 	EST
+Salem, Oregon (USA) 	44° 56´ N 	123° 02´ W 	PST
+Salinas, California (USA) 	36° 40´ N 	121° 39´ W 	PST
+Saliyan, Nepal 	28° 21´ N 	82° 11´ O 	GMT+5
+Salt Lake City, Utah 	40° 45´ N 	111° 53´ W 	MST
+Salta, Argentinien 	24° 47´ S 	65° 25´ W 	GMT-3
+Salto, Uruguay 	31° 27´ S 	57° 50´ W 	GMT-3
+Salvador, Brasilien 	12° 59´ S 	38° 31´ W 	GMT-3
+Salzburg, Österreich 	47° 48´ N 	13° 03´ O 	MEZ
+Salzgitter, Deutschland 	52° 05´ N 	10° 20´ O 	MEZ
+San Antonio, Texas (USA) 	29° 26´ N 	98° 29´ W 	CST
+San Bernardino, California (USA) 	34° 06´ N 	117° 17´ W 	PST
+San Cristobal, Venezuela 	7° 46´ N 	72° 15´ W 	GMT-4
+San Diego, California (USA) 	32° 43´ N 	117° 09´ W 	PST
+San Francisco, California (USA) 	37° 47´ N 	122° 25´ W 	PST
+San Jose, California (USA) 	37° 20´ N 	121° 53´ W 	PST
+San Jose, Costa Rica 	9° 56´ N 	84° 05´ W 	GMT-6
+San Juan, Argentinien 	31° 32´ S 	68° 31´ W 	GMT-3
+San Juan, Dominikan.republik 	18° 49´ N 	71° 12´ W 	GMT-4
+San Juan, Puerto Rico 	18° 28´ N 	66° 07´ W 	GMT-5
+San Lorenzo, Paraguay 	25° 20´ S 	57° 32´ W 	GMT-4
+San Luis Potosi, Mexiko 	22° 09´ N 	100° 59´ W 	GMT-6
+San Marino, San Marino 	43° 55´ N 	12° 28´ O 	MEZ
+San Miguel de Tucuman, Argentini 	26° 47´ S 	65° 15´ W 	GMT-3
+San Miguel, El Salvador 	13° 28´ N 	88° 10´ W 	GMT-6
+San Pedro Sula, Honduras 	15° 26´ N 	88° 01´ W 	GMT-6
+San Salvador, El Salvador 	13° 42´ N 	89° 12´ W 	GMT-6
+Sana, Jemen 	15° 23´ N 	44° 12´ O 	GMT+3
+Sankt Poelten, Österreich 	48° 13´ N 	15° 37´ O 	MEZ
+Sansibar, Tansania 	6° 12´ S 	39° 12´ O 	GMT+3
+Santa Ana, El Salvador 	14° 00´ N 	89° 31´ W 	GMT-6
+Santa Barbara, California (USA) 	34° 25´ N 	119° 42´ W 	PST
+Santa Clara, Kuba 	22° 25´ N 	79° 58´ W 	GMT-5
+Santa Cruz, Bolivien 	17° 48´ S 	63° 10´ W 	GMT-4
+Santa Fe, Argentinien 	31° 35´ S 	60° 41´ W 	GMT-3
+Santa Fe, New Mexico (USA) 	35° 41´ N 	105° 56´ W 	MST
+Santa Rosa, California (USA) 	38° 26´ N 	122° 43´ W 	PST
+Santiago De Chile, Chile 	33° 27´ S 	70° 40´ W 	GMT-4
+Santiago De Cuba, Kuba 	20° 00´ N 	75° 49´ W 	GMT-5
+Santiago, Dominikan.republik 	19° 30´ N 	70° 40´ W 	GMT-4
+Santiago, Panama 	8° 08´ N 	80° 59´ W 	GMT-5
+Santo Domingo, Dominikan.republic 	18° 28´ N 	69° 54´ W 	GMT-4
+Sao Paulo, Brasilien 	23° 32´ S 	46° 37´ W 	GMT-3
+Sao Tome, Sao Tome Und Principe 	0° 12´ N 	6° 43´ O 	GMT
+Sapporo, Japan 	43° 03´ N 	141° 21´ O 	GMT+9
+Sarajewo, Jugoslawien 	43° 50´ N 	18° 25´ O 	MEZ
+Sarh, Tschad 	9° 08´ N 	18° 22´ O 	GMT+1
+Savannah, Georgia (USA) 	32° 05´ N 	81° 06´ W 	EST
+Savannakhet, Laos 	16° 34´ N 	104° 45´ O 	GMT+7
+Schaffhausen, Schweiz 	47° 40´ N 	8° 40´ O 	MEZ
+Schenectady, New York (USA) 	42° 49´ N 	73° 57´ W 	EST
+Schwerin, Deutschland 	53° 38´ N 	11° 23´ O 	MEZ
+Scranton, Pennsylvania (USA) 	41° 25´ N 	75° 40´ W 	EST
+Seattle, Washington (USA) 	47° 37´ N 	122° 20´ W 	PST
+Segou, Mali 	13° 28´ N 	6° 18´ W 	GMT
+Semarang, Indonesien 	6° 58´ S 	110° 29´ O 	GMT+7
+Seoul, Korea 	37° 34´ N 	127° 00´ O 	GMT+9
+Serangoon, Singapur 	1° 23´ N 	103° 55´ O 	GMT+7
+Serka, Jordanien 	32° 04´ N 	36° 06´ O 	GMT+2
+Serres, Griechenland 	41° 05´ N 	23° 31´ O 	GMT+2
+Setif, Algerien 	36° 11´ N 	5° 24´ O 	GMT+1
+Setubal, Portugal 	38° 31´ N 	8° 54´ W 	GMT
+Sevilla, Spanien 	37° 23´ N 	5° 59´ W 	MEZ
+Sfax, Tunesien 	34° 45´ N 	10° 43´ O 	GMT+1
+Shanghai, China 	31° 14´ N 	121° 28´ O 	GMT+8
+Sharjah, Vereinigte Arabische Emiratete 	25° 20´ N 	55° 26´ O 	GMT+4
+Sheffield, Grossbritannien 	53° 23´ N 	1° 30´ W 	GMT
+Shenyang, China 	41° 50´ N 	123° 26´ O 	GMT+8
+Shiraz, Iran 	29° 38´ N 	52° 34´ O 	GMT+3
+Shkoder, Albanien 	42° 03´ N 	19° 01´ O 	MEZ
+Shreveport, Louisiana (USA) 	32° 31´ N 	93° 45´ W 	CST
+Shubra Al-khaima, Ägypten 	30° 06´ N 	31° 15´ O 	GMT+2
+Sidi-Bel-Abbes, Algerien 	35° 15´ N 	0° 39´ W 	GMT+1
+Siegen, Deutschland 	50° 52´ N 	8° 02´ O 	MEZ
+Siguiri, Guinea 	11° 28´ N 	9° 07´ W 	GMT
+Sikasso, Mali 	11° 18´ N 	5° 38´ W 	GMT
+Singapur, Singapur 	1° 17´ N 	103° 51´ O 	GMT+7
+Sioux City, Iowa (USA) 	42° 30´ N 	96° 24´ W 	CST
+Sioux Falls, South Dakota (USA) 	43° 33´ N 	96° 44´ W 	CST
+Skopje, Jugoslawien 	42° 00´ N 	21° 29´ O 	MEZ
+Sliema, Malta 	35° 55´ N 	14° 31´ O 	MEZ
+Sofia, Bulgarien 	42° 41´ N 	23° 19´ O 	GMT+2
+Solingen, Deutschland 	51° 11´ N 	7° 05´ O 	MEZ
+Songkhla, Thailand 	7° 12´ N 	100° 35´ O 	GMT+7
+Sosnowitz, Polen 	50° 16´ N 	19° 07´ O 	MEZ
+South Bend, Indiana (USA) 	41° 41´ N 	86° 15´ W 	EST
+Southampton, Grossbritannien 	50° 54´ N 	1° 23´ W 	GMT
+Spartanburg, South Carolina (usa 	34° 56´ N 	81° 57´ W 	EST
+Split, Jugoslawien 	43° 31´ N 	16° 28´ O 	MEZ
+Spokane, Washington (USA) 	47° 40´ N 	117° 26´ W 	PST
+Springfield, Illinois (USA) 	39° 48´ N 	89° 39´ W 	CST
+Springfield, Massachusetts (USA) 	42° 06´ N 	72° 36´ W 	EST
+Springfield, Missouri (USA) 	37° 13´ N 	93° 18´ W 	CST
+St.catharine's, Kanada 	45° 24´ N 	73° 34´ W 	GMT-5
+St.gallen, Schweiz 	47° 25´ N 	9° 23´ O 	MEZ
+St.george's, Bermuda-Inseln 	32° 24´ N 	64° 42´ W 	GMT-4
+St.george's, Grenada 	12° 04´ N 	61° 44´ W 	GMT-4
+St.john's, Antigua 	17° 08´ N 	61° 50´ W 	GMT-4
+St.laurent, Französisch-Guayana 	5° 29´ N 	54° 03´ W 	GMT-3
+Stamford, Connecticut (USA) 	41° 03´ N 	73° 32´ W 	EST
+Stara Zagora, Bulgarien 	42° 25´ N 	25° 37´ O 	GMT+2
+Stavanger, Norwegen 	58° 58´ N 	5° 45´ O 	MEZ
+Stettin, Polen 	53° 25´ N 	14° 32´ O 	MEZ
+Steyr, Österreich 	48° 04´ N 	14° 25´ O 	MEZ
+Stockholm, Schweden 	59° 20´ N 	18° 03´ O 	MEZ
+Stockton, California (USA) 	37° 57´ N 	121° 17´ W 	PST
+Strasbourg, Frankreich 	48° 35´ N 	7° 45´ O 	MEZ
+Stuttgart, Deutschland 	48° 46´ N 	9° 11´ O 	MEZ
+Sucre, Bolivien 	19° 02´ S 	65° 17´ W 	GMT-4
+Sudbury, Kanada 	46° 30´ N 	81° 00´ W 	GMT-5
+Südpol 	89° 59´ S 	00° 00´ W 	GMT
+Suez, Ägypten 	29° 59´ N 	32° 33´ O 	GMT+2
+Sunnyvale, California (USA) 	37° 23´ N 	122° 02´ W 	PST
+Surabaya, Indonesien 	7° 14´ S 	112° 45´ O 	GMT+7
+Surakarta, Indonesien 	7° 32´ S 	110° 50´ O 	GMT+7
+Suva, Fidschi 	18° 08´ S 	178° 25´ O 	GMT+1
+Swerdlowsk, Sowjetunion 	56° 51´ N 	60° 36´ O 	GMT+5
+Sydney, Australien 	33° 53´ S 	151° 12´ O 	GMT+10
+Syracuse, New York (USA) 	43° 03´ N 	76° 09´ W 	EST
+Szeged, Ungarn 	46° 15´ N 	20° 09´ O 	MEZ
+Tabouk, Saudi-Arabien 	28° 22´ N 	36° 32´ O 	GMT+3
+Tabriz, Iran 	38° 05´ N 	46° 18´ O 	GMT+3
+Tacoma, Washington (USA) 	47° 15´ N 	122° 26´ W 	PST
+Taegu, Korea 	35° 52´ N 	128° 36´ O 	GMT+9
+Taejeon, Korea 	36° 20´ N 	127° 26´ O 	GMT+9
+Tahoua, Niger 	14° 57´ N 	5° 19´ O 	GMT+1
+Taichung, Taiwan 	24° 09´ N 	120° 40´ O 	GMT+8
+Taif, Saudi-Arabien 	21° 15´ N 	40° 21´ O 	GMT+3
+Tainan, Taiwan 	23° 01´ N 	120° 14´ O 	GMT+8
+Taipeh, Taiwan 	25° 03´ N 	121° 30´ O 	GMT+8
+Tais, Jemen 	13° 35´ N 	44° 02´ O 	GMT+3
+Talca, Chile 	35° 28´ S 	71° 40´ W 	GMT-4
+Talcahuano, Chile 	36° 40´ S 	73° 10´ W 	GMT-4
+Tallahassee, Florida (USA) 	30° 27´ N 	84° 17´ W 	EST
+Tamale, Ghana 	9° 26´ N 	0° 49´ W 	GMT
+Tampa, Florida (USA) 	27° 57´ N 	82° 27´ W 	EST
+Tampere, Finnland 	61° 32´ N 	23° 45´ O 	GMT+2
+Tampico, Mexiko 	22° 13´ N 	97° 51´ W 	GMT-5
+Tanga, Tansania 	5° 07´ S 	30° 50´ O 	GMT+3
+Tanger, Marokko 	35° 48´ N 	5° 50´ W 	GMT+1
+Tanta, Ägypten 	30° 48´ N 	31° 00´ O 	GMT+2
+Tarawa, Kiribati 	1° 30´ N 	173° 00´ O 	GMT-1
+Taschkent, Sowjetunion 	41° 20´ N 	69° 18´ O 	GMT+6
+Taunggyi, Myanmar 	20° 55´ N 	96° 53´ O 	GMT+6
+Tbilisi, Sowjetunion 	41° 42´ N 	44° 45´ O 	GMT+3
+Tegucigalpa, Honduras 	14° 06´ N 	87° 13´ W 	GMT-6
+Teheran, Iran 	35° 40´ N 	51° 26´ O 	GMT+3
+Tel Aviv, Israel 	32° 05´ N 	34° 46´ O 	GMT+2
+Temeschburg, Rumänien 	45° 45´ N 	21° 15´ O 	GMT+2
+Tempe, Arizona (USA) 	33° 25´ N 	111° 56´ W 	PST
+Temuco, Chile 	38° 45´ S 	72° 40´ W 	GMT-4
+Ternitz, Österreich 	47° 43´ N 	16° 02´ O 	MEZ
+Terre Haute, Indiana (USA) 	39° 28´ N 	87° 24´ W 	EST
+Tetouan, Marokko 	35° 34´ N 	5° 22´ W 	GMT+1
+Thessaloniki, Griechenland 	40° 38´ N 	22° 58´ O 	GMT+2
+Thies, Senegal 	14° 49´ N 	16° 52´ W 	GMT
+Thimbu, Bhutan 	27° 32´ N 	89° 45´ O 	GMT+5
+Thun, Schweiz 	46° 46´ N 	7° 38´ O 	MEZ
+Tianjin, China 	39° 08´ N 	117° 12´ O 	GMT+8
+Tijuana, Mexiko 	32° 32´ N 	117° 01´ W 	GMT-8
+Tilburg, Niederlande 	51° 34´ N 	5° 05´ O 	MEZ
+Timbuktu, Mali 	16° 46´ N 	3° 01´ W 	GMT
+Tirana, Albanien 	41° 20´ N 	19° 50´ O 	MEZ
+Tlemcen, Algerien 	34° 53´ N 	1° 21´ W 	GMT+1
+Toamasina, Madagaskar 	18° 10´ S 	49° 23´ O 	GMT+3
+Tokyo, Japan 	35° 42´ N 	139° 46´ O 	GMT+9
+Toledo, Ohio (USA) 	41° 39´ N 	83° 33´ W 	EST
+Toliary, Madagaskar 	23° 20´ S 	43° 41´ O 	GMT+3
+Topeka, Kansas (USA) 	39° 03´ N 	95° 40´ W 	CST
+Toronto, Kanada 	43° 39´ N 	79° 23´ W 	GMT-5
+Torreon, Mexiko 	25° 33´ N 	103° 26´ W 	GMT-6
+Toulouse, Frankreich 	43° 37´ N 	1° 27´ O 	MEZ
+Tours, Frankreich 	47° 23´ N 	0° 41´ O 	MEZ
+Traun, Österreich 	48° 13´ N 	14° 14´ O 	MEZ
+Trenton, New Jersey (USA) 	40° 13´ N 	74° 46´ W 	EST
+Tripoli, Libanon 	34° 27´ N 	35° 50´ O 	GMT+2
+Tripolis, Libyen 	32° 54´ N 	13° 11´ O 	GMT+1
+Trondheim, Norwegen 	63° 25´ N 	10° 25´ O 	MEZ
+Troy, New York (USA) 	42° 44´ N 	73° 41´ W 	EST
+Trujillo, Peru 	8° 07´ S 	79° 02´ W 	GMT-5
+Tschoudjo, Togo 	8° 59´ N 	1° 11´ O 	GMT
+Tsumeb, Namibia 	19° 13´ S 	17° 42´ O 	GMT+2
+Tucson, Arizona (USA) 	32° 13´ N 	110° 58´ W 	PST
+Tulsa, Oklahoma (USA) 	36° 09´ N 	96° 00´ W 	CST
+Tunis, Tunesien 	36° 48´ N 	10° 12´ O 	GMT+1
+Turin, Italien 	45° 03´ N 	7° 40´ O 	MEZ
+Turku, Finnland 	60° 27´ N 	22° 15´ O 	GMT+2
+Tuscaloosa, Alabama (USA) 	33° 12´ N 	87° 34´ W 	CST
+Ujung Padang, Indonesien 	5° 09´ S 	119° 28´ O 	GMT+8
+Ulan Bator, Mongolei 	47° 55´ N 	106° 53´ O 	GMT+8
+Ulm, Deutschland 	48° 25´ N 	10° 00´ O 	MEZ
+Umhlazi, Südafrika 	29° 53´ S 	31° 00´ O 	GMT+2
+Uppsala, Schweden 	59° 55´ N 	17° 38´ O 	MEZ
+Utica, New York (USA) 	43° 06´ N 	75° 14´ W 	EST
+Utrecht, Niederlande 	52° 06´ N 	5° 07´ O 	MEZ
+Vaduz, Liechtenstein 	47° 08´ N 	9° 32´ O 	MEZ
+Valencia, Spanien 	39° 28´ N 	0° 22´ W 	MEZ
+Valencia, Venezuela 	10° 11´ N 	68° 00´ W 	GMT-4
+Valladolid, Spanien 	41° 39´ N 	4° 45´ W 	MEZ
+Valletta, Malta 	35° 54´ N 	14° 32´ O 	MEZ
+Valparaiso, Chile 	33° 05´ S 	71° 40´ W 	GMT-4
+Vancouver, Kanada 	49° 17´ N 	123° 07´ W 	GMT-8
+Vantaa, Finnland 	60° 18´ N 	24° 57´ O 	GMT+2
+Varna, Bulgarien 	43° 12´ N 	27° 57´ O 	GMT+2
+Västeras, Schweden 	59° 36´ N 	16° 32´ O 	MEZ
+Vejle, Dänemark 	55° 43´ N 	9° 33´ O 	MEZ
+Venedig, Italien 	45° 27´ N 	12° 21´ O 	MEZ
+Vera Cruz, Mexiko 	19° 12´ N 	96° 08´ W 	GMT-6
+Victoria, Hongkong 	22° 16´ N 	114° 13´ O 	GMT+8
+Victoria, Kanada 	48° 25´ N 	123° 22´ W 	GMT-7
+Victoria, Seschellen 	4° 38´ S 	55° 28´ O 	GMT+4
+Vientiane, Laos 	17° 58´ N 	102° 36´ O 	GMT+7
+Vila Nova De Gaia, Portugal 	41° 04´ N 	8° 40´ W 	GMT
+Villach, Österreich 	46° 37´ N 	13° 51´ O 	MEZ
+Vina Del Mar, Chile 	33° 02´ S 	71° 35´ W 	GMT-4
+Vineland, New Jersey (USA) 	39° 29´ N 	75° 02´ W 	EST
+Volos, Griechenland 	39° 22´ N 	22° 57´ O 	GMT+2
+Waco, Texas (USA) 	31° 33´ N 	97° 08´ W 	CST
+Wadi Medani, Sudan 	14° 24´ N 	33° 03´ O 	GMT+2
+Warschau, Polen 	52° 15´ N 	21° 00´ O 	MEZ
+Warwick, Rhode Island (USA) 	41° 42´ N 	71° 27´ W 	EST
+Washington, D.c. (USA) 	38° 54´ N 	77° 01´ W 	EST
+Waterbury, Connecticut (USA) 	41° 33´ N 	73° 03´ W 	EST
+Waterford, Irland 	52° 15´ N 	7° 06´ W 	GMT
+Waterloo, Iowa (USA) 	42° 30´ N 	92° 20´ W 	CST
+Wellington, Neuseeland 	41° 28´ S 	174° 51´ O 	GMT+1
+Wels, Österreich 	48° 10´ N 	14° 02´ O 	MEZ
+West Palm Beach, Florida (USA) 	26° 43´ N 	80° 03´ W 	EST
+Wheeling, West Virginia (USA) 	40° 04´ N 	80° 43´ W 	EST
+Wichita Falls, Texas (USA) 	33° 55´ N 	98° 29´ W 	CST
+Wichita, Kansas (USA) 	37° 41´ N 	97° 20´ W 	CST
+Wien, Österreich 	48° 12´ N 	16° 22´ O 	MEZ
+Wiener Neustadt, Österreich 	47° 48´ N 	16° 15´ O 	MEZ
+Wiesbaden, Deutschland 	50° 05´ N 	8° 15´ O 	MEZ
+Wilkes Barre, Pennsylvania (USA) 	41° 15´ N 	75° 53´ W 	EST
+Willemstad, Curacao (niederl.ant 	12° 06´ N 	68° 57´ W 	GMT-4
+Williamsburg, Virginia (USA) 	37° 16´ N 	76° 42´ W 	EST
+Williston, North Dakota (USA) 	48° 11´ N 	103° 37´ W 	CST
+Wilmington, Delaware (USA) 	39° 45´ N 	75° 33´ W 	EST
+Wilmington, North Carolina (USA) 	34° 14´ N 	77° 55´ W 	EST
+Windhuk, Namibia 	22° 34´ S 	17° 06´ O 	GMT+2
+Windsor, Kanada 	42° 18´ N 	83° 01´ W 	GMT-5
+Winnipeg, Kanada 	49° 53´ N 	97° 09´ W 	GMT-6
+Winston Salem, North Carolina (USA) 	36° 06´ N 	80° 15´ W 	EST
+Winterthur, Schweiz 	47° 30´ N 	8° 45´ O 	MEZ
+Witten, Deutschland 	51° 26´ N 	7° 20´ O 	MEZ
+Wladiwostok, Sowjetunion 	43° 08´ N 	131° 54´ O 	GMT+9
+Wolfsberg, Österreich 	46° 50´ N 	14° 50´ O 	MEZ
+Wolfsburg, Deutschland 	52° 26´ N 	10° 48´ O 	MEZ
+Wolgograd, Sowjetunion 	48° 45´ N 	44° 25´ O 	GMT+3
+Wollongong, Australien 	17° 13´ S 	137° 57´ O 	GMT+1
+Worcester, Massachusetts (USA) 	42° 16´ N 	71° 48´ W 	EST
+Wuhan, China 	36° 45´ N 	114° 15´ O 	GMT+8
+Wuppertal, Deutschland 	51° 16´ N 	7° 11´ O 	MEZ
+Würzburg, Deutschland 	49° 48´ N 	9° 56´ O 	MEZ
+Xian, China 	34° 16´ N 	108° 54´ O 	GMT+8
+Yakima, Washington (USA) 	46° 36´ N 	120° 31´ W 	PST
+Yaounde, Kamerun 	3° 51´ N 	11° 31´ O 	GMT+1
+Yaren, Nauru 	1° 50´ S 	167° 10´ O 	GMT+1
+Yokohama, Japan 	41° 04´ N 	141° 15´ O 	GMT+9
+York, Grossbritannien 	53° 57´ N 	1° 05´ W 	GMT
+York, Pennsylvania (USA) 	39° 58´ N 	76° 44´ W 	EST
+Youngstown, Pennsylvania (USA) 	41° 06´ N 	80° 39´ W 	EST
+Yunghu, Taiwan 	24° 51´ N 	120° 03´ O 	GMT+8
+Zagazig, Ägypten 	30° 35´ N 	31° 30´ O 	GMT+2
+Zagreb, Kroatien 	45° 48´ N 	16° 00´ O 	MEZ
+Zamboanga, Philippinen 	6° 55´ N 	122° 05´ O 	GMT+8
+Zaragoza, Spanien 	41° 39´ N 	0° 54´ W 	MEZ
+Ziguinchor, Senegal 	12° 35´ N 	16° 20´ W 	GMT
+Zinder, Niger 	13° 46´ N 	8° 58´ O 	GMT+1
+Zomba, Malawi 	15° 22´ S 	35° 22´ O 	GMT+2
+Zürich, Schweiz 	47° 22´ N 	8° 31´ O 	MEZ
+Zwickau, Deutschland 	50° 44´ N 	12° 30´ O 	MEZ 

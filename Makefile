@@ -1,6 +1,6 @@
 CC = g++-4.7
 CFLAGS = -Wall -std=c++11
-OUT = beschrift
+OUT = vis/pflp_solver
 
 all: main.o
 	$(CC) main.o -o $(OUT) $(CFLAGS)
