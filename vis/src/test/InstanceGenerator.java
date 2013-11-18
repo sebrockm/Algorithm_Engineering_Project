@@ -86,7 +86,7 @@ public class InstanceGenerator
 		
 		TestInstanceConfig config = new TestInstanceConfig(testSeq);
 		config.addProperty("cluster", cluster);
-		config.addProperty("elemsPerCluster", cluster);
+		config.addProperty("elemsPerCluster", elemsPerCluster);
 		config.addProperty("radius", radius);
 		config.addProperty("w", w);
 		config.addProperty("h", h);
@@ -141,11 +141,13 @@ public class InstanceGenerator
 	
 	public static void main(String[] args)
 	{
-		/*createTest(0, 50, 10, 1000, 1);
+		createTest(0, 50, 10, 1000, 1);
 		createTest(1, 6, 1000, 10, 1);
 		createTest(2, 12, 100, 100, 1);
 		createTest(3, 12, 50, 50, 1);
-		createTest(4, 12, 50, 50, 0.5);*/
-		createTest(5, 10, 2000, 10, 0.5);
+		createTest(4, 12, 50, 50, 0.5);
+        createTest(5, 12, 5, 10, 1);
+        createTest(6, 12, 10, 10, 0.5);
+        createTest(7, 12, 10, 100, 0.75);
 	}
 }
