@@ -146,6 +146,10 @@ public class InstanceGenerator
 		createTest(2, 12, 100, 100, 1);
 		createTest(3, 12, 50, 50, 1);
 		createTest(4, 12, 50, 50, 0.5);*/
-		createTest(5, 10, 2000, 10, 0.5);
+		
+        createTest(5, 12, 5, 10, 1);
+        createTest(6, 12, 10, 10, 0.5);
+        
+        createTest(7, 12, 10, 100, 0.75);
 	}
 }
