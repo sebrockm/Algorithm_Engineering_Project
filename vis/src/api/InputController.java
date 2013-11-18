@@ -44,14 +44,14 @@ public abstract class InputController implements KeyListener, MouseListener, Mou
         int returnvalue = _callCppProg(String.format(SOLVE, inputFile, outFile));
         if(returnvalue > -1)
         {
-            getRenderer().showPopUp(String.format("Solving Succeded in '%d' Seconds", returnvalue), false);
+            getRenderer().showPopUp(String.format("Solving succeded in '%d' Seconds", returnvalue), false);
             getRenderer().setSplashScreen("Loading...");
             getModel().setFile(outFile);
             getModel().setParser(new ProjectedData());
         }
         else
         {
-            getRenderer().showPopUp("Solving Failed", true);
+            getRenderer().showPopUp("Solving failed", true);
         }
         getRenderer().setSplashScreen("");
     }
@@ -62,11 +62,11 @@ public abstract class InputController implements KeyListener, MouseListener, Mou
         String inputFile = getModel().getFile();
         if(_callCppProg(String.format(EVAL, inputFile)) == -1)
         {
-            getRenderer().showPopUp("Evaluating Failed", true);
+            getRenderer().showPopUp("Evaluating failed", true);
         }
         else
         {
-            getRenderer().showPopUp("Evaluating Succeded", false);   
+            getRenderer().showPopUp("Evaluating succeded", false);   
         }
         getRenderer().setSplashScreen("");
     }
