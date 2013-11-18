@@ -14,7 +14,7 @@ Aden, Jemen 	12° 46´ N 	45° 01´ O 	GMT+3
 Agadez, Niger 	17° 00´ N 	7° 56´ O 	GMT+1
 Agadir, Marokko 	30° 30´ N 	9° 40´ W 	GMT+1
 Ahmedabad, Indien 	23° 00´ N 	72° 40´ O 	GMT+5
-Akron, Ohio (USA) 	41° 05´ N 	81° 31´ O 	EST
+Akron, Ohio (USA) 	41° 05´ N 	81° 31´ W 	EST
 Akureyri, Island 	65° 41´ N 	18° 04´ W 	GMT
 Akyab, Myanmar 	20° 09´ N 	92° 55´ O 	GMT+6
 Al Mahalla Al-Kubra, Ägypten 	30° 59´ N 	31° 10´ O 	GMT+2

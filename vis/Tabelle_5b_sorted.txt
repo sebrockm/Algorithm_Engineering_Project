@@ -795,7 +795,7 @@ Circleville, Ohio (USA) 	39° 34´ N 	83° 02´ W 	EST
 Dayton, Ohio (USA) 	39° 46´ N 	84° 12´ W 	EST
 Columbus, Ohio (USA) 	39° 58´ N 	83° 00´ W 	EST
 Canton, Ohio (USA) 	40° 48´ N 	81° 23´ W 	EST
-Akron, Ohio (USA) 	41° 05´ N 	81° 31´ O 	EST
+Akron, Ohio (USA) 	41° 05´ N 	81° 31´ W 	EST
 Cleveland, Ohio (USA) 	41° 30´ N 	81° 42´ W 	EST
 Toledo, Ohio (USA) 	41° 39´ N 	83° 33´ W 	EST
 Oklahoma City, Oklahoma (USA) 	35° 28´ N 	97° 31´ W 	CST

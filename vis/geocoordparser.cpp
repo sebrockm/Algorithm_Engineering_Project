@@ -15,7 +15,7 @@ int main(int argc, char** argv)
 		return 1;
 	}
 
-	output << 293 << std::endl;
+	output << 1232 << std::endl;
 	
 	while(input)
 	{
@@ -52,8 +52,8 @@ int main(int argc, char** argv)
 			}
 
 				
-			double phi = 103 + go + mo/60.0;
-			double theta = -44 + gn + mn/60.0;
+			double phi = go + mo/60.0;
+			double theta = gn + mn/60.0;
 			theta = 90.0 - theta;
 			double r = 637.1;
 
@@ -62,14 +62,16 @@ int main(int argc, char** argv)
 			phi *= PI/180;
 			theta *= PI/180;
 
-			int z = (int)(r*sin(theta)*cos(phi));
-			int x = (int)(r*sin(theta)*sin(phi));
+			//int z = (int)(r*sin(theta)*cos(phi));
+			//int x = (int)(r*sin(theta)*sin(phi));
+			//int y = (int)(r*cos(theta));
+			int x = (int)(r*phi);
 			int y = (int)(r*cos(theta));
 
-			std::cout << (z<0?name:"") << z << std::endl;
+			//std::cout << (z<0?name:"") << z << std::endl;
 
 			output <<  x << " " << y << " "
-				<< 4*name.size() << " " << rand()%6+2 << " "
+				<< 8*name.size() << " " << rand()%12+4 << " "
 				<< name << " 1 " << x << " " << y
 				<< std::endl;
 		}

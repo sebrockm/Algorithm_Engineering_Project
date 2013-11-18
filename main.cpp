@@ -351,11 +351,6 @@ int main(int argc, char** argv)
 
 	parse_options(argc, argv, &input_file, &output_file, &eval_file);
 
-
-	std::cout 	<< "input_file: " << (input_file?input_file:"") << std::endl
-				<< "output_file: " << (output_file?output_file:"") << std::endl
-				<< "eval_file: " << (eval_file?eval_file:"") << std::endl;
-
 	if(input_file && output_file)
 	{
 		fileParser(input_file, output_file);
@@ -365,7 +360,7 @@ int main(int argc, char** argv)
 		int counter = evaluate(eval_file);
 		if(counter >= 0)
 		{
-			std::cout << counter << " beschriftete Punkte" << std::endl;
+			std::cout << counter << std::endl;
 		}
 	}
 }
