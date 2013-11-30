@@ -133,23 +133,29 @@ void writeSolution(vector<Label>& labels, const string& file_name, int recN)
 	}
 
 	int counter = 0;
+	int tmpCounter = 0;
 	auto t1 = chrono::high_resolution_clock::now();
 
 	Heuristic1 heu(labels, recN);
 
-	for(int i = 0; i < 2; i++)//viermal wiederholen, weil vier cool ist
+	int i = 1;
+	do
 	{
+		tmpCounter = 0;
 		for(unsigned j = 0; j < labels.size(); j++)
 		{
-			cout << 100*(i*labels.size()+j)/(2*labels.size()) << "%\t" << counter << "\r";
+			cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
 			if(labels[j].b() == 0)
 			{
-				counter += heu.tryToEnable(labels[j]);
+				tmpCounter += heu.tryToEnable(labels[j]);
 			}
 		}
-	}
+		counter += tmpCounter;
+		i++;
+	}while(tmpCounter > 0);
 
 	auto t2 = chrono::high_resolution_clock::now();
+	cout << "                                                                  \r";
 	cout << counter << "\t" << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << endl;
 
 	bool ok = true;
