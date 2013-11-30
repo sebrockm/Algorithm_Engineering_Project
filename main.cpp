@@ -137,13 +137,14 @@ void writeSolution(vector<Label>& labels, const string& file_name, int recN)
 
 	Heuristic1 heu(labels, recN);
 
-	for(int i = 0; i < 4; i++)//viermal wiederholen, weil vier cool ist
+	for(int i = 0; i < 2; i++)//viermal wiederholen, weil vier cool ist
 	{
-		for(auto& label : labels)
+		for(unsigned j = 0; j < labels.size(); j++)
 		{
-			if(label.b() == 0)
+			cout << 100*(i*labels.size()+j)/(2*labels.size()) << "%\t" << counter << "\r";
+			if(labels[j].b() == 0)
 			{
-				counter += heu.tryToEnable(label);
+				counter += heu.tryToEnable(labels[j]);
 			}
 		}
 	}
