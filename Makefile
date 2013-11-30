@@ -1,6 +1,6 @@
 CC = g++-4.7
-CFLAGS = -c -Wall -std=c++11 -O2
-LDFLAGS = -std=c++11 -O2
+CFLAGS = -c -Wall -std=c++11 -O3
+LDFLAGS = -std=c++11 -O3
 SOURCES = main.cpp Heuristic1.cpp crossing.cpp Label.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 OUT = pflp_solver
