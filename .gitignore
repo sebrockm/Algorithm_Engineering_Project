@@ -15,6 +15,6 @@
 *.swp
 blob/blatt1/~$ae.pptx
 
-bin/
-.metadata/*
-.settings/*
+vis/bin/
+vis/.metadata/*
+vis/.settings/*

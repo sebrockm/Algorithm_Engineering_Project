@@ -1,5 +1,6 @@
 #include "Label.hpp"
-#include "heuristic1.hpp"
+#include "crossing.hpp"
+#include "Heuristic1.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -17,7 +18,7 @@ void usage(const char* progname)
 {
 	cerr	<< endl
 			<< "usage:" << endl
-			<< "      " << progname << " -in dat1 -out dat2 [-rec n] reads dat1 and writes a solution to dat2 using heuristic1 with n recursion steps (default is 0)" << endl
+			<< "      " << progname << " -in dat1 -out dat2 [-rec n] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0)" << endl
 			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct" << endl;
 }
 
@@ -134,15 +135,21 @@ void writeSolution(vector<Label>& labels, const string& file_name, int recN)
 	int counter = 0;
 	auto t1 = chrono::high_resolution_clock::now();
 
-	for(unsigned i = 0; i < labels.size(); i++)
+	Heuristic1 heu(labels, recN);
+
+	for(int i = 0; i < 4; i++)//viermal wiederholen, weil vier cool ist
 	{
-		vector<Label*> untouchables;
-		tryToEnable(labels[i], labels.begin(), labels.end(), recN, untouchables);
+		for(auto& label : labels)
+		{
+			if(label.b() == 0)
+			{
+				counter += heu.tryToEnable(label);
+			}
+		}
 	}
-	cout << count_if(labels.begin(), labels.end(), [](const Label& label){return label.b() == 1;});
 
 	auto t2 = chrono::high_resolution_clock::now();
-	cout << "\t" << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << endl;
+	cout << counter << "\t" << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << endl;
 
 	bool ok = true;
 
