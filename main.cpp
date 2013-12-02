@@ -18,12 +18,12 @@ void usage(const char* progname)
 {
 	cerr	<< endl
 			<< "usage:" << endl
-			<< "      " << progname << " -in dat1 -out dat2 [-rec n] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0)" << endl
-			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct" << endl;
+			<< "      " << progname << " -in dat1 -out dat2 [-rec n] [-opt] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it." << endl
+			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl;
 }
 
 
-void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, int& recN)
+void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, int& recN, bool& opt)
 {
 	if(argc < 2)
 	{
@@ -32,6 +32,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 	}
 
 	recN = 0;
+	opt = false;
 
 	for(int i = 1; i < argc; i++)
 	{
@@ -79,7 +80,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 		{
 			if(++i < argc)
 			{
-				if(output_file.empty() && input_file.empty() && eval_file.empty())
+				if(output_file.empty() && input_file.empty() && eval_file.empty() && recN == 0 && !opt)
 				{
 					eval_file = argv[i];
 				}
@@ -106,6 +107,10 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 				usage(argv[0]);
 				exit(EXIT_FAILURE);
 			}
+		}
+		else if(string(argv[i]) == "-opt")
+		{
+			opt = true;
 		}
 		else
 		{
@@ -178,7 +183,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int recN)
 }
 
 
-int fileParser(const string& file_name, vector<Label>& labels)
+int fileParser(const string& file_name, vector<Label>& labels, bool opt)
 {
 	ifstream file(file_name);
 	if(!file)
@@ -196,6 +201,7 @@ int fileParser(const string& file_name, vector<Label>& labels)
 
 	int x, y, l, h;
 	string t;
+	int b, xs, ys;
 	string line;
 	getline(file, line); //erstes '\n' ueberspringen
 	for(int i = 0; i < count && getline(file, line); i++)
@@ -206,7 +212,18 @@ int fileParser(const string& file_name, vector<Label>& labels)
 		{
 			break;
 		}
-		labels.emplace_back(x, y, l, h, t, 0);
+		if(opt)
+		{
+			if(!(iss >> b >> xs >> ys))
+			{
+				break;
+			}
+			labels.emplace_back(x, y, l, h, t, b, xs, ys);
+		}
+		else
+		{
+			labels.emplace_back(x, y, l, h, t, 0);
+		}
 	}
 
 	file.close();
@@ -311,13 +328,14 @@ int main(int argc, char** argv)
 	string output_file;
 	string eval_file;
 	int recN;
+	bool opt;
 
-	parse_options(argc, argv, input_file, output_file, eval_file, recN);
+	parse_options(argc, argv, input_file, output_file, eval_file, recN, opt);
 
 	if(!input_file.empty() && !output_file.empty())
 	{
 		vector<Label> labels;
-		fileParser(input_file, labels);
+		fileParser(input_file, labels, opt);
 		writeSolution(labels, output_file, recN);
 	}
 	if(!eval_file.empty())
