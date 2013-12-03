@@ -47,6 +47,10 @@ public:
 	void disable();
 	int xs() const;
 	int ys() const;
+	int maxX() const;
+	int minX() const;
+	int maxY() const;
+	int minY() const;
 };
 
 /**

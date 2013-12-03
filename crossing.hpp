@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "Label.hpp"
+#include "KDTree.hpp"
 
 
 /**
@@ -21,6 +22,8 @@ bool isPosOkUntilNow(std::vector<Label>::iterator first, std::vector<Label>::ite
  * @param last Iterator to fiest Label not to be checked with
  * @return vector of pointers to Labels crossing with label
  */
-std::vector<Label*> getCrossing(const Label& label, std::vector<Label>::iterator first, std::vector<Label>::iterator last);
+std::vector<Label*> getCrossing(const Label& label, std::vector<Label*>::iterator first, std::vector<Label*>::iterator last);
+
+vector<Label*> getCrossing(const Label& label,  KDTree* tree);
 
 #endif
