@@ -1,4 +1,5 @@
 #include "Label.hpp"
+#include "KDTree.hpp"
 #include "crossing.hpp"
 #include "Heuristic1.hpp"
 
@@ -141,6 +142,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int recN)
 	int tmpCounter = 0;
 	auto t1 = chrono::high_resolution_clock::now();
 
+	sort(labels.begin(), labels.end(), [](const Label& l1, const Label& l2){return l1.h()*l1.l() < l2.h()*l2.l();});
 	Heuristic1 heu(labels, recN);
 
 	int i = 1;
@@ -330,12 +332,15 @@ int main(int argc, char** argv)
 	int recN;
 	bool opt;
 
+
 	parse_options(argc, argv, input_file, output_file, eval_file, recN, opt);
 
 	if(!input_file.empty() && !output_file.empty())
 	{
 		vector<Label> labels;
 		fileParser(input_file, labels, opt);
+
+
 		writeSolution(labels, output_file, recN);
 	}
 	if(!eval_file.empty())

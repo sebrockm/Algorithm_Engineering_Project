@@ -23,7 +23,7 @@ Label::Label(int x, int y, int l, int h, string name, int b, int xs, int ys)
 		else if(ys == y+h)
 			_p = tr;
 		else
-			throw invalid_argument("ys does not match y nor y+h");
+			throw invalid_argument(name + "ys does not match y nor y+h");
 	}
 	else if(xs == x-l)
 	{
@@ -32,11 +32,11 @@ Label::Label(int x, int y, int l, int h, string name, int b, int xs, int ys)
 		else if(ys == y+h)
 			_p = tl;
 		else
-			throw invalid_argument("ys does not match y nor y+h");
+			throw invalid_argument(name + "ys does not match y nor y+h");
 	}
 	else
 	{
-		throw invalid_argument("xs does not match x nor x-l");
+		throw invalid_argument(name + "xs does not match x nor x-l");
 	}
 }
 
@@ -99,4 +99,20 @@ int Label::xs() const
 int Label::ys() const
 {
 	return (_p==br || _p==bl) ? _y : _y+_h;
+}
+int Label::maxX() const
+{
+	return _x + _l;
+}
+int Label::minX() const
+{
+	return _x - _l;
+}
+int Label::maxY() const
+{
+	return _y + _h;
+}
+int Label::minY() const
+{
+	return _y - _h;
 }

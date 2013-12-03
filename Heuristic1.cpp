@@ -10,7 +10,15 @@
 using namespace std;
 
 Heuristic1::Heuristic1(vector<Label>& labels, int maxDepth)
-	:_labels(labels), _maxDepth(maxDepth) {}
+	:_labels(labels), _maxDepth(maxDepth) 
+{
+	vector<Label*> tmp;
+	for(auto& l : labels)
+	{
+		tmp.push_back(&l);
+	}
+	tree = createKDTree(tmp.begin(), tmp.end(), 12, 10);
+}
 
 void Heuristic1::doRollback(vector<pair<Label*, Label::Pos>>& rollbacks)
 {
@@ -48,7 +56,7 @@ bool Heuristic1::tryToEnable(Label& label, int maxDepth, vector<Label*>& untouch
 	//für jede der 4 möglichen Positionen die Überschneidungen finden
 	for(int i = 0; i < 4; i++)
 	{
-		crossers.emplace_back(label.getPos(), getCrossing(label, _labels.begin(), _labels.end()));
+		crossers.emplace_back(label.getPos(), getCrossing(label, tree.get()));
 		if(crossers.back().second.empty())
 		{
 			untouchables.push_back(&label);//label erfolgreich verschoben, darum in anderen Rekursionszweigen nicht mehr anfassen

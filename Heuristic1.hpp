@@ -3,6 +3,7 @@
 
 
 #include "Label.hpp"
+#include "KDTree.hpp"
 
 #include <vector>
 
@@ -10,6 +11,7 @@ class Heuristic1{
 private:
 	std::vector<Label>& _labels;
 	int _maxDepth;
+	std::shared_ptr<KDTree> tree;
 
 	/**
 	 * Tries to enable a label by recursivly moving all crossing labels.
