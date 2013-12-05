@@ -9,8 +9,8 @@ class VEB
 	friend class VEB;
 
 private:
-	VEB<T, h/2> down[(1<<(h-h/2))];
 	VEB<T, h-h/2> top;
+	VEB<T, h/2> down[(1<<(h-h/2))];
 
 	static unsigned long long low(unsigned long long u)
 	{
