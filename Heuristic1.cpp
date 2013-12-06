@@ -80,6 +80,8 @@ bool Heuristic1::tryToEnable(Label& label, int maxDepth, vector<Label*>& untouch
 			});
 	crossers.erase(nend, crossers.end());
 
+	sort(crossers.begin(), crossers.end(), [](const pair<Label::Pos, vector<Label*>>& dir1, const pair<Label::Pos, vector<Label*>>& dir2){return dir1.second.size() < dir2.second.size();});
+
 	for(auto& dir : crossers)//in jede richtung versuchen, die Situation rekursiv aufzulösen
 	{
 		//für jede Richtung das aktuelle Label zu den untouchables hinzufügen
