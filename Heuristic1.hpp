@@ -6,8 +6,10 @@
 #include "KDTree.hpp"
 
 #include <vector>
+#include <memory>
 
-class Heuristic1{
+class Heuristic1
+{
 private:
 	std::vector<Label>& _labels;
 	int _maxDepth;

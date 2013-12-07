@@ -2,6 +2,7 @@
 #include "KDTree.hpp"
 #include "crossing.hpp"
 #include "Heuristic1.hpp"
+#include "Heuristic2.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -19,12 +20,13 @@ void usage(const char* progname)
 {
 	cerr	<< endl
 			<< "usage:" << endl
-			<< "      " << progname << " -in dat1 -out dat2 [-rec n] [-opt] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it." << endl
+			<< "      " << progname << " -in dat1 -out dat2 [-heu 1] [-rec n] [-opt] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it." << endl
+			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 reads dat1 and writes a solution to dat2 using Heuristic2" << endl
 			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl;
 }
 
 
-void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, int& recN, bool& opt)
+void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, int& heu, int& recN, bool& opt)
 {
 	if(argc < 2)
 	{
@@ -32,6 +34,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 		exit(EXIT_FAILURE);
 	}
 
+	heu = 1;
 	recN = 0;
 	opt = false;
 
@@ -97,6 +100,23 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 				exit(EXIT_FAILURE);
 			}
 		}
+		else if(string(argv[i]) == "-heu")
+		{
+			if(++i < argc)
+			{
+				heu = atoi(argv[i]);
+				if(heu != 1 && heu != 2)
+				{
+					usage(argv[0]);
+					exit(EXIT_FAILURE);
+				}
+			}
+			else
+			{
+				usage(argv[0]);
+				exit(EXIT_FAILURE);
+			}
+		}
 		else if(string(argv[i]) == "-rec")
 		{
 			if(++i < argc)
@@ -129,7 +149,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 
 
 
-void writeSolution(vector<Label>& labels, const string& file_name, int recN)
+void writeSolution(vector<Label>& labels, const string& file_name, int heu, int recN)
 {
 	ofstream file(file_name);
 	if(!file)
@@ -143,23 +163,38 @@ void writeSolution(vector<Label>& labels, const string& file_name, int recN)
 	auto t1 = chrono::high_resolution_clock::now();
 
 	sort(labels.begin(), labels.end(), [](const Label& l1, const Label& l2){return l1.h()*l1.l() < l2.h()*l2.l();});
-	Heuristic1 heu(labels, recN);
 
-	int i = 1;
-	do
+	if(heu == 1)
 	{
-		tmpCounter = 0;
-		for(unsigned j = 0; j < labels.size(); j++)
+		Heuristic1 heu(labels, recN);
+
+		int i = 1;
+		do
 		{
-			cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
-			if(labels[j].b() == 0)
+			tmpCounter = 0;
+			for(unsigned j = 0; j < labels.size(); j++)
 			{
-				tmpCounter += heu.tryToEnable(labels[j]);
+				cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+				if(labels[j].b() == 0)
+				{
+					tmpCounter += heu.tryToEnable(labels[j]);
+				}
 			}
+			counter += tmpCounter;
+			i++;
+		}while(tmpCounter > 0);
+	}
+	else if(heu == 2)
+	{
+		Heuristic2 heu(labels);
+
+		int i = 1;
+		while((tmpCounter = heu.start()) > 0)
+		{
+			cout << i << ". Durchlauf" << "\r";
+			counter += tmpCounter;
 		}
-		counter += tmpCounter;
-		i++;
-	}while(tmpCounter > 0);
+	}
 
 	auto t2 = chrono::high_resolution_clock::now();
 	cout << "                                                                  \r";
@@ -329,19 +364,19 @@ int main(int argc, char** argv)
 	string input_file;
 	string output_file;
 	string eval_file;
+	int heu;
 	int recN;
 	bool opt;
 
 
-	parse_options(argc, argv, input_file, output_file, eval_file, recN, opt);
+	parse_options(argc, argv, input_file, output_file, eval_file, heu, recN, opt);
 
 	if(!input_file.empty() && !output_file.empty())
 	{
 		vector<Label> labels;
 		fileParser(input_file, labels, opt);
 
-
-		writeSolution(labels, output_file, recN);
+		writeSolution(labels, output_file, heu, recN);
 	}
 	if(!eval_file.empty())
 	{
