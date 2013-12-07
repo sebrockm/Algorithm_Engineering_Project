@@ -1,51 +1,97 @@
 #include "VEB.hpp"
+#include "Trees.hpp"
 
 #include <iostream>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#include <chrono>
 
 using namespace std;
+
+template <class Iter>
+bool mybinary(Iter first, Iter last, int what)
+{
+	while(last > first)
+	{
+		auto middle = first + (last-first)/2;
+		if(what < *middle)
+			last = middle;
+		else if(what > *middle)
+			first = middle + 1;
+		else 
+			return true;
+	}
+	return false;
+}
 
 
 int main()
 {
 	srand(time(0));
-	const unsigned H = 4;
 	const unsigned long long N = (1ull << H) - 1;
-	VEB<int, H> veb;
-	cout << "N=" << N << " sizeof(veb)/sizeof(int)=" << sizeof(veb)/sizeof(int) << endl;
 
-	vector<int> v = {52,27,75,14,7,21,40,34,46,63,58,70,89,81,94};
-
-	/*for(unsigned i=0; i<N; i++)
-	{
-		v.push_back(rand());
-	}*/
+	vector<int> v(N);
+	generate(v.begin(), v.end(), rand);
 
 	sort(v.begin(), v.end());
 
+	vector<int> search(N);
+	generate_n(search.begin(), N, rand);
+
+	vector<bool> ergs(N);
+
+	auto t1 = chrono::high_resolution_clock::now();
 	for(unsigned i=0; i<N; i++)
 	{
-		veb[i] = v[i];
+		ergs[i] = binary_search(v.begin(), v.end(), search[i]);
 	}
+	auto t2 = chrono::high_resolution_clock::now();
+	cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() / N << "s avg sortiert" << endl;
 
+	t1 = chrono::high_resolution_clock::now();
 	for(unsigned i=0; i<N; i++)
 	{
-		if(veb[i] != v[i])
-			cout << "AHHHH" << endl;
+		if(ergs[i] != mybinary(v.begin(), v.end(), search[i]))
+			cout << "gna2" << endl;
 	}
+	t2 = chrono::high_resolution_clock::now();
+	cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() / N << "s avg sortiert mybinary" << endl;
 
-	for(unsigned i=0; i<N; i++)
 	{
-		if(!veb.search(v[i]))
-			cout << "BEHHHH" << endl;
+		RandTree<int, H> randt(v.data());
+		t1 = chrono::high_resolution_clock::now();
+		for(unsigned i=0; i<N; i++)
+		{
+			if(ergs[i] != randt.search(search[i]))
+				cout << "gna1" << endl;
+		}
+		t2 = chrono::high_resolution_clock::now();
+		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() / N << "s avg zufällig" << endl;
 	}
 
-	//cout << "0 ist " << (veb.search(0)?"":"nicht") << " drin, veb[0]=" << veb[0] << endl;
+	{
+		LevelSortedTree<int, H> lst(v.data());
+		t1 = chrono::high_resolution_clock::now();
+		for(unsigned i=0; i<N; i++)
+		{
+			if(ergs[i] != lst.search(search[i]))
+				cout << "gna3" << endl;
+		}
+		t2 = chrono::high_resolution_clock::now();
+		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() / N << "s avg level-weise" << endl;
+	}
 
-        int* p = (int*)&veb;
-        for(unsigned i=0; i<N; i++)
-            cout << p[i] << ",";
+	{
+		VEB<int, H> veb(v.data());
+		t1 = chrono::high_resolution_clock::now();
+		for(unsigned i=0; i<N; i++)
+		{
+			if(ergs[i] != veb.search(search[i]))
+				cout << "gna4" << endl;
+		}
+		t2 = chrono::high_resolution_clock::now();
+		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() / N << "s avg van Emde Boas" << endl;
+	}
 }

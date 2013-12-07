@@ -1,23 +1,24 @@
 #ifndef _VEB_HPP_
 #define _VEB_HPP_
 
+#include <algorithm>
 
-template <class T, unsigned h>
+template <class T, size_t h>
 class VEB
 {
-	template <class U, unsigned a>
+	template <class U, size_t a>
 	friend class VEB;
 
 private:
 	VEB<T, h-h/2> top;
 	VEB<T, h/2> down[(1<<(h-h/2))];
 
-	static unsigned long long low(unsigned long long u)
+	static size_t low(size_t u)
 	{
 		return u & ((1ull<<(h/2))-1);
 	}
 	
-	static unsigned long long high(unsigned long long u)
+	static size_t high(size_t u)
 	{
 		return u >> (h/2);
 	}
@@ -37,10 +38,24 @@ private:
 	}
 
 public:
-
-	T& operator [] (unsigned long long index)
+	static size_t size()
 	{
-		if(low(index) == low((unsigned long long)-1))
+		return (1<<h) - 1;
+	}
+
+	VEB(){}
+
+	VEB(T* ar)
+	{
+		for(size_t i = 0; i < size(); i++)
+		{
+			(*this)[i] = ar[i];
+		}
+	}
+
+	T& operator [] (size_t index)
+	{
+		if(low(index) == low((size_t)-1))
 			return top[high(index)];
 		return down[high(index)][low(index)];
 	}
@@ -56,7 +71,7 @@ public:
 template <class T>
 class VEB<T, 1>
 {
-	template <class U, unsigned a>
+	template <class U, size_t a>
 	friend class VEB;
 
 private:
@@ -72,7 +87,19 @@ private:
 	}
 
 public:
-	T& operator [] (unsigned index)
+	static size_t size()
+	{
+		return 1;
+	}
+	
+	VEB():data(){}
+
+	VEB(T* ar)
+	{
+		data = *ar;
+	}
+
+	T& operator [] (size_t index)
 	{
 		return data;
 	}
