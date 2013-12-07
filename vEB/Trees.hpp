@@ -21,7 +21,6 @@ public:
 
 	RandTree(T* ar):left(new RandTree<T, h-1>(ar)), right(new RandTree<T, h-1>(ar + size()/2 + 1)), data(ar[size()/2])
 	{
-//		std::cout << reinterpret_cast<size_t>(this) << std::endl;
 	}
 
 	bool search(const T& k) const
