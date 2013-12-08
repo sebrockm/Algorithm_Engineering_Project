@@ -182,6 +182,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 				if(progress)
 				{
 					cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+					cout.flush();
 				}
 				if(labels[j].b() == 0)
 				{
@@ -205,6 +206,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 				if(progress)
 				{
 					cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+					cout.flush();
 				}
 				if(labels[j].b() == 0)
 				{
