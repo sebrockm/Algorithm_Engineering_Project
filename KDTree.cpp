@@ -58,3 +58,4 @@ shared_ptr<KDTree> createKDTree(vector<Label*>::iterator first, vector<Label*>::
 
 	return tree;
 }
+

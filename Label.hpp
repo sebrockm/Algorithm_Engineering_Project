@@ -61,5 +61,7 @@ public:
  */
 bool labelCross(const Label& label1, const Label& label2);
 
+bool labelWouldCross(const Label& label1, const Label& label2);
+
 #endif
 

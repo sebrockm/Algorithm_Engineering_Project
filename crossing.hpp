@@ -2,10 +2,12 @@
 #define _CROSSING_HPP_
 
 #include <vector>
+#include <utility>
 
 #include "Label.hpp"
 #include "KDTree.hpp"
 
+using namespace std;
 
 /**
  * Checks if Label pos crosses with any previously Labels beginning with first
@@ -13,7 +15,7 @@
  * @param pos Iterator to Label to be checked
  * @return true if there are no crossings
  */
-bool isPosOkUntilNow(std::vector<Label>::iterator first, std::vector<Label>::iterator pos);
+bool isPosOkUntilNow(vector<Label>::iterator first, vector<Label>::iterator pos);
 
 /**
  * Returns a vector with pointers to Labels that are crossing label
@@ -22,8 +24,14 @@ bool isPosOkUntilNow(std::vector<Label>::iterator first, std::vector<Label>::ite
  * @param last Iterator to fiest Label not to be checked with
  * @return vector of pointers to Labels crossing with label
  */
-std::vector<Label*> getCrossing(const Label& label, std::vector<Label*>::iterator first, std::vector<Label*>::iterator last);
+vector<Label*> getCrossing(const Label& label, vector<Label*>::iterator first, vector<Label*>::iterator last);
 
-vector<Label*> getCrossing(const Label& label,  KDTree* tree);
+vector<Label*> getWouldCrossing(const Label& label, vector<Label*>::iterator first, vector<Label*>::iterator last);
+
+vector<Label*> getCrossing(const Label& label, KDTree* tree);
+
+vector<Label*> getWouldCrossing(const Label& label, KDTree* tree);
+
+vector<pair<Label::Pos, Label*>> getCouldCrossing(const Label& label, KDTree* tree);
 
 #endif

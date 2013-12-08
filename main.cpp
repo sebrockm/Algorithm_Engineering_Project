@@ -21,7 +21,7 @@ void usage(const char* progname)
 	cerr	<< endl
 			<< "usage:" << endl
 			<< "      " << progname << " -in dat1 -out dat2 [-heu 1] [-rec n] [-opt] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it." << endl
-			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 reads dat1 and writes a solution to dat2 using Heuristic2" << endl
+			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 [-opt] reads dat1 and writes a solution to dat2 using Heuristic2. If -opt is set, dat1 must contain a correct solution and Heuristic2 will try to optimize it." << endl
 			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl;
 }
 
@@ -189,11 +189,20 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 		Heuristic2 heu(labels);
 
 		int i = 1;
-		while((tmpCounter = heu.start()) > 0)
+		do
 		{
-			cout << i << ". Durchlauf" << "\r";
+			tmpCounter = 0;
+			for(unsigned j = 0; j < labels.size(); j++)
+			{
+				cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+				if(labels[j].b() == 0)
+				{
+					tmpCounter += heu.tryToEnable(labels[j]);
+				}
+			}
 			counter += tmpCounter;
-		}
+			i++;
+		}while(tmpCounter > 0);
 	}
 
 	auto t2 = chrono::high_resolution_clock::now();
