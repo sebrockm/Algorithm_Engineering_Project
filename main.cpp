@@ -20,13 +20,13 @@ void usage(const char* progname)
 {
 	cerr	<< endl
 			<< "usage:" << endl
-			<< "      " << progname << " -in dat1 -out dat2 [-heu 1] [-rec n] [-opt] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it." << endl
-			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 [-opt] reads dat1 and writes a solution to dat2 using Heuristic2. If -opt is set, dat1 must contain a correct solution and Heuristic2 will try to optimize it." << endl
+			<< "      " << progname << " -in dat1 -out dat2 [-heu 1] [-rec n] [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it. If -progress is set, progress is printed." << endl
+			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic2. If -opt is set, dat1 must contain a correct solution and Heuristic2 will try to optimize it. If -progress is set, progress is printed." << endl
 			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl;
 }
 
 
-void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, int& heu, int& recN, bool& opt)
+void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, int& heu, int& recN, bool& opt, bool& progress)
 {
 	if(argc < 2)
 	{
@@ -37,6 +37,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 	heu = 1;
 	recN = 0;
 	opt = false;
+	progress = false;
 
 	for(int i = 1; i < argc; i++)
 	{
@@ -133,6 +134,10 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 		{
 			opt = true;
 		}
+		else if(string(argv[i]) == "-progress")
+		{
+			progress = true;
+		}
 		else
 		{
 			usage(argv[0]);
@@ -149,7 +154,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 
 
 
-void writeSolution(vector<Label>& labels, const string& file_name, int heu, int recN)
+void writeSolution(vector<Label>& labels, const string& file_name, int heu, int recN, bool progress)
 {
 	ofstream file(file_name);
 	if(!file)
@@ -174,7 +179,10 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 			tmpCounter = 0;
 			for(unsigned j = 0; j < labels.size(); j++)
 			{
-				cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+				if(progress)
+				{
+					cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+				}
 				if(labels[j].b() == 0)
 				{
 					tmpCounter += heu.tryToEnable(labels[j]);
@@ -194,7 +202,10 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 			tmpCounter = 0;
 			for(unsigned j = 0; j < labels.size(); j++)
 			{
-				cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+				if(progress)
+				{
+					cout << i << ". Durchlauf: " << 100*j/labels.size() << "%\t" << counter+tmpCounter << "\r";
+				}
 				if(labels[j].b() == 0)
 				{
 					tmpCounter += heu.tryToEnable(labels[j]);
@@ -206,7 +217,10 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 	}
 
 	auto t2 = chrono::high_resolution_clock::now();
-	cout << "                                                                  \r";
+	if(progress)
+	{
+		cout << "                                                                  \r";
+	}
 	cout << counter << "\t" << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << endl;
 
 	bool ok = true;
@@ -376,16 +390,17 @@ int main(int argc, char** argv)
 	int heu;
 	int recN;
 	bool opt;
+	bool progress;
 
 
-	parse_options(argc, argv, input_file, output_file, eval_file, heu, recN, opt);
+	parse_options(argc, argv, input_file, output_file, eval_file, heu, recN, opt, progress);
 
 	if(!input_file.empty() && !output_file.empty())
 	{
 		vector<Label> labels;
 		fileParser(input_file, labels, opt);
 
-		writeSolution(labels, output_file, heu, recN);
+		writeSolution(labels, output_file, heu, recN, progress);
 	}
 	if(!eval_file.empty())
 	{
