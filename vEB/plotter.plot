@@ -1,5 +1,5 @@
 set term png
-set output "plot.png" 
+set output "plot2.png" 
 
 set xlabel "N"
 set ylabel "durchschnittliche Suchdauer in µs"

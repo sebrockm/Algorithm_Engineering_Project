@@ -5,55 +5,79 @@
 #include <algorithm>
 #include <iostream>
 #include <cstdlib>
+#include <utility>
+
+using namespace std;
+
 
 template <class T, size_t h>
 class RandTree
 {
 private:
-	std::unique_ptr<RandTree<T, h-1>> left, right;
-	T data;
-	
+	struct RandTreeNode
+	{
+		RandTreeNode *left, *right;
+		T data;
+
+		RandTreeNode():left(0), right(0){}
+	};
+
+	RandTreeNode nodes[(1<<h)-1];
+	RandTreeNode* root;
+
+	void set(RandTreeNode** toSet, size_t hh, pair<T, size_t>* ar)
+	{
+		size_t middle = (1<<(hh-1)) - 1;
+		*toSet = &nodes[ar[middle].second];
+
+		if(hh > 1)
+		{
+			set(&(*toSet)->left, hh-1, ar);
+			set(&(*toSet)->right, hh-1, ar + middle + 1);
+		}
+	}
+
 public:
 	constexpr static size_t size()
 	{
 		return (1<<h) - 1;
 	}
 
-	RandTree(T* ar):left(new RandTree<T, h-1>(ar)), right(new RandTree<T, h-1>(ar + size()/2 + 1)), data(ar[size()/2])
+	RandTree(T* ar)
 	{
+		pair<T, size_t> tmp[size()];//gibt an, welcher Knoten sich wo in nodes befindet
+
+		for(size_t i = 0; i < size(); i++)
+		{
+			nodes[i].data = ar[i];
+			tmp[i] = {ar[i], i};
+		}
+
+		sort(tmp, tmp+size(), [](const pair<T, size_t>& p1, const pair<T, size_t>& p2){return p1.first < p2.first;});
+
+		if(h == 27)
+			cout << "vor set" << endl;
+
+		set(&root, h, tmp);
+
+		if(h == 27)
+			cout << "nach set" << endl;
 	}
 
 	bool search(const T& k) const
 	{
-		if(k == data)
-			return true;
-		if(k < data)
-			return left->search(k);
-		return right->search(k);
-	}
-};
+		RandTreeNode* node = root;
+		while(node->left && node->right)
+		{
+			if(k < node->data)
+				node = node->left;
+			else if(k > node->data)
+				node = node->right;
+			else
+				return true;
+		}
 
-
-template <class T>
-class RandTree<T, 1>
-{
-private:
-	T data;
-
-public:
-	constexpr static size_t size()
-	{
-		return 1;
-	}
-
-	RandTree(T* ar):data(*ar)
-	{
-		//std::cout << reinterpret_cast<size_t>(this) << std::endl;
-	}
-
-	bool search(const T& k) const
-	{
-		return k == data;
+		return node->data == k;
 	}
 };
 

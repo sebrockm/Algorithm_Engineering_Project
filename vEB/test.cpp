@@ -10,22 +10,6 @@
 
 using namespace std;
 
-template <class Iter>
-bool mybinary(Iter first, Iter last, int what)
-{
-	while(last > first)
-	{
-		auto middle = first + (last-first)/2;
-		if(what < *middle)
-			last = middle;
-		else if(what > *middle)
-			first = middle + 1;
-		else 
-			return true;
-	}
-	return false;
-}
-
 
 int main()
 {
@@ -38,66 +22,66 @@ int main()
 	vector<int> v(N);
 	generate(v.begin(), v.end(), rand);
 
-	sort(v.begin(), v.end());
 
 	vector<int> search(R);
-	generate_n(search.begin(), R, rand);
+	generate(search.begin(), search.end(), rand);
 
 	vector<bool> ergs(R);
 
-	auto t1 = chrono::high_resolution_clock::now();
-	for(unsigned i=0; i<R; i++)
+	//sorted Tree
 	{
-		ergs[i] = binary_search(v.begin(), v.end(), search[i]);
-	}
-	auto t2 = chrono::high_resolution_clock::now();
-	cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << " ";
-
-	/*
-	t1 = chrono::high_resolution_clock::now();
-	for(unsigned i=0; i<R; i++)
-	{
-		if(ergs[i] != mybinary(v.begin(), v.end(), search[i]))
-			cout << "gna2" << endl;
-	}
-	t2 = chrono::high_resolution_clock::now();
-	cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << " ";
-	*/
-
-	{
-		RandTree<int, H> randt(v.data());
-		t1 = chrono::high_resolution_clock::now();
+		sort(v.begin(), v.end());
+		auto t1 = chrono::high_resolution_clock::now();
 		for(unsigned i=0; i<R; i++)
 		{
+			ergs[i] = binary_search(v.begin(), v.end(), search[i]);
+		}
+		auto t2 = chrono::high_resolution_clock::now();
+		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << " ";
+	}
+
+	//RandTree
+	{
+		random_shuffle(v.begin(), v.end());
+		RandTree<int, H> randt(v.data());
+		auto t1 = chrono::high_resolution_clock::now();
+		for(unsigned i=0; i<R; i++)
+		{
+			randt.search(search[i]);
 			if(ergs[i] != randt.search(search[i]))
 				cout << "gna1" << endl;
 		}
-		t2 = chrono::high_resolution_clock::now();
+		auto t2 = chrono::high_resolution_clock::now();
 		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << " ";
 	}
 
+	//Level sorted Tree
 	{
+		sort(v.begin(), v.end());
 		LevelSortedTree<int, H> lst(v.data());
-		t1 = chrono::high_resolution_clock::now();
+		auto t1 = chrono::high_resolution_clock::now();
 		for(unsigned i=0; i<R; i++)
 		{
+			lst.search(search[i]);
 			if(ergs[i] != lst.search(search[i]))
 				cout << "gna3" << endl;
 		}
-		t2 = chrono::high_resolution_clock::now();
+		auto t2 = chrono::high_resolution_clock::now();
 		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << " ";
 	}
 
+	//vEB
 	{
 		VEB<int, H> veb(v.data());
-		t1 = chrono::high_resolution_clock::now();
+		auto t1 = chrono::high_resolution_clock::now();
 		for(unsigned i=0; i<R; i++)
 		{
+			veb.search(search[i]);
 			if(ergs[i] != veb.search(search[i]))
 				cout << "gna4" << endl;
 		}
-		t2 = chrono::high_resolution_clock::now();
-		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count()<< " ";
+		auto t2 = chrono::high_resolution_clock::now();
+		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count();
 	}
 
 	cout << endl;
