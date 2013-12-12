@@ -6,15 +6,23 @@
 bool labelCross(const Label& label1, const Label& label2)
 {
 	 return label1.b() == 1 && label2.b() == 1 &&
+		label1.xs() < label2.xs()+label2.l() && label2.xs() < label1.xs()+label1.l() &&
+		label1.ys()-label1.h() < label2.ys() && label2.ys()-label2.h() < label1.ys();
+/*
 		std::max(label1.xs(), label2.xs()) < std::min(label1.xs()+label1.l(), label2.xs()+label2.l()) &&
 		std::max(label1.ys()-label1.h(), label2.ys()-label2.h()) < std::min(label1.ys(), label2.ys());
+*/
 }
 
 bool labelWouldCross(const Label& label1, const Label& label2)
 {
 	return label1.b() + label2.b() == 1 && 
+		label1.xs() < label2.xs()+label2.l() && label2.xs() < label1.xs()+label1.l() &&
+		label1.ys()-label1.h() < label2.ys() && label2.ys()-label2.h() < label1.ys();
+/*
 		std::max(label1.xs(), label2.xs()) < std::min(label1.xs()+label1.l(), label2.xs()+label2.l()) &&
 		std::max(label1.ys()-label1.h(), label2.ys()-label2.h()) < std::min(label1.ys(), label2.ys());
+*/
 }
 
 Label::Label(int x, int y, int l, int h, string name, int b)
