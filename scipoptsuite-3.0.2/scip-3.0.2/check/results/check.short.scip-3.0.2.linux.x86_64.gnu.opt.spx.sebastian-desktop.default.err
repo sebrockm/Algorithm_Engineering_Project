@@ -1,0 +1,141 @@
+Linux sebastian-desktop 3.11.0-15-generic #23-Ubuntu SMP Mon Dec 9 18:17:04 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+Do 9. Jan 21:50:53 CET 2014
+@01 instances/CP/linking.cip ===========
+Do 9. Jan 21:50:53 CET 2014
+Do 9. Jan 21:50:53 CET 2014
+@01 instances/CP/j301_2.cip ===========
+Do 9. Jan 21:50:53 CET 2014
+Do 9. Jan 21:50:53 CET 2014
+@01 instances/CP/stein27_super.cip ===========
+Do 9. Jan 21:50:53 CET 2014
+Do 9. Jan 21:50:53 CET 2014
+@01 instances/Indicator/mcf128-4-1.lp ===========
+Do 9. Jan 21:50:53 CET 2014
+Do 9. Jan 21:50:54 CET 2014
+@01 instances/Indicator/mcf64-4-1.lp ===========
+Do 9. Jan 21:50:54 CET 2014
+Do 9. Jan 21:50:54 CET 2014
+@01 instances/MIP/bell5.mps ===========
+Do 9. Jan 21:50:54 CET 2014
+Do 9. Jan 21:50:54 CET 2014
+@01 instances/MIP/blend2.mps ===========
+Do 9. Jan 21:50:54 CET 2014
+Do 9. Jan 21:50:54 CET 2014
+@01 instances/MIP/dcmulti.mps ===========
+Do 9. Jan 21:50:54 CET 2014
+Do 9. Jan 21:50:56 CET 2014
+@01 instances/MIP/egout.mps ===========
+Do 9. Jan 21:50:56 CET 2014
+Do 9. Jan 21:50:56 CET 2014
+@01 instances/MIP/enigma.mps ===========
+Do 9. Jan 21:50:56 CET 2014
+Do 9. Jan 21:50:56 CET 2014
+@01 instances/MIP/flugpl.mps ===========
+Do 9. Jan 21:50:56 CET 2014
+Do 9. Jan 21:50:56 CET 2014
+@01 instances/MIP/gt2.mps ===========
+Do 9. Jan 21:50:56 CET 2014
+Do 9. Jan 21:50:56 CET 2014
+@01 instances/MIP/lseu.mps ===========
+Do 9. Jan 21:50:56 CET 2014
+Do 9. Jan 21:50:56 CET 2014
+@01 instances/MIP/MANN_a9.clq.lp ===========
+Do 9. Jan 21:50:56 CET 2014
+Do 9. Jan 21:50:56 CET 2014
+@01 instances/MIP/misc03.mps ===========
+Do 9. Jan 21:50:56 CET 2014
+Do 9. Jan 21:50:57 CET 2014
+@01 instances/MIP/p0033.osil ===========
+Do 9. Jan 21:50:57 CET 2014
+Do 9. Jan 21:50:57 CET 2014
+@01 instances/MIP/p0548.mps ===========
+Do 9. Jan 21:50:57 CET 2014
+Do 9. Jan 21:50:57 CET 2014
+@01 instances/MIP/rgn.mps ===========
+Do 9. Jan 21:50:57 CET 2014
+Do 9. Jan 21:50:57 CET 2014
+@01 instances/MIP/stein27.fzn ===========
+Do 9. Jan 21:50:57 CET 2014
+Do 9. Jan 21:50:58 CET 2014
+@01 instances/MIP/stein27_inf.lp ===========
+Do 9. Jan 21:50:58 CET 2014
+Do 9. Jan 21:50:58 CET 2014
+@01 instances/MIP/vpm2.fzn ===========
+Do 9. Jan 21:50:58 CET 2014
+Do 9. Jan 21:50:59 CET 2014
+@01 instances/MINLP/bip_cross_min.10.10.10.1.pip ===========
+Do 9. Jan 21:50:59 CET 2014
+Do 9. Jan 21:50:59 CET 2014
+@01 instances/MINLP/circle.osil ===========
+Do 9. Jan 21:50:59 CET 2014
+Do 9. Jan 21:50:59 CET 2014
+@01 instances/MINLP/ex1224.osil ===========
+Do 9. Jan 21:50:59 CET 2014
+Do 9. Jan 21:50:59 CET 2014
+@01 instances/MINLP/ex1266.mps ===========
+Do 9. Jan 21:50:59 CET 2014
+Do 9. Jan 21:51:00 CET 2014
+@01 instances/MINLP/gastrans.cip ===========
+Do 9. Jan 21:51:00 CET 2014
+Do 9. Jan 21:51:00 CET 2014
+@01 instances/MINLP/m3.osil ===========
+Do 9. Jan 21:51:00 CET 2014
+Do 9. Jan 21:51:00 CET 2014
+@01 instances/MINLP/meanvarx.mps ===========
+Do 9. Jan 21:51:00 CET 2014
+Do 9. Jan 21:51:00 CET 2014
+@01 instances/MINLP/parincQuadratic.osil ===========
+Do 9. Jan 21:51:00 CET 2014
+Do 9. Jan 21:51:00 CET 2014
+@01 instances/MINLP/tltr.mps ===========
+Do 9. Jan 21:51:00 CET 2014
+Do 9. Jan 21:51:00 CET 2014
+@01 instances/PseudoBoolean/factor-mod-size=9-P0=67-P1=349-P2=67-P3=499-P4=79-P5=347-P6=307-B.opb ===========
+Do 9. Jan 21:51:00 CET 2014
+Do 9. Jan 21:51:06 CET 2014
+@01 instances/PseudoBoolean/normalized-bsg_10_4_5.opb ===========
+Do 9. Jan 21:51:06 CET 2014
+Do 9. Jan 21:51:07 CET 2014
+@01 instances/PseudoBoolean/normalized-mds_10_4_3.opb ===========
+Do 9. Jan 21:51:07 CET 2014
+Do 9. Jan 21:51:07 CET 2014
+@01 instances/PseudoBoolean/normalized-mds_50_25_5.opb ===========
+Do 9. Jan 21:51:07 CET 2014
+Do 9. Jan 21:51:08 CET 2014
+@01 instances/PseudoBoolean/normalized-t2001.13queen13.1111218308.opb ===========
+Do 9. Jan 21:51:08 CET 2014
+Do 9. Jan 21:51:08 CET 2014
+@01 instances/PseudoBoolean/normalized-t2001.13queen13.1110976730--soft-33-100-0.wbo ===========
+Do 9. Jan 21:51:08 CET 2014
+Do 9. Jan 21:51:09 CET 2014
+@01 instances/PseudoBoolean/wheel010.lap.opb.pre.cip ===========
+Do 9. Jan 21:51:09 CET 2014
+Do 9. Jan 21:51:11 CET 2014
+@01 instances/Semicontinuous/meanvarxsc.lp ===========
+Do 9. Jan 21:51:11 CET 2014
+Do 9. Jan 21:51:11 CET 2014
+@01 instances/Semicontinuous/semicon1.mps ===========
+Do 9. Jan 21:51:11 CET 2014
+Do 9. Jan 21:51:11 CET 2014
+@01 instances/SAT/bart10.shuffled.cnf ===========
+Do 9. Jan 21:51:11 CET 2014
+Do 9. Jan 21:51:11 CET 2014
+@01 instances/SOS/findRoot.lp ===========
+Do 9. Jan 21:51:11 CET 2014
+Do 9. Jan 21:51:11 CET 2014
+@01 instances/SOS/pcu_0.01.lp ===========
+Do 9. Jan 21:51:11 CET 2014
+Do 9. Jan 21:51:12 CET 2014
+@01 instances/SOS/pcu_0.1.lp ===========
+Do 9. Jan 21:51:12 CET 2014
+Do 9. Jan 21:51:12 CET 2014
+@01 instances/SOS/sparse2.lp ===========
+Do 9. Jan 21:51:12 CET 2014
+Do 9. Jan 21:51:15 CET 2014
+@01 instances/Orbitope/packorb_1-FullIns_3.cip ===========
+Do 9. Jan 21:51:15 CET 2014
+Do 9. Jan 21:51:15 CET 2014
+@01 instances/Orbitope/partorb_1-FullIns_3.cip ===========
+Do 9. Jan 21:51:15 CET 2014
+Do 9. Jan 21:51:16 CET 2014
+Do 9. Jan 21:51:16 CET 2014
