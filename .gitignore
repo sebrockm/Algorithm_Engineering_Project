@@ -19,5 +19,5 @@ vis/bin/
 vis/.metadata/*
 vis/.settings/*
 
-scipoptsuite/*
+scipoptsuite-3.0.2/*
 gmon.out
