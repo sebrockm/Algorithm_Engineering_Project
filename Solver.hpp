@@ -19,7 +19,7 @@ private:
     SCIP* scip;
     vector<vector<SCIP_VAR*>> vars;
     vector<SCIP_CONS*> positionCons;
-    vector<vector<vector<vector<SCIP_CONS*>>>> crossCons;
+    vector<SCIP_CONS*> crossCons;
     void printStatus(SCIP_Status s) const;
 
 public:

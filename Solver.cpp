@@ -1,7 +1,8 @@
 #include "Solver.hpp"
 
-#include "objscip/objscip.h"
 #include "scip_exception.hpp"
+
+#include "objscip/objscip.h"
 #include "scip/cons_linear.h"
 #include "scip/scipdefplugins.h"
 
@@ -65,20 +66,16 @@ void Solver::printStatus(SCIP_Status s) const
 Solver::Solver(vector<Label>& labels)
     :labels(labels),
     vars(labels.size(), {0,0,0,0}),
-    positionCons(labels.size()),
-    crossCons((labels.size()-1))
+    positionCons(labels.size())
 {
     int n = labels.size();
 
     try
     {
         SCIP_CALL_EXC(SCIPcreate(&scip));
+        SCIP_CALL_EXC(SCIPincludeDefaultPlugins(scip));
         SCIP_CALL_EXC(SCIPcreateProbBasic(scip, "labeling"));
         SCIP_CALL_EXC(SCIPsetObjsense(scip, SCIP_OBJSENSE_MAXIMIZE));
-        SCIP_CALL_EXC(SCIPincludeConshdlrLinear(scip));
-        //SCIP_CALL_EXC(SCIPincludeNodeselEstimate(scip));
-        SCIP_CALL_EXC(SCIPincludeNodeselHybridestim(scip));
-        //SCIP_CALL_EXC(SCIPincludeNodeselBfs(scip));
         
         //Variablen
         for(int i = 0; i < n; i++)
@@ -91,7 +88,7 @@ Solver::Solver(vector<Label>& labels)
                             0, //left bound
                             1, //right bound
                             1, //objective
-                            SCIP_VARTYPE_BINARY));
+                            SCIP_VARTYPE_INTEGER));
                 SCIP_CALL_EXC(SCIPaddVar(scip, vars[i][p]));
             }
         }
@@ -113,33 +110,32 @@ Solver::Solver(vector<Label>& labels)
 
         for(int i = 0; i < n-1; i++)
         {
-            crossCons[i] = vector<vector<vector<SCIP_CONS*>>>(n-1-i);
             for(int j = i+1; j < n; j++)
             {
-                int jj = j-i-1;
-                crossCons[i][jj] = vector<vector<SCIP_CONS*>>(4);
                 labels[i].setPos(Label::tl);
                 for(int p = 0; p < 4; p++)
                 {
-                    crossCons[i][jj][p] = vector<SCIP_CONS*>(4);
                     labels[j].setPos(Label::tl);
                     for(int q = 0; q < 4; q++)
                     {
-                        stringstream ss;
-                        ss << "b#" << i+1 << "#" << p+1 << " + " << "b#" << j+1 << "#" << q+1 
-                            << " + " << "c#" << i+1 << "#" << p+1 << "#" << j+1 << "#" << q+1 << " <= 2";
+                        if(labelCouldCross(labels[i], labels[j]))
+                        {
+                            stringstream ss;
+                            ss << "b#" << i+1 << "#" << p+1 << " + " << "b#" << j+1 << "#" << q+1 
+                                << " + " << "c#" << i+1 << "#" << p+1 << "#" << j+1 << "#" << q+1 << " <= 2";
 
-                        SCIP_VAR* v[] = {vars[i][p], vars[j][q]};
-                        SCIP_Real vals[] = {1,1};
-                        SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &crossCons[i][jj][p][q], ss.str().c_str(),
-                                    2, //variable count
-                                    v, //variables
-                                    vals, //values
-                                    0., //lhs
-                                    2. - labelCouldCross(labels[i], labels[j]))); //rhs
+                            SCIP_VAR* v[] = {vars[i][p], vars[j][q]};
+                            SCIP_Real vals[] = {1,1};
+                            crossCons.push_back(NULL);
+                            SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &crossCons.back(), ss.str().c_str(),
+                                        2, //variable count
+                                        v, //variables
+                                        vals, //values
+                                        0., //lhs
+                                        1.)); //rhs
 
-                        SCIP_CALL_EXC(SCIPaddCons(scip, crossCons[i][jj][p][q]));
-
+                            SCIP_CALL_EXC(SCIPaddCons(scip, crossCons.back()));
+                        }
                         labels[j].rotateCW();
                     }   
                     labels[i].rotateCW();
@@ -161,7 +157,7 @@ bool Solver::solve()
     try
     {
         //timelimit halbe Stunde
-        SCIP_CALL(SCIPsetRealParam(scip, "limits/time", 1800));
+        //SCIP_CALL(SCIPsetRealParam(scip, "limits/time", 1800));
 
         //solve
         SCIP_CALL_EXC(SCIPsolve(scip));
@@ -169,7 +165,7 @@ bool Solver::solve()
         if(status != SCIP_STATUS_OPTIMAL)
         {
             printStatus(status);
-            return false;
+            //return false;
         }
 
         SCIP_SOL* sol = SCIPgetBestSol(scip);
@@ -179,15 +175,14 @@ bool Solver::solve()
             return false;
         }
 
-        cout << "best: " << SCIPgetSolOrigObj(scip, sol) << endl;
-
         for(int i = 0; i < n; i++)
         {
             labels[i].setPos(Label::tl);
             labels[i].disable();
             for(int p = 0; p < 4; p++)
             {
-                if(SCIPgetSolVal(scip, sol, vars[i][p]) > 0.5)
+                double d = SCIPgetSolVal(scip, sol, vars[i][p]);
+                if(d > 0.5)
                 {
                     labels[i].enable();
                     break;
@@ -224,16 +219,7 @@ Solver::~Solver()
 
         for(auto& a : crossCons)
         {
-            for(auto& b : a)
-            {
-                for(auto& c : b)
-                {
-                    for(auto& d : c)
-                    {
-                        SCIP_CALL_EXC(SCIPreleaseCons(scip, &d)); 
-                    }
-                }
-            }
+            SCIP_CALL_EXC(SCIPreleaseCons(scip, &a)); 
         }
 
         SCIP_CALL_EXC(SCIPfree(&scip));
