@@ -21,6 +21,7 @@ void usage(const char* progname)
 {
 	cerr	<< endl
 			<< "usage:" << endl
+            << "      " << progname << " -in dat1 -out dat2 -heu0 reads dat1 and writes an optimal solution to dat2 using scip."
 			<< "      " << progname << " -in dat1 -out dat2 [-heu 1] [-rec n] [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it. If -progress is set, progress is printed." << endl
 			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic2. If -opt is set, dat1 must contain a correct solution and Heuristic2 will try to optimize it. If -progress is set, progress is printed." << endl
 			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl;
