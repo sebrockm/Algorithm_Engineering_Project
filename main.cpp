@@ -3,6 +3,7 @@
 #include "crossing.hpp"
 #include "Heuristic1.hpp"
 #include "Heuristic2.hpp"
+#include "Solver.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -106,7 +107,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 			if(++i < argc)
 			{
 				heu = atoi(argv[i]);
-				if(heu != 1 && heu != 2)
+				if(heu != 0 && heu != 1 && heu != 2)
 				{
 					usage(argv[0]);
 					exit(EXIT_FAILURE);
@@ -217,6 +218,11 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 			i++;
 		}while(tmpCounter > 0);
 	}
+        else if(heu == 0)
+        {
+            Solver sol(labels);
+            sol.solve();
+        }
 
 	auto t2 = chrono::high_resolution_clock::now();
 	if(progress)
