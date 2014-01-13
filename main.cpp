@@ -3,6 +3,7 @@
 #include "crossing.hpp"
 #include "Heuristic1.hpp"
 #include "Heuristic2.hpp"
+#include "Solver.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -20,6 +21,7 @@ void usage(const char* progname)
 {
 	cerr	<< endl
 			<< "usage:" << endl
+            << "      " << progname << " -in dat1 -out dat2 -heu0 reads dat1 and writes an optimal solution to dat2 using scip."
 			<< "      " << progname << " -in dat1 -out dat2 [-heu 1] [-rec n] [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it. If -progress is set, progress is printed." << endl
 			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic2. If -opt is set, dat1 must contain a correct solution and Heuristic2 will try to optimize it. If -progress is set, progress is printed." << endl
 			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl;
@@ -106,7 +108,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 			if(++i < argc)
 			{
 				heu = atoi(argv[i]);
-				if(heu != 1 && heu != 2)
+				if(heu != 0 && heu != 1 && heu != 2)
 				{
 					usage(argv[0]);
 					exit(EXIT_FAILURE);
@@ -217,6 +219,11 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 			i++;
 		}while(tmpCounter > 0);
 	}
+        else if(heu == 0)
+        {
+            Solver sol(labels);
+            sol.solve();
+        }
 
 	auto t2 = chrono::high_resolution_clock::now();
 	if(progress)

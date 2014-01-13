@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\begin{document}
+
+\section*{ILP-Formulierung}
+\subsection*{Parameter}
+\begin{flalign}
+    i,j&\in\{1,\dots,n\} &&\text{Punkte} \\
+    p,q&\in P:=\{\mathit{tl},\mathit{tr},\mathit{br},\mathit{bl}\} &&\text{Position eines Labels} \\
+    c_{ipjq}&\in\{0,1\} &&\text{Überschneidung von $i$ und $j$ an $p$ und $q$}
+\end{flalign}
+
+\subsection*{Variablen}
+\begin{flalign}
+    b_{ip}&\in\{0,1\} &&\text{gibt an, ob Punkt $i$ an Position $p$ gelabelt wird} 
+\end{flalign}
+
+\subsection*{LP}
+\begin{flalign}
+                && \max&\sum_{i=1}^n \sum_{p\in P} b_{ip} \label{of}\\
+    \text{s.t.} && \sum_{p\in P} b_{ip} &\leq 1 &\forall i \\
+                && b_{ip} + b_{jq} + c_{ipjq} &\leq 2 &\forall p,q,i<j
+\end{flalign}
+
+\end{document}

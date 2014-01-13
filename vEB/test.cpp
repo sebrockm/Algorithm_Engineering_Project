@@ -41,7 +41,7 @@ int main()
 	}
 
 	//RandTree
-	{
+	/*{
 		random_shuffle(v.begin(), v.end());
 		RandTree<int, H> randt(v.data());
 		auto t1 = chrono::high_resolution_clock::now();
@@ -53,11 +53,11 @@ int main()
 		}
 		auto t2 = chrono::high_resolution_clock::now();
 		cout << (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count() << " ";
-	}
+	}*/
 
 	//Level sorted Tree
 	{
-		sort(v.begin(), v.end());
+		//sort(v.begin(), v.end());
 		LevelSortedTree<int, H> lst(v.data());
 		RandTree<int, H> rt((int*)&lst);
 		auto t1 = chrono::high_resolution_clock::now();
