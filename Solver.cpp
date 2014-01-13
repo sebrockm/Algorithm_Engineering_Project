@@ -2,6 +2,7 @@
 
 #include "scip_exception.hpp"
 
+#include "scip/message.h"
 #include "objscip/objscip.h"
 #include "scip/cons_linear.h"
 #include "scip/scipdefplugins.h"
@@ -16,7 +17,7 @@ using namespace std;
 
 void Solver::printStatus(SCIP_Status s) const
 {
-    switch(s)
+/*    switch(s)
     {
         default:
         case SCIP_STATUS_UNKNOWN:
@@ -61,6 +62,7 @@ void Solver::printStatus(SCIP_Status s) const
         case SCIP_STATUS_INFORUNBD:
             cerr << "the problem was proven to be either infeasible or unbounded" << endl; break;
     }
+	*/
 }
 
 Solver::Solver(vector<Label>& labels)
@@ -72,6 +74,7 @@ Solver::Solver(vector<Label>& labels)
 
     try
     {
+		SCIP_CALL_EXC(SCIPmessageSetHandler(NULL));
         SCIP_CALL_EXC(SCIPcreate(&scip));
         SCIP_CALL_EXC(SCIPincludeDefaultPlugins(scip));
         SCIP_CALL_EXC(SCIPcreateProbBasic(scip, "labeling"));
@@ -150,14 +153,14 @@ Solver::Solver(vector<Label>& labels)
     }
 }
 
-bool Solver::solve()
+int Solver::solve()
 {
     int n = labels.size();
 
     try
     {
         //timelimit halbe Stunde
-        //SCIP_CALL(SCIPsetRealParam(scip, "limits/time", 1800));
+        SCIP_CALL(SCIPsetRealParam(scip, "limits/time", 10*60));
 
         //solve
         SCIP_CALL_EXC(SCIPsolve(scip));
@@ -175,6 +178,7 @@ bool Solver::solve()
             return false;
         }
 
+		int counter = 0;
         for(int i = 0; i < n; i++)
         {
             labels[i].setPos(Label::tl);
@@ -185,11 +189,14 @@ bool Solver::solve()
                 if(d > 0.5)
                 {
                     labels[i].enable();
+					counter++;
                     break;
                 }
                 labels[i].rotateCW();
             }
         }
+
+		return counter;
     }
     catch(SCIPException& e)
     {
@@ -197,7 +204,7 @@ bool Solver::solve()
         exit(e.getRetcode());
     }
 
-    return true;
+    return 0;
 }
 
 Solver::~Solver()

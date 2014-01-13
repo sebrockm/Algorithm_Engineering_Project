@@ -219,11 +219,11 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 			i++;
 		}while(tmpCounter > 0);
 	}
-        else if(heu == 0)
-        {
-            Solver sol(labels);
-            sol.solve();
-        }
+	else if(heu == 0)
+	{
+		Solver sol(labels);
+		counter = sol.solve();
+	}
 
 	auto t2 = chrono::high_resolution_clock::now();
 	if(progress)

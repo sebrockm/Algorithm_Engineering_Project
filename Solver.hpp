@@ -25,7 +25,7 @@ private:
 public:
     Solver(vector<Label>& labels);
     ~Solver();
-    bool solve();
+    int solve();
 };
 
 #endif
