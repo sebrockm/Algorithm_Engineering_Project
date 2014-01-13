@@ -47,7 +47,7 @@ int main()
 		auto t1 = chrono::high_resolution_clock::now();
 		for(unsigned i=0; i<R; i++)
 		{
-			randt.search(search[i]);
+			//randt.search(search[i]);
 			if(ergs[i] != randt.search(search[i]))
 				cout << "gna1" << endl;
 		}
@@ -59,11 +59,12 @@ int main()
 	{
 		sort(v.begin(), v.end());
 		LevelSortedTree<int, H> lst(v.data());
+		RandTree<int, H> rt((int*)&lst);
 		auto t1 = chrono::high_resolution_clock::now();
 		for(unsigned i=0; i<R; i++)
 		{
-			lst.search(search[i]);
-			if(ergs[i] != lst.search(search[i]))
+			//lst.search(search[i]);
+			if(ergs[i] != rt.search(search[i]))
 				cout << "gna3" << endl;
 		}
 		auto t2 = chrono::high_resolution_clock::now();
@@ -73,11 +74,12 @@ int main()
 	//vEB
 	{
 		VEB<int, H> veb(v.data());
+		RandTree<int, H> rt((int*)&veb);
 		auto t1 = chrono::high_resolution_clock::now();
 		for(unsigned i=0; i<R; i++)
 		{
-			veb.search(search[i]);
-			if(ergs[i] != veb.search(search[i]))
+			//rt.search(search[i]);
+			if(ergs[i] != rt.search(search[i]))
 				cout << "gna4" << endl;
 		}
 		auto t2 = chrono::high_resolution_clock::now();
