@@ -2,7 +2,6 @@
 
 #include "scip_exception.hpp"
 
-#include "scip/message.h"
 #include "objscip/objscip.h"
 #include "scip/cons_linear.h"
 #include "scip/scipdefplugins.h"
@@ -17,7 +16,7 @@ using namespace std;
 
 void Solver::printStatus(SCIP_Status s) const
 {
-/*    switch(s)
+    switch(s)
     {
         default:
         case SCIP_STATUS_UNKNOWN:
@@ -62,7 +61,6 @@ void Solver::printStatus(SCIP_Status s) const
         case SCIP_STATUS_INFORUNBD:
             cerr << "the problem was proven to be either infeasible or unbounded" << endl; break;
     }
-	*/
 }
 
 Solver::Solver(vector<Label>& labels)
@@ -74,9 +72,9 @@ Solver::Solver(vector<Label>& labels)
 
     try
     {
-		SCIP_CALL_EXC(SCIPmessageSetHandler(NULL));
         SCIP_CALL_EXC(SCIPcreate(&scip));
         SCIP_CALL_EXC(SCIPincludeDefaultPlugins(scip));
+		SCIP_CALL_EXC(SCIPsetMessagehdlr(scip, NULL));
         SCIP_CALL_EXC(SCIPcreateProbBasic(scip, "labeling"));
         SCIP_CALL_EXC(SCIPsetObjsense(scip, SCIP_OBJSENSE_MAXIMIZE));
         
@@ -149,6 +147,7 @@ Solver::Solver(vector<Label>& labels)
     catch(SCIPException& e)
     {
         cerr << e.what() << endl;
+        cout << -1 << "\t" << 0 << endl;
         exit(e.getRetcode());
     }
 }
@@ -160,7 +159,7 @@ int Solver::solve()
     try
     {
         //timelimit halbe Stunde
-        SCIP_CALL(SCIPsetRealParam(scip, "limits/time", 10*60));
+        SCIP_CALL(SCIPsetRealParam(scip, "limits/time", 7.5*60));
 
         //solve
         SCIP_CALL_EXC(SCIPsolve(scip));
@@ -168,7 +167,11 @@ int Solver::solve()
         if(status != SCIP_STATUS_OPTIMAL)
         {
             printStatus(status);
-            //return false;
+            cout << "nopt\t";
+        }
+        else
+        {
+            cout << "opt\t";
         }
 
         SCIP_SOL* sol = SCIPgetBestSol(scip);
@@ -201,6 +204,7 @@ int Solver::solve()
     catch(SCIPException& e)
     {
         cerr << e.what() << endl;
+        cout << -1 << "\t" << 0 << endl;
         exit(e.getRetcode());
     }
 
@@ -234,6 +238,7 @@ Solver::~Solver()
     catch(SCIPException& e)
     {
         cerr << e.what() << endl;
+        cout << -1 << "\t" << 0 << endl;
         exit(e.getRetcode());
     }
 }

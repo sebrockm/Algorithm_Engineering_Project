@@ -24,11 +24,12 @@ void usage(const char* progname)
             << "      " << progname << " -in dat1 -out dat2 -heu0 reads dat1 and writes an optimal solution to dat2 using scip."
 			<< "      " << progname << " -in dat1 -out dat2 [-heu 1] [-rec n] [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic1 with n recursion steps (default is 0). If -opt is set, dat1 must contain a correct solution and Heuristic1 will try to optimize it. If -progress is set, progress is printed." << endl
 			<< "usage:" << progname << " -in dat1 -out dat2 -heu 2 [-opt] [-progress] reads dat1 and writes a solution to dat2 using Heuristic2. If -opt is set, dat1 must contain a correct solution and Heuristic2 will try to optimize it. If -progress is set, progress is printed." << endl
-			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl;
+			<< "      " << progname << " -eval dat1          evaluates whether the solution in dat1 is correct." << endl
+            << "      " << progname << " -ndichte dat1       gibt die Anzahl der Städte und die Labeldichte aus." << endl;
 }
 
 
-void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, int& heu, int& recN, bool& opt, bool& progress)
+void parse_options(int argc, char** argv, string& input_file, string& output_file, string& eval_file, string& dichte_file, int& heu, int& recN, bool& opt, bool& progress)
 {
 	if(argc < 2)
 	{
@@ -47,7 +48,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 		{ 
 			if(++i < argc)
 			{
-				if(input_file.empty() && eval_file.empty())
+				if(input_file.empty() && eval_file.empty() && dichte_file.empty())
 				{
 					input_file = argv[i];
 				}
@@ -67,7 +68,7 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 		{
 			if(++i < argc)
 			{
-				if(output_file.empty() && eval_file.empty())
+				if(output_file.empty() && eval_file.empty() && dichte_file.empty())
 				{
 					output_file = argv[i];
 				}
@@ -87,9 +88,29 @@ void parse_options(int argc, char** argv, string& input_file, string& output_fil
 		{
 			if(++i < argc)
 			{
-				if(output_file.empty() && input_file.empty() && eval_file.empty() && recN == 0 && !opt)
+				if(output_file.empty() && input_file.empty() && eval_file.empty() && dichte_file.empty() && recN == 0 && !opt)
 				{
 					eval_file = argv[i];
+				}
+				else
+				{
+					usage(argv[0]);
+					exit(EXIT_FAILURE);
+				}
+			}
+			else
+			{
+				usage(argv[0]);
+				exit(EXIT_FAILURE);
+			}
+		}
+		else if(string(argv[i]) == "-ndichte")
+		{
+			if(++i < argc)
+			{
+				if(output_file.empty() && input_file.empty() && eval_file.empty() && dichte_file.empty() && recN == 0 && !opt)
+				{
+					dichte_file = argv[i];
 				}
 				else
 				{
@@ -168,6 +189,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 	int counter = 0;
 	int tmpCounter = 0;
 	auto t1 = chrono::high_resolution_clock::now();
+    double diff = 0;
 
 	sort(labels.begin(), labels.end(), [](const Label& l1, const Label& l2){return l1.h()*l1.l() < l2.h()*l2.l();});
 
@@ -179,7 +201,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 		do
 		{
 			tmpCounter = 0;
-			for(unsigned j = 0; j < labels.size(); j++)
+			for(unsigned j = 0; j < labels.size() && diff < 7.5*60; j++)
 			{
 				if(progress)
 				{
@@ -190,10 +212,12 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 				{
 					tmpCounter += heu.tryToEnable(labels[j]);
 				}
+                auto t2 = chrono::high_resolution_clock::now();
+                diff = (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count();
 			}
 			counter += tmpCounter;
 			i++;
-		}while(tmpCounter > 0);
+		}while(tmpCounter > 0 && diff < 7.5*60);
 	}
 	else if(heu == 2)
 	{
@@ -203,7 +227,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 		do
 		{
 			tmpCounter = 0;
-			for(unsigned j = 0; j < labels.size(); j++)
+			for(unsigned j = 0; j < labels.size() && diff < 7.5*60; j++)
 			{
 				if(progress)
 				{
@@ -214,10 +238,12 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 				{
 					tmpCounter += heu.tryToEnable(labels[j]);
 				}
+                auto t2 = chrono::high_resolution_clock::now();
+                diff = (chrono::duration_cast<chrono::duration<double>>(t2-t1)).count();
 			}
 			counter += tmpCounter;
 			i++;
-		}while(tmpCounter > 0);
+		}while(tmpCounter > 0 && diff < 7.5*60);
 	}
 	else if(heu == 0)
 	{
@@ -391,18 +417,42 @@ int evaluate(const string& file_name)
 }
 
 
+double ndichte(const vector<Label>& labels)
+{
+    auto it = min_element(labels.begin(), labels.end(), [](const Label& l1, const Label& l2){return l1.x() - l1.l() < l2.x() - l2.l();});
+    int minx = it->x() - it->l();
+    it = max_element(labels.begin(), labels.end(), [](const Label& l1, const Label& l2){return l1.x() + l1.l() < l2.x() + l2.l();});
+    int maxx = it->x() + it->l();
+
+    it = min_element(labels.begin(), labels.end(), [](const Label& l1, const Label& l2){return l1.y() - l1.h() < l2.y() - l2.h();});
+    int miny = it->y() - it->h();
+    it = max_element(labels.begin(), labels.end(), [](const Label& l1, const Label& l2){return l1.y() + l1.h() < l2.y() + l2.h();});
+    int maxy = it->y() + it->h();
+
+    double size = (maxx - minx) * (maxy - miny);
+
+    double labelsize = 0;
+    for(auto& l : labels)
+    {
+        labelsize += l.h() * l.l();
+    }
+
+    return labelsize / size;
+}
+
 int main(int argc, char** argv)
 {
 	string input_file;
 	string output_file;
 	string eval_file;
+    string dichte_file;
 	int heu;
 	int recN;
 	bool opt;
 	bool progress;
 
 
-	parse_options(argc, argv, input_file, output_file, eval_file, heu, recN, opt, progress);
+	parse_options(argc, argv, input_file, output_file, eval_file, dichte_file, heu, recN, opt, progress);
 
 	if(!input_file.empty() && !output_file.empty())
 	{
@@ -411,6 +461,7 @@ int main(int argc, char** argv)
 
 		writeSolution(labels, output_file, heu, recN, progress);
 	}
+
 	if(!eval_file.empty())
 	{
 		int counter = evaluate(eval_file);
@@ -419,6 +470,15 @@ int main(int argc, char** argv)
 			cout << counter << endl;
 		}
 	}
+
+    if(!dichte_file.empty())
+    {
+        vector<Label> labels;
+        int n = fileParser(dichte_file, labels, false);
+
+        double d = ndichte(labels);
+        cout << n << "\t" << d << endl;
+    }
 }
 
 
