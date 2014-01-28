@@ -7,6 +7,7 @@
 #include "scip/scip.h"
 
 #include "Label.hpp"
+#include "Heu1PlusScip.hpp"
 
 
 using namespace std;
@@ -20,6 +21,7 @@ private:
     vector<vector<SCIP_VAR*>> vars;
     vector<SCIP_CONS*> positionCons;
     vector<SCIP_CONS*> crossCons;
+    Heu1PlusScip* heu;
     void printStatus(SCIP_Status s) const;
 
 public:

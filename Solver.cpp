@@ -5,6 +5,7 @@
 #include "objscip/objscip.h"
 #include "scip/cons_linear.h"
 #include "scip/scipdefplugins.h"
+#include "Heu1PlusScip.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -74,10 +75,10 @@ Solver::Solver(vector<Label>& labels)
     {
         SCIP_CALL_EXC(SCIPcreate(&scip));
         SCIP_CALL_EXC(SCIPincludeDefaultPlugins(scip));
-		SCIP_CALL_EXC(SCIPsetMessagehdlr(scip, NULL));
+		//SCIP_CALL_EXC(SCIPsetMessagehdlr(scip, NULL));
         SCIP_CALL_EXC(SCIPcreateProbBasic(scip, "labeling"));
         SCIP_CALL_EXC(SCIPsetObjsense(scip, SCIP_OBJSENSE_MAXIMIZE));
-        
+
         //Variablen
         for(int i = 0; i < n; i++)
         {
@@ -93,6 +94,10 @@ Solver::Solver(vector<Label>& labels)
                 SCIP_CALL_EXC(SCIPaddVar(scip, vars[i][p]));
             }
         }
+
+        heu = new Heu1PlusScip(scip, labels, vars);
+        SCIP_CALL_EXC(SCIPincludeObjHeur(scip, heu, true));
+        
 
         //Constraints
         for(int i = 0; i < n; i++)
@@ -163,6 +168,7 @@ int Solver::solve()
 
         //solve
         SCIP_CALL_EXC(SCIPsolve(scip));
+
         SCIP_Status status = SCIPgetStatus(scip);
         if(status != SCIP_STATUS_OPTIMAL)
         {
@@ -213,8 +219,12 @@ int Solver::solve()
 
 Solver::~Solver()
 {
+    int bla = 0;
     try
     {
+        cout << "bla" << (bla++) << endl;
+        delete heu;
+
         for(auto& a : vars)
         {
             for(auto& b : a)
@@ -222,18 +232,22 @@ Solver::~Solver()
                 SCIP_CALL_EXC(SCIPreleaseVar(scip, &b));
             }
         }
+        cout << "bla" << (bla++) << endl;
 
         for(auto& a : positionCons)
         {
             SCIP_CALL_EXC(SCIPreleaseCons(scip, &a)); 
         }
+        cout << "bla" << (bla++) << endl;
 
         for(auto& a : crossCons)
         {
             SCIP_CALL_EXC(SCIPreleaseCons(scip, &a)); 
         }
+        cout << "bla" << (bla++) << endl;
 
-        SCIP_CALL_EXC(SCIPfree(&scip));
+        //SCIP_CALL_EXC(SCIPfree(&scip));
+        cout << "bla" << (bla++) << endl;
     }
     catch(SCIPException& e)
     {
