@@ -24,6 +24,12 @@ using namespace std;
 #define HEUR_MAXDEPTH         -1
 #define HEUR_TIMING           SCIP_HEURTIMING_DURINGLPLOOP //(0xFFFFFFFF & (1 << 1))
 #define HEUR_USESSUBSCIP      FALSE  /**< does the heuristic use a secondary SCIP instance? */
+#define HEUR_CHECK_UNTOUCHABLES
+
+struct LabelVars
+{
+    SCIP_VAR* vars[4];
+};
 
 class Heu1PlusScip : public scip::ObjHeur
 {
@@ -31,6 +37,7 @@ private:
     vector<Label>& labels;
     vector<vector<SCIP_VAR*>>& vars;
     map<int, Label*> scipVarpToLabelMap;
+    map<Label*, LabelVars> labelToScipVar;
     Heuristic1* heu;
 
 public:
@@ -40,12 +47,15 @@ public:
     {
         for(int i = 0; i < labels.size(); ++i)
         {
+            LabelVars vs;
             for(int j = 0; j < 4; ++j)
             {
                 SCIP_VAR* var = vars[i][j];
                 int index = SCIPvarGetProbindex(var);
                 scipVarpToLabelMap.insert(pair<int, Label*>(index, &labels[i]));
+                vs.vars[j] = var;
             }
+            labelToScipVar.insert(pair<Label*, LabelVars>(&labels[i], vs));
         }
 
         heu = new Heuristic1(labels, 4);
@@ -127,18 +137,19 @@ public:
 
             if(SCIPgetLPSolstat(scip) != SCIP_LPSOLSTAT_OPTIMAL)
             {
+                cout << "current LP State not optimal: canceling heuristic" << endl;
                 return SCIP_OKAY;
             }
 
             //get current feasible solutions
             int feasSolsN = SCIPgetNSols(scip);
 
+            cout << "current feasible solutions: " << feasSolsN << endl;
+
             if(feasSolsN <= 0)
             {
                 return SCIP_OKAY;
             }
-
-            cout << "Current feasible Solutions: " << feasSolsN << endl;
 
             SCIP_SOL* sol;
             SCIP_CALL_EXC(SCIPcreateSol(scip, &sol, 0));
@@ -160,20 +171,18 @@ public:
                     SCIP_VAR* var = vars[i][j];
                     SCIP_Real val = SCIPgetSolVal(scip, sol, var);
 
-                    //abs(val-1.0) <= 0.00001
-
                     if(!SCIPvarIsActive(SCIPvarGetProbvar(var)))
                     {
                         touchable = false;
                     }
   
-                    if(SCIPisFeasIntegral(scip, val) && val < 0.5)
+                    if(SCIPisFeasIntegral(scip, val) && val > 0.5)
                     {
                         labels[i].enable();
                         l->setPos((Label::Pos)j);
                         break;
                     }
-                    //labels[i].rotateCW(); wieso?
+                    //labels[i].rotateCW();
                 }
 
                 if(touchable)
@@ -186,29 +195,34 @@ public:
                 }
             }
 
+#ifdef HEUR_CHECK_UNTOUCHABLES
             vector<bool> mask;
             for(auto& l : untouchables)
             {
                 mask.push_back(l->b() == 1);
             }
+#endif
 
             for(auto& l : touchables)
             {
                 heu->tryToEnable(*l, &untouchables);               
             }
 
+#ifdef HEUR_CHECK_UNTOUCHABLES
             for(int i = 0; i < untouchables.size(); ++i)
             {
                 if(untouchables[i]->b() > 0 != mask[i])
                 {
-                    cout << "ERROR: untouchable Variable modified" <<  endl;
+                    cerr << "untouchable Variable modified" <<  endl;
                 }
             }
+#endif
 
-            for(int i = 0; i < (int)labels.size(); i++)
+            for(int i = 0; i < (int)touchables.size(); i++)
             {
                 int pos = -1;
-                if(labels[i].b() == 1)
+                Label* l = touchables[i];
+                if(l->b() == 1)
                 {
                     switch(labels[i].getPos())
                     {
@@ -219,14 +233,20 @@ public:
                     default: break;
                     }
                 }
+                LabelVars& vars = labelToScipVar[l];
                 for(int j = 0; j < 4; j++)
                 {
-                    SCIP_CALL_EXC(SCIPsetSolVal(scip, sol, vars[i][j], j==pos));
+                    SCIP_CALL_EXC(SCIPsetSolVal(scip, sol, vars.vars[j], j==pos));
                 }
             }
 
-            SCIP_Bool stored;
+            SCIP_Bool stored = 0;
             SCIP_CALL_EXC(SCIPaddSolFree(scip, &sol, &stored));
+
+            if(!stored)
+            {
+                cerr << "storing solution failed!" << endl;
+            }
 
             *result = SCIP_FOUNDSOL;
         }
