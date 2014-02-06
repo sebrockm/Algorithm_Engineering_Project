@@ -18,6 +18,12 @@
 #ifndef SCIP_EXCEPTION
 #define SCIP_EXCEPTION
 
+#define SCIP_ERROR_CHECK
+
+#if defined _DEBUG && !defined SCIP_ERROR_CHECK
+#define SCIP_ERROR_CHECK
+#endif
+
 #include<exception>
 #include<string>
 
@@ -144,6 +150,7 @@ public:
    ~SCIPException(void) throw(){}
 };
 
+#ifdef SCIP_ERROR_CHECK
 
 /** @brief macro to call scip function with exception handling
  *
@@ -159,5 +166,8 @@ public:
       }						\
    }
 
+#else
+#define SCIP_CALL_EXC(x) x
+#endif
 
 #endif

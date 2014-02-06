@@ -46,7 +46,7 @@ public:
 	 * @param label the label to try to enable
 	 * @return true if label was successfully enabled, false otherwise
 	 */
-	bool tryToEnable(Label& label);
+	bool tryToEnable(Label& label, vector<Label*>* untouchables = NULL);
 
 };
 

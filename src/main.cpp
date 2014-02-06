@@ -451,13 +451,16 @@ int main(int argc, char** argv)
 	string output_file;
 	string eval_file;
     string dichte_file;
-	int heu;
-	int recN;
-	bool opt;
-	bool progress;
+	int heu = 0;
+	int recN = 0;
+	bool opt = false;
+	bool progress = false;
 
+	//parse_options(argc, argv, input_file, output_file, eval_file, dichte_file, heu, recN, opt, progress);
 
-	parse_options(argc, argv, input_file, output_file, eval_file, dichte_file, heu, recN, opt, progress);
+    input_file = "data/tests/test_7/_test_s=5.dat";
+    input_file = "data/tests/staedte/nordamerika.dat";
+    output_file = "test.dat";
 
 	if(!input_file.empty() && !output_file.empty())
 	{

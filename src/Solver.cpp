@@ -14,6 +14,8 @@
 
 using namespace std;
 
+#define SCIP_WITH_HEU
+
 
 void Solver::printStatus(SCIP_Status s) const
 {
@@ -67,7 +69,7 @@ void Solver::printStatus(SCIP_Status s) const
 Solver::Solver(vector<Label>& labels)
     :labels(labels),
     //vars(labels.size(), {0,0,0,0}),
-    positionCons(labels.size())
+    positionCons(labels.size()), heu(NULL)
 {
     int n = labels.size();
 
@@ -90,7 +92,7 @@ Solver::Solver(vector<Label>& labels)
             for(int p = 0; p < 4; p++)
             {
                 stringstream ss;
-                ss << "b#" << i+1 << "#" << p+1;
+                ss << "b#" << i << "#" << p;
                 SCIP_CALL_EXC(SCIPcreateVarBasic(scip, &vars[i][p], ss.str().c_str(), 
                             0, //left bound
                             1, //right bound
@@ -100,10 +102,11 @@ Solver::Solver(vector<Label>& labels)
             }
         }
 
+#ifdef SCIP_WITH_HEU
         heu = new Heu1PlusScip(scip, labels, vars);
-        SCIP_CALL_EXC(SCIPincludeObjHeur(scip, heu, true));
+        SCIP_CALL_EXC(SCIPincludeObjHeur(scip, heu, false));
+#endif
         
-
         //Constraints
         for(int i = 0; i < n; i++)
         {
@@ -228,7 +231,10 @@ Solver::~Solver()
     try
     {
         cout << "bla" << (bla++) << endl;
-        delete heu;
+        if(heu)
+        {
+            delete heu;
+        }
 
         for(auto& a : vars)
         {

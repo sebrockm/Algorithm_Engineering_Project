@@ -141,13 +141,19 @@ public class InstanceGenerator
 	
 	public static void main(String[] args)
 	{
-		createTest(0, 50, 10, 1000, 1);
+		/*createTest(0, 50, 10, 1000, 1);
 		createTest(1, 6, 1000, 10, 1);
 		createTest(2, 12, 100, 100, 1);
 		createTest(3, 12, 50, 50, 1);
 		createTest(4, 12, 50, 50, 0.5);
         createTest(5, 12, 5, 10, 1);
         createTest(6, 12, 10, 10, 0.5);
-        createTest(7, 12, 10, 100, 0.75);
+        createTest(7, 12, 10, 100, 0.75);*/
+        createTest(8, 12, 10, 40, 1);
+        createTest(9, 12, 50, 10, 1);
+        createTest(10, 12, 10, 60, 1);
+        createTest(11, 12, 70, 10, 1);
+        createTest(12, 12, 10, 80, 1);
+        createTest(13, 12, 90, 10, 1);
 	}
 }

@@ -49,6 +49,17 @@ Label::Label(int x, int y, int l, int h, string name, int b, int xs, int ys)
 	}
 }
 
+Label::Label(const Label& cpy)
+{
+    _p = cpy._p;
+    _x = cpy._x;
+    _y = cpy._y;
+    _name = cpy._name;
+    _b = cpy._b;
+    _l = cpy._l;
+    _h = cpy._h;
+}
+
 void Label::setPos(Pos p)
 {
 	_p = p;

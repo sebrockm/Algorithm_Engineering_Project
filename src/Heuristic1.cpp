@@ -30,15 +30,15 @@ void Heuristic1::doRollback(vector<pair<Label*, Label::Pos>>& rollbacks)
 	}
 }
 
-bool Heuristic1::tryToEnable(Label& label)
+bool Heuristic1::tryToEnable(Label& label, vector<Label*>* untouchables)
 {
-	vector<Label*> untouchables;
+	vector<Label*> _untouchables;
 	vector<pair<Label*, Label::Pos>> rollbacks;
 
 	label.enable();
 	label.setPos(Label::tl);
 
-	if(!tryToEnable(label, _maxDepth, untouchables, rollbacks))
+	if(!tryToEnable(label, _maxDepth, untouchables ? *untouchables : _untouchables, rollbacks))
 	{
 		doRollback(rollbacks);
 		label.disable();

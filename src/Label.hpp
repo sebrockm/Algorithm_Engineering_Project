@@ -25,9 +25,13 @@ private:
 	Pos _p;
 
 public:
+    Label(void) : _x(0), _y(0), _name("undefined"), _b(0), _p(br) { }
+
 	Label(int x, int y, int l, int h, string name, int b);
 
 	Label(int x, int y, int l, int h, string name, int b, int xs, int ys);
+
+    Label(const Label& cpy);
 
 	void setPos(Pos p);
 
@@ -45,6 +49,17 @@ public:
 	int b() const;
 	void enable();
 	void disable();
+    void setEnable(bool enbl)
+    {
+        if(enbl)
+        {
+            enable();
+        }
+        else
+        {
+            disable();
+        }
+    }
 	int xs() const;
 	int ys() const;
 	int maxX() const;
