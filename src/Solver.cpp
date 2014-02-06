@@ -71,7 +71,7 @@ Solver::Solver(vector<Label>& labels)
     //vars(labels.size(), {0,0,0,0}),
     positionCons(labels.size()), heu(NULL)
 {
-    int n = labels.size();
+    int n = (int)labels.size();
 
     for(size_t i = 0; i < n; ++i)
     {
@@ -167,7 +167,7 @@ Solver::Solver(vector<Label>& labels)
 
 int Solver::solve()
 {
-    int n = labels.size();
+    int n = (int)labels.size();
 
     try
     {

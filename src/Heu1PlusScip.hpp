@@ -86,10 +86,10 @@ public:
                 for(int j = 0; j < 4; j++)
                 {                    
                     SCIP_VAR* var = vars[i][j];
-                    if(!SCIPvarIsActive(SCIPvarGetProbvar(var)) && (SCIPgetSolVal(scip, sol, var) != (j==pos)))
+                    /*if(!SCIPvarIsActive(SCIPvarGetProbvar(var)) && (SCIPgetSolVal(scip, sol, var) != (j==pos)))
                     {
                         cout << "ERROR" << endl;
-                    } 
+                    } */
                     SCIP_CALL_EXC(SCIPsetSolVal(scip, sol, vars[i][j], j==pos));
                 }
             }
@@ -121,6 +121,25 @@ public:
     {
         try
         {
+            *result = SCIP_DIDNOTRUN;
+
+            //!SCIPisRelaxSolValid(scip) immer true...
+
+            if(SCIPgetLPSolstat(scip) != SCIP_LPSOLSTAT_OPTIMAL)
+            {
+                return SCIP_OKAY;
+            }
+
+            //get current feasible solutions
+            int feasSolsN = SCIPgetNSols(scip);
+
+            if(feasSolsN <= 0)
+            {
+                return SCIP_OKAY;
+            }
+
+            cout << "Current feasible Solutions: " << feasSolsN << endl;
+
             SCIP_SOL* sol;
             SCIP_CALL_EXC(SCIPcreateSol(scip, &sol, 0));
 
@@ -180,10 +199,9 @@ public:
 
             for(int i = 0; i < untouchables.size(); ++i)
             {
-                if(untouchables[i]->b() != mask[i])
+                if(untouchables[i]->b() > 0 != mask[i])
                 {
-                    cout << "ERROR: untouchable Variable '" <<  << endl;
-                    exit(-1);
+                    cout << "ERROR: untouchable Variable modified" <<  endl;
                 }
             }
 
@@ -222,24 +240,6 @@ public:
 
 
         //******************************** other tries...
-
-        *result = SCIP_DIDNOTRUN;
-
-        //!SCIPisRelaxSolValid(scip) immer true...
-        if(SCIPgetLPSolstat(scip) != SCIP_LPSOLSTAT_OPTIMAL)
-        {
-            return SCIP_OKAY;
-        }
-
-        //get current feasible solutions
-        int feasSolsN = SCIPgetNSols(scip);
-
-        if(feasSolsN <= 0)
-        {
-            return SCIP_OKAY;
-        }
-
-        cout << "Current feasible Solutions: " << feasSolsN << endl;
 
         SCIP_VAR** lpcands;
         SCIP_Real* lpcandssol;
