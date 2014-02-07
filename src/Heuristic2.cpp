@@ -36,7 +36,6 @@ bool Heuristic2::tryToEnable(Label& label)
 			continue;
 		}
 
-		crossers.emplace_back(label.getPos(), wouldCrossing.front());
 		label.rotateCW();
 	}
 
@@ -47,6 +46,7 @@ bool Heuristic2::tryToEnable(Label& label)
 		label.setPos(dir.first);
 
 		auto dirCrossers = getCouldCrossing(*dir.second, tree.get());//alle, die gerade disabled sind, aber dir.second schneiden koennten
+
 		for(auto& a : dirCrossers)
 		{
 			a.second->setPos(a.first);
@@ -76,8 +76,8 @@ bool Heuristic2::tryToEnable(Label& label)
 			continue;
 		}
 
-		dir.second->disable();
-		dirCrossers.front().second->enable();
+        dir.second->disable();
+        dirCrossers.front().second->enable();
 		dirCrossers.front().second->setPos(dirCrossers.front().first);
 
 		return true;

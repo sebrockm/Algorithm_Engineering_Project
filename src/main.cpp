@@ -458,8 +458,8 @@ int main(int argc, char** argv)
 
 	//parse_options(argc, argv, input_file, output_file, eval_file, dichte_file, heu, recN, opt, progress);
 
-    input_file = "data/tests/test_7/_test_s=5.dat";
-    input_file = "data/tests/staedte/nordamerika.dat";
+    input_file = "data/tests/test_14/_test_s=6.dat";
+    //input_file = "data/tests/staedte/nordamerika.dat";
     output_file = "test.dat";
 
 	if(!input_file.empty() && !output_file.empty())

@@ -4,8 +4,10 @@
 #include "scip/scip.h"
 #include "objscip/objheur.h"
 #include "Heuristic1.hpp"
+#include "Heuristic2.hpp"
 #include "Label.hpp"
 #include "scip_exception.hpp"
+#include "crossing.hpp"
 
 #include <cmath>
 #include <cassert>
@@ -13,6 +15,9 @@
 #include <iostream>
 #include <map>
 #include <set>
+
+#include "heur_rounding.h"
+
 using namespace std;
 
 #define HEUR_NAME             "Heu1+Scip"
@@ -25,10 +30,37 @@ using namespace std;
 #define HEUR_TIMING           SCIP_HEURTIMING_DURINGLPLOOP //(0xFFFFFFFF & (1 << 1))
 #define HEUR_USESSUBSCIP      FALSE  /**< does the heuristic use a secondary SCIP instance? */
 #define HEUR_CHECK_UNTOUCHABLES
+#define HEUR_REC_D 4
+
+struct ScipVarLabelData
+{
+    Label* labelPtr;
+    Label::Pos pos;
+    int posVal;
+
+    ScipVarLabelData(void)
+    {
+        labelPtr = NULL;
+        pos = Label::Pos::tl;
+    }
+};
 
 struct LabelVars
 {
     SCIP_VAR* vars[4];
+
+    LabelVars(void)
+    {
+
+    }
+
+    LabelVars(const LabelVars& v)
+    {
+        for(int i =0 ; i < 4; ++i)
+        {
+            vars[i] = v.vars[i];
+        }
+    }
 };
 
 class Heu1PlusScip : public scip::ObjHeur
@@ -36,40 +68,33 @@ class Heu1PlusScip : public scip::ObjHeur
 private:
     vector<Label>& labels;
     vector<vector<SCIP_VAR*>>& vars;
-    map<int, Label*> scipVarpToLabelMap;
-    map<Label*, LabelVars> labelToScipVar;
     Heuristic1* heu;
+    Heuristic2* heu2;
+    SCIP_HEUR* roundingHeu;
 
 public:
-    Heu1PlusScip(SCIP* scip, vector<Label>& labels, vector<vector<SCIP_VAR*>>& vars)
+    Heu1PlusScip(SCIP* scip, vector<Label>& _labels, vector<vector<SCIP_VAR*>>& vars)
         :ObjHeur(scip, HEUR_NAME, HEUR_DESC, HEUR_DISPCHAR, HEUR_PRIORITY, HEUR_FREQ, HEUR_FREQOFS, HEUR_MAXDEPTH, HEUR_TIMING, HEUR_USESSUBSCIP), 
-        labels(labels), vars(vars), heu(NULL)
+        labels(_labels), vars(vars), heu(NULL), heu2(NULL)
     {
-        for(int i = 0; i < labels.size(); ++i)
-        {
-            LabelVars vs;
-            for(int j = 0; j < 4; ++j)
-            {
-                SCIP_VAR* var = vars[i][j];
-                int index = SCIPvarGetProbindex(var);
-                scipVarpToLabelMap.insert(pair<int, Label*>(index, &labels[i]));
-                vs.vars[j] = var;
-            }
-            labelToScipVar.insert(pair<Label*, LabelVars>(&labels[i], vs));
-        }
-
-        heu = new Heuristic1(labels, 4);
+        heu = new Heuristic1(labels, HEUR_REC_D);
+        heu2 = new Heuristic2(labels);
     }
 
-    int callHeuristic(void)
+    void callHeuristic(void)
     {
         int count = 0;
-        for(auto& l : labels)
-        {
-            count += heu->tryToEnable(l);
-        }
-
-        return count;
+         do 
+         {
+            count = 0;
+            for(auto& l : labels)
+            {
+                if(l.b() == 0)
+                {
+                    count += heu2->tryToEnable(l);
+                }
+            }
+         } while (count > 0);
     }
 
     void addScipSolutionFromHeur(SCIP* scip)
@@ -115,16 +140,82 @@ public:
 
     SCIP_DECL_HEURINIT(scip_init)
     {
+        SCIP_CALL_EXC(SCIPincludeHeurRounding(scip, &roundingHeu));
+
+        heurInitRounding(scip, roundingHeu);
+
         callHeuristic();
 
         addScipSolutionFromHeur(scip);
 
+        cout << "Heur1 init" << endl;
+
         return SCIP_OKAY;
     }
 
+    SCIP_SOL* sol;
     SCIP_DECL_HEURINIT(scip_initsol)
     {
+        heurInitsolRounding(scip, roundingHeu);
+
+        sol = RoundingHeuGetSolution();
+        //SCIP_CALL_EXC(SCIPlinkLPSol(scip, sol));
         return SCIP_OKAY;
+    }
+
+    void copyScipStateToLabels(Scip* scip)
+    {
+        for(auto& it : labels)
+        {
+            it._isFixed = true;
+            it.disable();
+        }
+
+        for(int i = 0; i < labels.size(); ++i)
+        {
+            Label* lp = &labels[i];
+            for(int j = 0; j < 4; ++j)
+            {
+                SCIP_VAR* v = vars[i][j];
+                ScipVarLabelData* data = (ScipVarLabelData*)SCIPvarGetData(v);
+
+                SCIP_Real val = SCIPgetSolVal(scip, sol, v);
+
+                if(SCIPisFeasIntegral(scip, val) && val > 0.5)
+                {
+                    lp->enable();
+                    lp->setPos(data->pos);
+                    data->posVal = 1;
+                    break;
+                }
+                else
+                {
+                    data->posVal = 0;
+                }
+            }
+        }
+
+        SCIP_VAR** _vars = SCIPgetVars(scip);
+        int ncount = SCIPgetNVars(scip);
+        //set touchies
+        for(int i = 0; i < ncount; ++i)
+        {
+            SCIP_VAR* var = _vars[i];
+            ScipVarLabelData* data = (ScipVarLabelData*)SCIPvarGetData(var);
+            Label* lp = data->labelPtr;
+
+            lp->_isFixed = false;
+
+            Label::Pos pos = data->pos;
+
+            SCIP_Real val = SCIPgetSolVal(scip, sol, var);
+
+            if(SCIPisFeasIntegral(scip, val) && val > 0.5)
+            {
+                lp->enable();
+                lp->setPos(pos);
+            }
+        }
     }
 
     SCIP_DECL_HEUREXEC(scip_exec)
@@ -144,108 +235,84 @@ public:
             //get current feasible solutions
             int feasSolsN = SCIPgetNSols(scip);
 
-            cout << "current feasible solutions: " << feasSolsN << endl;
+           // cout << "current feasible solutions: " << feasSolsN << endl;
 
             if(feasSolsN <= 0)
             {
                 return SCIP_OKAY;
             }
 
-            SCIP_SOL* sol;
-            SCIP_CALL_EXC(SCIPcreateSol(scip, &sol, 0));
+            SCIP_RESULT res;
+            heurExecRounding(scip, roundingHeu, HEUR_TIMING, &res);
 
-            SCIP_CALL_EXC(SCIPlinkLPSol(scip, sol));
+            if(res == SCIP_DIDNOTFIND)
+            {
+                *result = SCIP_DIDNOTFIND;
+                return SCIP_OKAY;
+            }
+
+            //cout << "rounding heur found a solution..." << endl;
+
+            copyScipStateToLabels(scip);
 
             vector<Label*> untouchables;
-            vector<Label*> touchables;
-
-            for(int i = 0; i < (int)labels.size(); i++)
+            for(Label& l : labels)
             {
-                Label* l = &labels[i];
-                l->disable();
-                l->setPos(Label::tl);
-                bool touchable = true;
-
-                for(int j = 0; j < 4; j++)
+                if(l._isFixed)
                 {
-                    SCIP_VAR* var = vars[i][j];
-                    SCIP_Real val = SCIPgetSolVal(scip, sol, var);
+                    untouchables.push_back(&l);
+                }
+            }
 
-                    if(!SCIPvarIsActive(SCIPvarGetProbvar(var)))
+            //write back
+            double bound = SCIPgetPrimalbound(scip);
+            //cout << "current PB: " << bound << endl; 
+            int lce = 0;
+            for(Label& l : labels)
+            {
+                lce += l.b();
+            }
+
+            SCIP_VAR** _vars = SCIPgetVars(scip);
+            int ncount = SCIPgetNVars(scip);
+
+            //cout << "labels enabled: " << lce << endl;
+            int count = 0;
+            do 
+            {
+                count = 0;
+                for(int i = 0; i < ncount; i++)
+                {
+                    SCIP_VAR* var = _vars[i];
+                    ScipVarLabelData* data = (ScipVarLabelData*)SCIPvarGetData(var);
+                    if(data->labelPtr->b() == 0)
                     {
-                        touchable = false;
-                    }
-  
-                    if(SCIPisFeasIntegral(scip, val) && val > 0.5)
-                    {
-                        labels[i].enable();
-                        l->setPos((Label::Pos)j);
-                        break;
-                    }
-                    //labels[i].rotateCW();
-                }
-
-                if(touchable)
-                {
-                    touchables.push_back(l);
-                }
-                else
-                {
-                    untouchables.push_back(l);
-                }
-            }
-
-#ifdef HEUR_CHECK_UNTOUCHABLES
-            vector<bool> mask;
-            for(auto& l : untouchables)
-            {
-                mask.push_back(l->b() == 1);
-            }
-#endif
-
-            for(auto& l : touchables)
-            {
-                heu->tryToEnable(*l, &untouchables);               
-            }
-
-#ifdef HEUR_CHECK_UNTOUCHABLES
-            for(int i = 0; i < untouchables.size(); ++i)
-            {
-                if(untouchables[i]->b() > 0 != mask[i])
-                {
-                    cerr << "untouchable Variable modified" <<  endl;
-                }
-            }
-#endif
-
-            for(int i = 0; i < (int)touchables.size(); i++)
-            {
-                int pos = -1;
-                Label* l = touchables[i];
-                if(l->b() == 1)
-                {
-                    switch(labels[i].getPos())
-                    {
-                    case Label::tl: pos = 0; break;
-                    case Label::bl: pos = 1; break;
-                    case Label::br: pos = 2; break;
-                    case Label::tr: pos = 3; break;
-                    default: break;
+                        count += heu->tryToEnable(*data->labelPtr, &untouchables);
+                        SCIP_CALL_EXC(SCIPsetSolVal(scip, sol, _vars[i], data->posVal));
                     }
                 }
-                LabelVars& vars = labelToScipVar[l];
-                for(int j = 0; j < 4; j++)
+
+                if(count)
                 {
-                    SCIP_CALL_EXC(SCIPsetSolVal(scip, sol, vars.vars[j], j==pos));
+                    //cout << "could enable: " << count << endl;
                 }
-            }
+            } while (count > 0);
 
             SCIP_Bool stored = 0;
-            SCIP_CALL_EXC(SCIPaddSolFree(scip, &sol, &stored));
+            SCIP_CALL_EXC(SCIPtrySol(scip, sol, FALSE, FALSE, FALSE, TRUE, &stored));
 
             if(!stored)
             {
-                cerr << "storing solution failed!" << endl;
+                //cout << "storing solution failed!";
+            }
+            else
+            {
+                double newBound = SCIPgetPrimalbound(scip);
+                if(newBound > bound)
+                {
+                    cout << "new PB: " << bound; 
+                    cout << endl << endl;
+                }
             }
 
             *result = SCIP_FOUNDSOL;
@@ -274,63 +341,6 @@ public:
             return SCIP_OKAY;
         }
 
-        //set<Label*> fixedLabels;        
-
-        for(int i = 0; i < nlpcands; ++i)
-        {
-            SCIP_VAR* var = lpcands[i];
-
-            SCIP_Real obj = SCIPvarGetObj(var);
-            SCIP_Real v = lpcandssol[i];
-            //SCIPisFeasIntegral(var, v);
-            SCIP_Real bestroundval = obj > 0.0 ? SCIPfeasFloor(scip, v) : SCIPfeasCeil(scip, v);
-
-            int index = SCIPvarGetProbindex(var);
-
-            auto it = scipVarpToLabelMap.find(index);
-
-            if(it == scipVarpToLabelMap.end())
-            {
-                continue;
-            }
-
-            Label* l = it->second;
-
-            l->setEnable(bestroundval > 0);
-            l->setPos(bestroundval <= 0 ? (Label::Pos)0 : (Label::Pos)(index % 4));
-
-            //fixedLabels.insert(l);
-        }
-
-        vector<Label*> untouchables;
-        for(int i = 0; i < labels.size(); ++i)
-        {
-            Label* l = &labels[i];
-            for(int j = 0; j < 4; ++j)
-            {
-                SCIP_VAR* var = vars[i][j];
-                if(!SCIPvarIsActive(SCIPvarGetProbvar(var)))
-                {
-                    untouchables.push_back(l);
-                    break;
-                }
-            }
-        }
-
-        for(auto& l : labels)
-        {
-//             Label* ptr = &l;
-//             if(fixedLabels.find(ptr) != fixedLabels.end())
-//             {
-//                 continue;
-//             }
-            heu->tryToEnable(l, &untouchables);
-        }
-
-        addScipSolutionFromHeur(scip);
-
-        *result = SCIP_FOUNDSOL;
-
         return SCIP_OKAY;
     }
 
@@ -339,6 +349,7 @@ public:
         if(heu)
         {
             delete heu;
+            delete heu2;
         }
     }
 };

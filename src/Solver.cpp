@@ -16,7 +16,6 @@ using namespace std;
 
 #define SCIP_WITH_HEU
 
-
 void Solver::printStatus(SCIP_Status s) const
 {
     switch(s)
@@ -76,6 +75,9 @@ Solver::Solver(vector<Label>& labels)
     for(size_t i = 0; i < n; ++i)
     {
         vars.push_back(std::vector<SCIP_VAR*>(4));
+
+        for(int j = 0; j < 4; ++j)
+        varData.push_back(ScipVarLabelData());
     }
 
     try
@@ -89,6 +91,7 @@ Solver::Solver(vector<Label>& labels)
         //Variablen
         for(int i = 0; i < n; i++)
         {
+            Label* label = &labels[i];
             for(int p = 0; p < 4; p++)
             {
                 stringstream ss;
@@ -98,6 +101,11 @@ Solver::Solver(vector<Label>& labels)
                             1, //right bound
                             1, //objective
                             SCIP_VARTYPE_INTEGER));
+                
+                varData[4*i + p].labelPtr = label;
+                varData[4*i + p].pos = (Label::Pos)(((int)Label::tl + p) % 4);
+                varData[4*i + p].posVal = 0;
+                SCIPvarSetData(vars[i][p], (SCIP_VARDATA*)(&varData[4*i + p]));
                 SCIP_CALL_EXC(SCIPaddVar(scip, vars[i][p]));
             }
         }
@@ -121,7 +129,7 @@ Solver::Solver(vector<Label>& labels)
                     1.)); //rhs
             SCIP_CALL_EXC(SCIPaddCons(scip, positionCons[i]));
         }
-
+        
         for(int i = 0; i < n-1; i++)
         {
             for(int j = i+1; j < n; j++)

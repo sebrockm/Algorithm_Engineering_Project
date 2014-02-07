@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\scip">
+      <UniqueIdentifier>{a8bd06f5-0e7c-47ff-a309-2064ba77eee6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\crossing.hpp">
@@ -39,6 +42,9 @@
     <ClInclude Include="..\src\Solver.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\heur_rounding.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\crossing.cpp">
@@ -60,6 +66,120 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Solver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_actconsdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_clique.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_coefdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_crossover.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_dins.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_feaspump.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_fixandinfer.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_fracdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_guideddiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_intdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_intshifting.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_linesearchdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_localbranching.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_mutation.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_nlpdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_objpscostdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_octane.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_oneopt.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_pscostdiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_rens.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_rins.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_rootsoldiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_rounding.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_shiftandpropagate.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_shifting.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_simplerounding.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_subnlp.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_trivial.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_trysol.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_twoopt.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_undercover.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_vbounds.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_veclendiving.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_xyz.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_zeroobj.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scip-3.0.2\src\scip\heur_zirounding.c">
+      <Filter>Source Files\scip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\heur_rounding.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

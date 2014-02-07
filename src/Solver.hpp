@@ -12,13 +12,13 @@
 
 using namespace std;
 
-
 class Solver
 {
 private:
     vector<Label>& labels;
     SCIP* scip;
     vector<vector<SCIP_VAR*>> vars;
+    vector<ScipVarLabelData> varData;
     vector<SCIP_CONS*> positionCons;
     vector<SCIP_CONS*> crossCons;
     Heu1PlusScip* heu;

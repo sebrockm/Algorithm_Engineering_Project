@@ -25,6 +25,8 @@ private:
 	Pos _p;
 
 public:
+    bool _isFixed;
+
     Label(void) : _x(0), _y(0), _name("undefined"), _b(0), _p(br) { }
 
 	Label(int x, int y, int l, int h, string name, int b);
@@ -39,7 +41,7 @@ public:
 
 	void rotateCCW();
 
-	void rotateCW();
+    void rotateCW();
 	
 	int x() const;
 	int y() const;
