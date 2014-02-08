@@ -72,12 +72,12 @@ Solver::Solver(vector<Label>& labels)
 {
     int n = (int)labels.size();
 
-    for(size_t i = 0; i < n; ++i)
+    for(int i = 0; i < n; ++i)
     {
         vars.push_back(std::vector<SCIP_VAR*>(4));
 
         for(int j = 0; j < 4; ++j)
-        varData.push_back(ScipVarLabelData());
+            varData.push_back(ScipVarLabelData());
     }
 
     try
@@ -103,8 +103,7 @@ Solver::Solver(vector<Label>& labels)
                             SCIP_VARTYPE_INTEGER));
                 
                 varData[4*i + p].labelPtr = label;
-                varData[4*i + p].pos = (Label::Pos)(((int)Label::tl + p) % 4);
-                varData[4*i + p].posVal = 0;
+                varData[4*i + p].pos = (Label::Pos)p;
                 SCIPvarSetData(vars[i][p], (SCIP_VARDATA*)(&varData[4*i + p]));
                 SCIP_CALL_EXC(SCIPaddVar(scip, vars[i][p]));
             }
@@ -120,7 +119,7 @@ Solver::Solver(vector<Label>& labels)
         {
             SCIP_Real vals[] = {1,1,1,1};
             stringstream ss;
-            ss << "sum b#" << i+1 << "#p <= 1";
+            ss << "sum b#" << i << "#p <= 1";
             SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &positionCons[i], ss.str().c_str(),
                     4, //variable count
                     &vars[i][0], //variables
@@ -134,10 +133,10 @@ Solver::Solver(vector<Label>& labels)
         {
             for(int j = i+1; j < n; j++)
             {
-                labels[i].setPos(Label::tl);
+                labels[i].setPos((Label::Pos)0);
                 for(int p = 0; p < 4; p++)
                 {
-                    labels[j].setPos(Label::tl);
+                    labels[j].setPos((Label::Pos)0);
                     for(int q = 0; q < 4; q++)
                     {
                         if(labelCouldCross(labels[i], labels[j]))
@@ -206,7 +205,7 @@ int Solver::solve()
 		int counter = 0;
         for(int i = 0; i < n; i++)
         {
-            labels[i].setPos(Label::tl);
+            labels[i].setPos((Label::Pos)0);
             labels[i].disable();
             for(int p = 0; p < 4; p++)
             {

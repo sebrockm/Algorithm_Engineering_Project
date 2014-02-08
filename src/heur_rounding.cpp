@@ -19,11 +19,14 @@
  */
 
 /*---+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0----+----1----+----2*/
+#ifdef _WIN32
 #include <windows.h>
+#endif
+
 #include <assert.h>
 #include <string.h>
 
-#include "scip/heur_rounding.h"
+#include "heur_rounding.h"
 
 
 #define HEUR_NAME             "special_rounding"
@@ -420,7 +423,7 @@ SCIP_DECL_HEURCOPY(heurCopyRounding)
    assert(strcmp(SCIPheurGetName(heur), HEUR_NAME) == 0);
 
    /* call inclusion method of primal heuristic */
-   SCIP_CALL( SCIPincludeHeurRounding(scip) );
+   SCIP_CALL( SCIPincludeHeurRounding(scip, NULL) );
  
    return SCIP_OKAY;
 }
@@ -748,11 +751,11 @@ SCIP_RETCODE SCIPincludeHeurRounding(
    SCIP_CALL( SCIPsetHeurExitsol(scip, heur, heurExitsolRounding) ); */
 
    /* add rounding primal heuristic parameters */
-   SCIP_CALL( SCIPaddIntParam(scip, "heuristics/"HEUR_NAME"/successfactor",
+   SCIP_CALL( SCIPaddIntParam(scip, "heuristics/""special_rounding""/successfactor",
          "number of calls per found solution that are considered as standard success, a higher factor causes the heuristic to be called more often",
          &heurdata->successfactor, TRUE, DEFAULT_SUCCESSFACTOR, -1, INT_MAX, NULL, NULL) );
 
-   SCIP_CALL( SCIPaddBoolParam(scip, "heuristics/"HEUR_NAME"/oncepernode",
+   SCIP_CALL( SCIPaddBoolParam(scip, "heuristics/""special_rounding""/oncepernode",
          "should the heuristic only be called once per node?",
          &heurdata->oncepernode, TRUE, DEFAULT_ONCEPERNODE, NULL, NULL) );
 

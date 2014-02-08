@@ -253,7 +253,9 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 	else if(heu == 0)
 	{
 		Solver sol(labels);
+cout << "hier" << endl;
 		counter = sol.solve();
+cout << "hier" << endl;
 	}
 
 	auto t2 = chrono::high_resolution_clock::now();
@@ -455,18 +457,17 @@ int main(int argc, char** argv)
 	int recN = 0;
 	bool opt = false;
 	bool progress = false;
-
-	//parse_options(argc, argv, input_file, output_file, eval_file, dichte_file, heu, recN, opt, progress);
-
-    input_file = "data/tests/test_14/_test_s=6.dat";
+    //input_file = "../data/tests/test_14/_test_s=6.dat";
     //input_file = "data/tests/staedte/nordamerika.dat";
-    output_file = "test.dat";
+    //output_file = "test.dat";
+
+
+	parse_options(argc, argv, input_file, output_file, eval_file, dichte_file, heu, recN, opt, progress);
 
 	if(!input_file.empty() && !output_file.empty())
 	{
 		vector<Label> labels;
 		fileParser(input_file, labels, opt);
-
 		writeSolution(labels, output_file, heu, recN, progress);
 	}
 
