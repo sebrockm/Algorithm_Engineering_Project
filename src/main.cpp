@@ -253,9 +253,7 @@ void writeSolution(vector<Label>& labels, const string& file_name, int heu, int 
 	else if(heu == 0)
 	{
 		Solver sol(labels);
-cout << "hier" << endl;
 		counter = sol.solve();
-cout << "hier" << endl;
 	}
 
 	auto t2 = chrono::high_resolution_clock::now();

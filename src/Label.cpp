@@ -20,10 +20,10 @@ bool labelCouldCross(const Label& label1, const Label& label2)
 }
 
 Label::Label(int x, int y, int l, int h, string name, int b)
-	:_x(x), _y(y), _l(l), _h(h), _name(name), _b(b), _p((Pos)0) {}
+	:_x(x), _y(y), _l(l), _h(h), _name(name), _b(b), _p((Pos)0),_isFixed{0,0,0,0} {}
 
 Label::Label(int x, int y, int l, int h, string name, int b, int xs, int ys)
-	:_x(x), _y(y), _l(l), _h(h), _name(name), _b(b), _p((Pos)0) 
+	:_x(x), _y(y), _l(l), _h(h), _name(name), _b(b), _p((Pos)0),_isFixed{0,0,0,0} 
 {
 	if(xs == x)
 	{
@@ -58,11 +58,20 @@ Label::Label(const Label& cpy)
     _b = cpy._b;
     _l = cpy._l;
     _h = cpy._h;
+    _isFixed[0] = cpy._isFixed[0];
+    _isFixed[1] = cpy._isFixed[1];
+    _isFixed[2] = cpy._isFixed[2];
+    _isFixed[3] = cpy._isFixed[3];
 }
 
 void Label::setPos(Pos p)
 {
+    if(fixedCount() == 4 && p != _p)
+		throw invalid_argument("alles fix, aber pos soll geaendert werden");
+
 	_p = p;
+    while(_isFixed[(int)_p])
+        rotateCW();
 }
 
 Label::Pos Label::getPos() const
@@ -72,12 +81,20 @@ Label::Pos Label::getPos() const
 
 void Label::rotateCCW()
 {
+    if(fixedCount() == 4)
+        return;
 	_p = (Pos)(((int)_p+3)%4);
+    while(_isFixed[(int)_p])
+        rotateCCW();
 }
 
 void Label::rotateCW()
 {
+    if(fixedCount() == 4)
+        return;
 	_p = (Pos)(((int)_p+1)%4);
+    while(_isFixed[(int)_p])
+        rotateCW();
 }
 
 int Label::x() const
@@ -106,10 +123,14 @@ int Label::b() const
 }
 void Label::enable()
 {
+    if(_b != 1 && _isFixed[(int)_p])
+		throw invalid_argument("versuche gefixte pos zu enablen");
 	_b = 1;
 }
 void Label::disable()
 {
+    if(_b != 0 && fixedCount() > 0)
+		throw invalid_argument("versuche gefixte pos zu disablen");
 	_b = 0;
 }
 int Label::xs() const

@@ -5,19 +5,19 @@ Heu1PlusScip::Heu1PlusScip(SCIP* scip, vector<Label>& _labels, vector<vector<SCI
     :ObjHeur(scip, HEUR_NAME, HEUR_DESC, HEUR_DISPCHAR, HEUR_PRIORITY, HEUR_FREQ, HEUR_FREQOFS, HEUR_MAXDEPTH, HEUR_TIMING, HEUR_USESSUBSCIP), 
     labels(_labels), vars(vars), heu(_labels, HEUR_REC_D), heu2(_labels)
 {
-    cout << HEUR_NAME << endl;
+    //cout << HEUR_NAME << endl;
 }
 
 void Heu1PlusScip::callHeuristic(vector<Label*>* ut)
 {
-    cout << "ut.size(): " << (ut?ut->size():0) << endl;
+    //cout << "ut.size(): " << (ut?ut->size():0) << endl;
     int count = 0;
     do 
     {
         count = 0;
         for(auto& l : labels)
         {
-            if(l.b() == 0)
+            if(l.b() == 0 && l.fixedCount() < 4)
             {
                if(heu.tryToEnable(l, ut))
                {
@@ -77,10 +77,14 @@ SCIP_Bool Heu1PlusScip::copyLabelsToScipState(SCIP* scip, SCIP_HEUR* heur)
 
 void Heu1PlusScip::copyScipStateToLabels(Scip* scip)
 {
-    static int c = 0;
-    //cout << ++c << ". call of copyScipStateToLabels" << endl;
     try
     {
+        for(auto& l : labels)
+        {
+            l.unfix();
+            l.disable();
+        }
+
         int counter = 0;
         SCIP_VAR** _vars = SCIPgetVars(scip);
         int ncount = SCIPgetNVars(scip);
@@ -90,16 +94,11 @@ void Heu1PlusScip::copyScipStateToLabels(Scip* scip)
             SCIP_Real val = SCIPgetSolVal(scip, NULL, _vars[i]);//values of current solution
             ScipVarLabelData* data = (ScipVarLabelData*)SCIPvarGetData(_vars[i]);
 
-            data->labelPtr->_isFixed = false;
             if(SCIPisFeasIntegral(scip, val) && val > 0.5)
             {
-                data->labelPtr->enable();
                 data->labelPtr->setPos(data->pos);
+                data->labelPtr->enable();
                 counter++;
-            }
-            else
-            {
-                data->labelPtr->disable();
             }
         }
 
@@ -111,17 +110,13 @@ void Heu1PlusScip::copyScipStateToLabels(Scip* scip)
             SCIP_Real val = SCIPgetSolVal(scip, NULL, _vars[i]);//values of current solution
             ScipVarLabelData* data = (ScipVarLabelData*)SCIPvarGetData(_vars[i]);
 
-            data->labelPtr->_isFixed = true;
             if(SCIPisFeasIntegral(scip, val) && val > 0.5)
             {
-                data->labelPtr->enable();
                 data->labelPtr->setPos(data->pos);
+                data->labelPtr->enable();
                 counter++;
             }
-            else
-            {
-                data->labelPtr->disable();
-            }
+            data->labelPtr->_isFixed[(int)data->pos] = true;
         }
 /*
         if(SCIPgetNSols(scip) > 0)
@@ -180,13 +175,16 @@ SCIP_RETCODE Heu1PlusScip::scip_init(SCIP* scip, SCIP_HEUR* heur)
 {
     //copyScipStateToLabels(scip);
     for(auto& l : labels)
+    {
+        l.unfix();
         l.disable();
+    }
 
     callHeuristic();
 
     copyLabelsToScipState(scip, heur);
 
-    cout << "Heur1 init" << endl;
+    //cout << "Heur1 init" << endl;
 
     return SCIP_OKAY;
 }
@@ -222,17 +220,20 @@ SCIP_RETCODE Heu1PlusScip::scip_exec(SCIP* scip, SCIP_HEUR* heur, SCIP_HEURTIMIN
 
         copyScipStateToLabels(scip);
 
+        /*
         vector<Label*> untouchables;
         for(Label& l : labels)
         {
-            if(l._isFixed)
+            if(l.fixedCount() == 4)
             {
                 untouchables.push_back(&l);
             }
         }
+        */
         //cout << untouchables.size() << " untouchables" << endl;
 
-        callHeuristic(&untouchables);
+        //callHeuristic(&untouchables);
+        callHeuristic();
 
         auto stored = copyLabelsToScipState(scip, heur);
 

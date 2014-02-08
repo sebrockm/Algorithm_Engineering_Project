@@ -21,8 +21,8 @@ using namespace std;
 #define HEUR_NAME             "Heu1+Scip"
 #define HEUR_DESC             "Scip using Heuristic1"
 #define HEUR_DISPCHAR         'H'
-#define HEUR_PRIORITY         100
-#define HEUR_FREQ             1
+#define HEUR_PRIORITY         1
+#define HEUR_FREQ             20
 #define HEUR_FREQOFS          0
 #define HEUR_MAXDEPTH         -1
 #define HEUR_TIMING           SCIP_HEURTIMING_AFTERNODE//(0xFFFFFFFF & (1 << 1))
@@ -50,7 +50,6 @@ private:
     vector<vector<SCIP_VAR*>>& vars;
     Heuristic1 heu;
     Heuristic2 heu2;
-    //SCIP_HEUR* roundingHeu;
 
     void callHeuristic(vector<Label*>* ut = NULL);
     SCIP_Bool copyLabelsToScipState(SCIP* scip, SCIP_HEUR* heur = NULL);

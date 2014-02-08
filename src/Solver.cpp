@@ -15,6 +15,9 @@
 using namespace std;
 
 #define SCIP_WITH_HEU
+#define SCIP_CONS_3
+#define SCIP_CONS_4
+//#define SCIP_CONS_5
 
 void Solver::printStatus(SCIP_Status s) const
 {
@@ -84,7 +87,7 @@ Solver::Solver(vector<Label>& labels)
     {
         SCIP_CALL_EXC(SCIPcreate(&scip));
         SCIP_CALL_EXC(SCIPincludeDefaultPlugins(scip));
-		//SCIP_CALL_EXC(SCIPsetMessagehdlr(scip, NULL));
+		SCIP_CALL_EXC(SCIPsetMessagehdlr(scip, NULL));
         SCIP_CALL_EXC(SCIPcreateProbBasic(scip, "labeling"));
         SCIP_CALL_EXC(SCIPsetObjsense(scip, SCIP_OBJSENSE_MAXIMIZE));
 
@@ -141,21 +144,118 @@ Solver::Solver(vector<Label>& labels)
                     {
                         if(labelCouldCross(labels[i], labels[j]))
                         {
-                            stringstream ss;
-                            ss << "b#" << i+1 << "#" << p+1 << " + " << "b#" << j+1 << "#" << q+1 
-                                << " + " << "c#" << i+1 << "#" << p+1 << "#" << j+1 << "#" << q+1 << " <= 2";
+                            bool found3 = false;
+#ifdef SCIP_CONS_3
+                            for(int k = j+1; k < n; k++)
+                            {
+                                labels[k].setPos((Label::Pos)0);
+                                for(int r = 0; r < 4; r++)
+                                {
+                                    if(labelCouldCross(labels[i], labels[k]) && labelCouldCross(labels[j], labels[k]))
+                                    {
+                                        found3 = true;
+                                        bool found4 = false;
+#ifdef SCIP_CONS_4
+                                        for(int l = k+1; l < n; l++)
+                                        {
+                                            labels[l].setPos((Label::Pos)0);
+                                            for(int s = 0; s < 4; s++)
+                                            {
+                                                if(labelCouldCross(labels[i], labels[l]) && labelCouldCross(labels[j], labels[l]) && labelCouldCross(labels[k], labels[l]))
+                                                {
+                                                    found4 = true;
+                                                    bool found5 = false;
+#ifdef SCIP_CONS_5
+                                                    for(int m = l+1; m < n; m++)
+                                                    {
+                                                        for(int t = 0; t < 4; t++)
+                                                        {
+                                                            if(labelCouldCross(labels[i], labels[m]) && labelCouldCross(labels[j], labels[m]) 
+                                                                    && labelCouldCross(labels[k], labels[m]) && labelCouldCross(labels[l], labels[m]))
+                                                            {
+                                                                found5 = true;
+                                                                stringstream sssss;
+                                                                sssss << "b#" << i << "#" << p << " + b#" << j << "#" << q 
+                                                                    << " + b#" << k << "#" << r << " + b#" << l << "#" << s << " + b#" << m << "#" << t << " <= 1";
 
-                            SCIP_VAR* v[] = {vars[i][p], vars[j][q]};
-                            SCIP_Real vals[] = {1,1};
-                            crossCons.push_back(NULL);
-                            SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &crossCons.back(), ss.str().c_str(),
-                                        2, //variable count
-                                        v, //variables
-                                        vals, //values
-                                        0., //lhs
-                                        1.)); //rhs
+                                                                SCIP_VAR* vvvv[] = {vars[i][p], vars[j][q], vars[k][r], vars[l][s], vars[m][t]};
+                                                                SCIP_Real vvvvals[] = {1,1,1,1,1};
+                                                                crossCons.push_back(NULL);
+                                                                SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &crossCons.back(), sssss.str().c_str(),
+                                                                            5, //variable count
+                                                                            vvvv, //variables
+                                                                            vvvvals, //values
+                                                                            0., //lhs
+                                                                            1.)); //rhs
 
-                            SCIP_CALL_EXC(SCIPaddCons(scip, crossCons.back()));
+                                                                SCIP_CALL_EXC(SCIPaddCons(scip, crossCons.back()));
+                                                            }
+                                                            labels[m].rotateCW();
+                                                        }
+                                                    }
+#endif//5
+                                                    if(!found5)
+                                                    {
+                                                        stringstream ssss;
+                                                        ssss << "b#" << i << "#" << p << " + b#" << j << "#" << q 
+                                                            << " + b#" << k << "#" << r << " + b#" << l << "#" << s << " <= 1";
+
+                                                        SCIP_VAR* vvv[] = {vars[i][p], vars[j][q], vars[k][r], vars[l][s]};
+                                                        SCIP_Real vvvals[] = {1,1,1,1};
+                                                        crossCons.push_back(NULL);
+                                                        SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &crossCons.back(), ssss.str().c_str(),
+                                                                    4, //variable count
+                                                                    vvv, //variables
+                                                                    vvvals, //values
+                                                                    0., //lhs
+                                                                    1.)); //rhs
+
+                                                        SCIP_CALL_EXC(SCIPaddCons(scip, crossCons.back()));
+                                                    }
+                                                }
+                                                labels[l].rotateCW();
+                                            }
+                                        }
+#endif//4
+                                        if(!found4)
+                                        {
+                                            stringstream sss;
+                                            sss << "b#" << i << "#" << p << " + b#" << j << "#" << q << " + b#" << k << "#" << r <<" <= 1";
+
+                                            SCIP_VAR* vv[] = {vars[i][p], vars[j][q], vars[k][r]};
+                                            SCIP_Real vvals[] = {1,1,1};
+                                            crossCons.push_back(NULL);
+                                            SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &crossCons.back(), sss.str().c_str(),
+                                                        3, //variable count
+                                                        vv, //variables
+                                                        vvals, //values
+                                                        0., //lhs
+                                                        1.)); //rhs
+
+                                            SCIP_CALL_EXC(SCIPaddCons(scip, crossCons.back()));
+                                        }
+                                    }
+                                    labels[k].rotateCW();
+                                }
+                            }
+#endif//3
+                            if(!found3)
+                            {
+                                stringstream ss;
+                                ss << "b#" << i << "#" << p << " + " << "b#" << j << "#" << q << " <= 1";
+
+                                SCIP_VAR* v[] = {vars[i][p], vars[j][q]};
+                                SCIP_Real vals[] = {1,1};
+                                crossCons.push_back(NULL);
+                                SCIP_CALL_EXC(SCIPcreateConsBasicLinear(scip, &crossCons.back(), ss.str().c_str(),
+                                            2, //variable count
+                                            v, //variables
+                                            vals, //values
+                                            0., //lhs
+                                            1.)); //rhs
+
+                                SCIP_CALL_EXC(SCIPaddCons(scip, crossCons.back()));
+                            }
                         }
                         labels[j].rotateCW();
                     }   
@@ -167,7 +267,7 @@ Solver::Solver(vector<Label>& labels)
     catch(SCIPException& e)
     {
         cerr << e.what() << endl;
-        cout << -1 << "\t" << 0 << endl;
+        cout << "nopt" << -1 << "\t" << 0 << endl;
         exit(e.getRetcode());
     }
 }
@@ -205,6 +305,7 @@ int Solver::solve()
 		int counter = 0;
         for(int i = 0; i < n; i++)
         {
+            labels[i].unfix();
             labels[i].setPos((Label::Pos)0);
             labels[i].disable();
             for(int p = 0; p < 4; p++)
@@ -225,7 +326,7 @@ int Solver::solve()
     catch(SCIPException& e)
     {
         cerr << e.what() << endl;
-        cout << -1 << "\t" << 0 << endl;
+        cout << "nopt" << -1 << "\t" << 0 << endl;
         exit(e.getRetcode());
     }
 
@@ -234,10 +335,8 @@ int Solver::solve()
 
 Solver::~Solver()
 {
-    int bla = 0;
     try
     {
-        cout << "bla" << (bla++) << endl;
         if(heu)
         {
             delete heu;
@@ -250,27 +349,23 @@ Solver::~Solver()
                 SCIP_CALL_EXC(SCIPreleaseVar(scip, &b));
             }
         }
-        cout << "bla" << (bla++) << endl;
 
         for(auto& a : positionCons)
         {
             SCIP_CALL_EXC(SCIPreleaseCons(scip, &a)); 
         }
-        cout << "bla" << (bla++) << endl;
 
         for(auto& a : crossCons)
         {
             SCIP_CALL_EXC(SCIPreleaseCons(scip, &a)); 
         }
-        cout << "bla" << (bla++) << endl;
 
         //SCIP_CALL_EXC(SCIPfree(&scip));
-        cout << "bla" << (bla++) << endl;
     }
     catch(SCIPException& e)
     {
         cerr << e.what() << endl;
-        cout << -1 << "\t" << 0 << endl;
+        cout << "nopt" << -1 << "\t" << 0 << endl;
         exit(e.getRetcode());
     }
 }

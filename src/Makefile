@@ -20,6 +20,6 @@ clean:
 	rm -f *.o $(OUT)
 
 test:
-	./pflp_solver -in ../data/tests/test_3/_test_s=6.dat -out test.dat -heu 0
+	./pflp_solver -in ../data/tests/test_21/_test_s=6.dat -out test.dat -heu 0
     
 

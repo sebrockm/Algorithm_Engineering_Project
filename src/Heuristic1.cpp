@@ -35,8 +35,8 @@ bool Heuristic1::tryToEnable(Label& label, vector<Label*>* untouchables)
 	vector<Label*> _untouchables;
 	vector<pair<Label*, Label::Pos>> rollbacks;
 
-	label.enable();
 	label.setPos(Label::tl);
+	label.enable();
 
 	if(!tryToEnable(label, _maxDepth, untouchables ? *untouchables : _untouchables, rollbacks))
 	{
@@ -90,18 +90,21 @@ bool Heuristic1::tryToEnable(Label& label, int maxDepth, vector<Label*>& untouch
 
 		vector<pair<Label*, Label::Pos>> newRollbacks;
 
-		label.setPos(dir.first);
-		bool posPossible = true;
+		bool posPossible = !label._isFixed[(int)dir.first];
 
-		for(auto& cross : dir.second)//versuche für diese Richtung alle kreuzenden rekursiv zu verschieben 
-		{
-			if(!tryToEnable(*cross, maxDepth-1, newUntouchables, newRollbacks))//cross ließ sich nicht rekursiv verschieben
-			{
-				doRollback(newRollbacks);
-				posPossible = false;
-				break;
-			}
-		}
+        if(posPossible)
+        {
+            label.setPos(dir.first);
+            for(auto& cross : dir.second)//versuche für diese Richtung alle kreuzenden rekursiv zu verschieben 
+            {
+                if(!tryToEnable(*cross, maxDepth-1, newUntouchables, newRollbacks))//cross ließ sich nicht rekursiv verschieben
+                {
+                    doRollback(newRollbacks);
+                    posPossible = false;
+                    break;
+                }
+            }
+        }
 		if(posPossible)//Richtung gefunden, bei der sich die Situation rekursiv auflösen ließ
 		{
 			rollbacks.emplace_back(&label, oldPos);

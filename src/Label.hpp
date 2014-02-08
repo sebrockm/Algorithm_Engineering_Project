@@ -25,7 +25,17 @@ private:
 	Pos _p;
 
 public:
-    bool _isFixed;
+    bool _isFixed[4];
+
+    void unfix()
+    {
+        _isFixed[0] = _isFixed[1] = _isFixed[2] = _isFixed[3] = false;
+    }
+
+    int fixedCount() const
+    {
+        return _isFixed[0] + _isFixed[1] + _isFixed[2] + _isFixed[3];
+    } 
 
     Label(void) : _x(0), _y(0), _name("undefined"), _b(0), _p(br) { }
 
