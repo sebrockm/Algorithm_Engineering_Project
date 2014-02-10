@@ -206,7 +206,7 @@ SCIP_RETCODE Heu1PlusScip::scip_exec(SCIP* scip, SCIP_HEUR* heur, SCIP_HEURTIMIN
 
         if(SCIPgetLPSolstat(scip) != SCIP_LPSOLSTAT_OPTIMAL)
         {
-            cout << "current LP State not optimal: canceling heuristic" << endl;
+            //cout << "current LP State not optimal: canceling heuristic" << endl;
             return SCIP_OKAY;
         }
 

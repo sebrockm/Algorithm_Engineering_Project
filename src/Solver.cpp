@@ -87,7 +87,7 @@ Solver::Solver(vector<Label>& labels)
     {
         SCIP_CALL_EXC(SCIPcreate(&scip));
         SCIP_CALL_EXC(SCIPincludeDefaultPlugins(scip));
-		SCIP_CALL_EXC(SCIPsetMessagehdlr(scip, NULL));
+		//SCIP_CALL_EXC(SCIPsetMessagehdlr(scip, NULL));
         SCIP_CALL_EXC(SCIPcreateProbBasic(scip, "labeling"));
         SCIP_CALL_EXC(SCIPsetObjsense(scip, SCIP_OBJSENSE_MAXIMIZE));
 
